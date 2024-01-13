@@ -1,9 +1,22 @@
-import React from 'react'
+import React from 'react';
+import Platos from './Platos';
+import PlatoMenu from './PlatoMenu';
 
-const Bebidas = () => {
-  return (
-    <div>Bebidas</div>
+
+
+
+
+function Bebidas() {
+
+  return(
+<div>
+    <p>asd</p>
+  </div>
+
   )
+  
+
+
 }
 
 export default Bebidas

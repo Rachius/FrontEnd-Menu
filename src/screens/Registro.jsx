@@ -1,6 +1,7 @@
 import React from 'react'
 import { Form } from 'react-router-dom'
 
+
 const Registro = () => {
   return (
       <div class="d-flex justify-content-center">
@@ -21,6 +22,7 @@ const Registro = () => {
             <div class="mb-3">
               <label for="InputPasswordReg" class="form-label">Contraseña</label>
               <input type="password" class="form-control" id="InputPasswordReg" required/>
+              <span id="passwordHelpInline" class="form-text">Debe tener entre 8-20 characteres de largo.</span>
                     
             </div>
             {/* <div class="mb-3 form-check">
@@ -29,6 +31,7 @@ const Registro = () => {
             </div> */}
             <div>         
             <button type="submit" class="btn btn-success">Submit</button>
+            
             </div>
 
 
