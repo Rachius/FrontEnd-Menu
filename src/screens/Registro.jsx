@@ -1,14 +1,27 @@
 import React from 'react'
 import {useForm} from 'react-hook-form'
-import { registerRequest } from '../api/auth.js'
-
+import { useAuth } from '../contexts/AuthContex'
+import { useEffect } from 'react'
+import {  useNavigate,Link } from 'react-router-dom'
 
 
 
 function Registro(){
 
-  const {register,handleSubmit} = useForm()
+  const {register,handleSubmit,formState:{errors},} = useForm()
+  const {signup,isAuthenticated,errors:RegisterErrors} = useAuth()
+  const navigate = useNavigate()
 
+  useEffect(()=>{
+    if(isAuthenticated) navigate("./Home")
+
+  },[isAuthenticated])
+
+
+
+  const onSubmit = handleSubmit(async (values) => {
+      signup(values)
+      })
 
   return (
       <div class="d-flex justify-content-center">
@@ -17,23 +30,32 @@ function Registro(){
           <br />
             <h3>Formulario de registración</h3>
             <br />
-            <form onSubmit={handleSubmit(async (values) => {
-              const res = await registerRequest(values);
-              console.log(res);
-                })} noValidate>
+        
+              {RegisterErrors.map((error, i)=> (
+              <div className='bg-red-500 p-2'key={i}>
+                
+                {error}
+              </div>))}
 
-              <div class="mb-3 needs-validation" novalidate>
-              <label for="InputNameReg" class="form-label">username</label>
-              <input type="text" class="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: true })} />
+           
+            <form onSubmit={onSubmit} noValidate>
+
+              <div class="mb-3 needs-validation" noValidate>
+              <label for="InputNameReg" className="form-label">username</label>
+              <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: true })} />
+              {errors.username && <p className='text-red-500'>Userame is required</p>}
             </div>
             <div class="mb-3">
-              <label for="InputEmailReg" class="form-label">email</label>
-              <input type="email" class="form-control" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: true })}/>
+              <label for="InputEmailReg" className="form-label">email</label>
+              <input type="email" className="form-control" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: true })}/>
+              {errors.email && <p className='text-red-500'>Email is required</p>}
+            
             </div>
             <div class="mb-3">
-              <label for="InputPasswordReg" class="form-label">password</label>
-              <input type="password" class="form-control" id="InputPasswordReg" {...register('password', { required: true })}/>
-              <span id="passwordHelpInline" class="form-text">Debe tener entre 8-20 characteres de largo.</span>
+              <label for="InputPasswordReg" className="form-label">password</label>
+              <input type="password" className="form-control" id="InputPasswordReg" {...register('password', { required: true })}/>
+              {errors.password && <p className='text-red-500'>Password is required</p>}
+              <span id="passwordHelpInline" className="form-text">Debe tener entre 8-20 characteres de largo.</span>
                     
             </div>
             {/* <div class="mb-3 form-check">
@@ -41,7 +63,10 @@ function Registro(){
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div> */}
             <div>         
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" className="btn btn-success">Submit</button>
+            <p>
+                Do you have an account? <Link to="/login">Sign in</Link>
+                </p>
             
             </div>
 
