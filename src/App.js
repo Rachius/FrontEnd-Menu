@@ -11,9 +11,8 @@ import Platos from './screens/Platos';
 import Bebidas from './screens/Bebidas';
 import Postres from './screens/Postres';
 import LogOut from './screens/LogOut';
-
-
 import ProtectedRoute from './ProtectedRoutes';
+import { AdminRoute } from './ProtectedRoutes';
 
 
 
@@ -37,13 +36,27 @@ function App() {
             <Route path="/registro" element={<Registro/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/home" element={<Home/>}/>
-            <Route path="/logOut" element={<logOut/>}/>
+            <Route path="/platos" element={<Platos/>}/>
+            <Route path="/bebidas" element={<Bebidas/>}/>
+            <Route path="/postres" element={<Postres/>}/>
+            <Route>
+            <Route element={<AdminRoute/>}>
+            <Route path="/pedidos" element={<Pedidos/>}/>
+            <Route path="/platos" element={<Platos/>}/>
+            <Route path="/bebidas" element={<Bebidas/>}/>
+            <Route path="/postres" element={<Postres/>}/>
+            <Route path="/logOut" element={<LogOut/>}/>
+            <Route path="/editUsuarios" element={<LogOut/>}/>
+            <Route path="/editMenu" element={<LogOut/>}/>
+            </Route>
+
+            </Route>
           <Route element={<ProtectedRoute/>}>            
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/platos" element={<Platos/>}/>
             <Route path="/bebidas" element={<Bebidas/>}/>
             <Route path="/postres" element={<Postres/>}/>
-            <Route path="/logOut" element={<logOut/>}/>
+            <Route path="/logOut" element={<LogOut/>}/>
           </Route>
         
           </Routes>

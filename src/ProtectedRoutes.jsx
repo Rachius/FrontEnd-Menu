@@ -10,4 +10,12 @@ function ProtectedRoute() {
     return <Outlet/>
 }
 
+export  function AdminRoute(){
+    const [user,isAuthenticated] = useAuth()
+    const isAdmin = isAuthenticated && user && user.rol === 'admin';
+    if (!isAdmin) return <Navigate to="/Home" replace />;
+
+   return <Outlet/>
+}
 export default ProtectedRoute
+
