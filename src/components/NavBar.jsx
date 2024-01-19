@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContex';
-
+import Home from '../screens/Home';
 /*
 
 const links=
@@ -77,7 +77,7 @@ function Navbar () {
           </ul>
         </li>
         <li class="nav-item" >
-          <Link to='/Home' onClick={()=>{
+          <Link to={Home} onClick={()=>{
             logOut()
           }}>
           <a class="nav-link" href="/pedidos">LogOut</a>
