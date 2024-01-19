@@ -13,7 +13,7 @@ function Registro(){
   const navigate = useNavigate()
 
   useEffect(()=>{
-    if(isAuthenticated) navigate("./Home")
+    if(isAuthenticated) navigate("/Home")
 
   },[isAuthenticated])
 

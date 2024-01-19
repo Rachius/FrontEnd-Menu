@@ -15,7 +15,7 @@ function Login (){
 
     })
     useEffect(()=>{
-      if(isAuthenticated) navigate("./Profile")
+      if(isAuthenticated) navigate("/Home")
   
     },[isAuthenticated])
 

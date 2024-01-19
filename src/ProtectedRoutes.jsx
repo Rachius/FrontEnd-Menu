@@ -9,6 +9,14 @@ function ProtectedRoute() {
 
     return <Outlet/>
 }
+/*
+export function Unlogin() {
+    const {loading,isAuthenticated}= useAuth()
+   
+    if(loading && !isAuthenticated) return <h1>Loading...</h1>
+
+    return <Outlet/>
+}*/
 
 export  function AdminRoute(){
     const [user,isAuthenticated] = useAuth()
@@ -17,5 +25,7 @@ export  function AdminRoute(){
 
    return <Outlet/>
 }
+
+
 export default ProtectedRoute
 

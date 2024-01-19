@@ -69,7 +69,7 @@ export const AuthProvider = ({children}) => {
 
     }
 
-/*useEffect(()=> {
+        useEffect(()=> {
         if(errors.length>0) {
            const timer = setTimeout(()=>{
                 setErrors([])
@@ -77,19 +77,51 @@ export const AuthProvider = ({children}) => {
             return ()=>clearTimeout(timer)
         }
     })
+
+ /*   useEffect(() => {
+        const checkAuthentication = async () => {
+          const token = Cookies.get('token');
+      
+          if (token) {
+            try {
+              const res = await verifyTokenRequest(token); // Tu función para verificar el token
+              if (res.data) {
+                setIsAuthenticated(true);
+                setUser(res.data);
+              } else {
+                setIsAuthenticated(false);
+                setUser(null);
+              }
+            } catch (error) {
+              setIsAuthenticated(false);
+              setUser(null);
+            }
+          } else {
+            setIsAuthenticated(false);
+            setUser(null);
+          }
+      
+          setLoading(false);
+        };
+      
+        checkAuthentication();
+      }, []);
+      
 */
 
     useEffect(()=>{
         async function checklogin(){
             const cookies = Cookies.get()
-            if(!cookies.token){
-                setIsAuthenticated(false)
-                setLoading(false)
-                return setUser(null)
-            }
-               try {
+            
+            
+                   if(!cookies.token){
+                       setIsAuthenticated(false)
+                         setLoading(false)
+                            return setUser(null)
+                                             }
+          try {
                 const res = await verifyTokenRequest(cookies.token)
-                console.log(res)
+              
                     if(!res.data){
                         setIsAuthenticated(false)
                         setLoading(false)
@@ -98,6 +130,7 @@ export const AuthProvider = ({children}) => {
 
                 setIsAuthenticated(true)
                 setUser(res.data)
+               
                 setLoading(false)
                } catch (error) {
                 setIsAuthenticated(false)
@@ -109,7 +142,7 @@ export const AuthProvider = ({children}) => {
         },[])
 
 
-    return (<AuthContext.Provider value={{signin,signup,logOut,user,isAuthenticated,errors,}}>
+    return (<AuthContext.Provider value={{signin,signup,logOut,user,isAuthenticated,errors,loading,}}>
         {children}
     </AuthContext.Provider>)
 
