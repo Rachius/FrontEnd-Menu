@@ -57,7 +57,7 @@ function Login (){
 <label class="form-check-label" for="exampleCheck1">Check me out</label>
 </div> */}
     <div>         
-    <button type="submit" className="btn btn-success"    >Submit</button>
+    <button type="submit" className="btn btn-success"  >Submit</button>
     <p>
       Don't have an account? <Link to="/registro">Sign up</Link>
     </p>
