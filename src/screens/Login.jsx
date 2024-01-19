@@ -1,7 +1,6 @@
-
 import React from 'react'
 import {useForm} from 'react-hook-form'
-import { useAuth } from '../contexts/AuthContex'
+import { useAuth } from '../context/authContext'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -58,7 +57,7 @@ function Login (){
 <label class="form-check-label" for="exampleCheck1">Check me out</label>
 </div> */}
     <div>         
-    <button type="submit" className="btn btn-success">Submit</button>
+    <button type="submit" className="btn btn-success"  >Submit</button>
     <p>
       Don't have an account? <Link to="/registro">Sign up</Link>
     </p>
@@ -76,3 +75,23 @@ function Login (){
 }
 
   export default Login
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
