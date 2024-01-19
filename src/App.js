@@ -1,6 +1,6 @@
 
 
-import { AuthProvider,useAuth} from './context/authContext.jsx';
+import { AuthProvider,useAuth} from './contexts/AuthContex';
 
 import './App.css';
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";

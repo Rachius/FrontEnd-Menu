@@ -2,7 +2,7 @@ import React from 'react';
 import {useForm} from 'react-hook-form'
 import { Button } from 'bootstrap';
 import Registro from './Registro';
-import { useAuth } from '../context/authContext.jsx';
+import { useAuth } from '../contexts/AuthContex';
 import { useEffect } from 'react';
 import {  useNavigate, Link } from 'react-router-dom';
 
