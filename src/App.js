@@ -1,5 +1,7 @@
 
-import { AuthProvider } from './contexts/AuthContex';
+
+import { AuthProvider,useAuth} from './context/authContext.jsx';
+
 import './App.css';
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import NavBar from './components/NavBar';
@@ -13,8 +15,7 @@ import Postres from './screens/Postres';
 import LogOut from './screens/LogOut';
 import ProtectedRoute from './ProtectedRoutes';
 import { AdminRoute } from './ProtectedRoutes';
-
-
+import EditarPedido from './screens/editarpedido';
 
 
 

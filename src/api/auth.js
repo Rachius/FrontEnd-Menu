@@ -9,4 +9,3 @@ export const loginRequest = user => axios.post(`/login`,user)
 export const verifyTokenRequest = () => axios.get(`/verify`)
 
 export const logOutRequest = user => axios.post(`/logOut`,user)
-
