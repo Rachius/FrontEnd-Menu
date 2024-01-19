@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <div>
-    {/* <div className='d-flex justify-content-between'>Home
+    <div className='d-flex justify-content-between'>Home
       <br />
       <br />
       
@@ -207,7 +207,7 @@ const Home = () => {
 
               </div>
           
-          </div> */}
+          </div>
 
           <p>principal</p>
 
