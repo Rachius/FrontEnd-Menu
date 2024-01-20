@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContex';
 import Home from '../screens/Home';
-import Button  from 'bootstrap';
-import { set } from 'react-hook-form';
+
+
 /*
 
 const links=
@@ -42,24 +42,29 @@ const links=
 */
 
 
-
 function Navbar () {
+ 
+
+
   const {isAuthenticated,logOut,user} = useAuth()
+
   return (
-    
-    
-  <nav class="navbar navbar-expand-lg $navbar-dark-color:                 rgba($white, .55);
-  $navbar-dark-hover-color:           rgba($white, .75);">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/home">Inicio</a>
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
       <ul class="navbar-nav">
-        {isAuthenticated  && user.rol ==='admin' ?(
+        
+        {isAuthenticated  && user.rol ==='admin' ? (
           <>
+
+        <Link to="/Home" class="navbar-brand">Inicio</Link>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
         <li class="nav-item">
           <a class="nav-link" href="/pedidos">Pedidos</a>
@@ -91,6 +96,10 @@ function Navbar () {
         </li>
           </>): isAuthenticated  && user.rol ==='user' ?(
           <>
+                          <a class="navbar-brand" href="/Home">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+                </button>
 
         <li class="nav-item">
           <a class="nav-link" href="/pedidos">Pedidos</a>
@@ -118,6 +127,10 @@ function Navbar () {
          
         </li>
           </>) : (<>
+            <a class="navbar-brand" href="/Home">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+                </button>
           <li class="nav-item" >
           <a class="nav-link active" aria-current="page" href="/login">Login</a>
         </li>
@@ -147,8 +160,6 @@ function Navbar () {
 </nav>
   )
 }
-
-
 
 
 

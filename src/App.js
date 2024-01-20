@@ -15,7 +15,10 @@ import Postres from './screens/Postres';
 import LogOut from './screens/LogOut';
 import ProtectedRoute from './ProtectedRoutes';
 import { AdminRoute } from './ProtectedRoutes';
+import { Unlogin } from './ProtectedRoutes';
 import EditarPedido from './screens/editarpedido';
+
+
 
 
 
@@ -33,13 +36,14 @@ function App() {
           <NavBar/>
 
           <Routes>
-           
+            <Route >
             <Route path="/registro" element={<Registro/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/home" element={<Home/>}/>
+            <Route path="/Home" element={<Home/>}/>
             <Route path="/platos" element={<Platos/>}/>
             <Route path="/bebidas" element={<Bebidas/>}/>
             <Route path="/postres" element={<Postres/>}/>
+            </Route>
             <Route>
             <Route element={<AdminRoute/>}>
             <Route path="/pedidos" element={<Pedidos/>}/>
@@ -52,7 +56,7 @@ function App() {
             </Route>
 
             </Route>
-          <Route element={<ProtectedRoute/>}>            
+            <Route element={<ProtectedRoute/>}>            
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/platos" element={<Platos/>}/>
             <Route path="/bebidas" element={<Bebidas/>}/>
