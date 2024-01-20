@@ -15,8 +15,12 @@ import Postres from './screens/Postres';
 import LogOut from './screens/LogOut';
 import ProtectedRoute from './ProtectedRoutes';
 import { AdminRoute } from './ProtectedRoutes';
-import { Unlogin } from './ProtectedRoutes';
-import EditarPedido from './screens/editarpedido';
+import EditPedido from './screens/EditPedido.jsx';
+import EditUsuario from './screens/EditUsuarios.jsx';
+import editMenu from './screens/EditMenu'
+import EditMenu from './screens/EditMenu';
+
+
 
 
 
@@ -51,8 +55,9 @@ function App() {
             <Route path="/bebidas" element={<Bebidas/>}/>
             <Route path="/postres" element={<Postres/>}/>
             <Route path="/logOut" element={<LogOut/>}/>
-            <Route path="/editUsuarios" element={<LogOut/>}/>
-            <Route path="/editMenu" element={<LogOut/>}/>
+            <Route path="/editMenu" element={<EditMenu/>}/>
+            <Route path="/editUsuario" element={<EditUsuario/>}/>
+            <Route path="/editPedido" element={<EditPedido/>}/>
             </Route>
 
             </Route>

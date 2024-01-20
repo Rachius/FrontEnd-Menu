@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+
+
+.bg-verde-claro {
+  background-color: #1c5c16d9;
+}
+
+.bg-verde-blanco {
+  background-color: #fffffff6;
+}
+
+
+
+.bordered {
+  border: 0.5px solid black;
+  background-color: white;
+}
+
+
+
+.margen-10 {
+  margin: 50px;
+ }
+
+ .negrita-color-blanco {
+  font-weight: bold;
+  color: rgb(255, 255, 255); /* Cambia este valor por el color que desees */
+  font-family: Arial, sans-serif; /* Cambia este valor por la fuente que desees */
+}
+
+
+.negrita-color-negro {
+  font-weight: bold;
+  color: rgb(0, 0, 0); /* Cambia este valor por el color que desees */
+  font-family: Arial, sans-serif; /* Cambia este valor por la fuente que desees */
+  
+}
+
+
+
+
+.formulario-fondo {
+  background-image: url('/prueba.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode:multiply ; /* Agrega el efecto de difuminado */
+  opacity: 0.9;
+  color: rgb(0, 0, 0); /* Cambia el color del texto para que se vea bien con el fondo difuminado */
+}

@@ -1,5 +1,32 @@
+import React from 'react';
+import {useForm} from 'react-hook-form'
+import { Button } from 'bootstrap';
+import Registro from './Registro';
+import { useAuth } from '../contexts/AuthContex';
+import { useEffect } from 'react';
+import {  useNavigate, Link } from 'react-router-dom';
+  
 
-function editUsuario() {
+
+function EditUsuario() {
+
+  const {register,handleSubmit,formState:{errors},} = useForm()
+  const {signup,isAuthenticated,errors:RegisterErrors} = useAuth()
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    if(isAuthenticated) navigate("./Home")
+
+  },[isAuthenticated])
+
+
+
+  const onSubmit = handleSubmit(async (values) => {
+      signup(values)
+      })
+
+
+
 
     return(
   <div>
@@ -88,8 +115,8 @@ function editUsuario() {
                                  
                                         </div>
                                     
-                                    </div> */
-    </div>
+                                    </div> 
+    
   
     )
     
@@ -97,4 +124,4 @@ function editUsuario() {
   
   }
   
-  export default editUsuario
+  export default EditUsuario

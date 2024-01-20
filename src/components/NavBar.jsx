@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContex';
+import { useAuth,checklogin } from '../contexts/AuthContex';
 import Home from '../screens/Home';
+import ProtectedRoute from '../ProtectedRoutes';
+import { AdminRoute } from '../ProtectedRoutes';
 
 
 /*
@@ -51,7 +53,7 @@ function Navbar () {
   return (
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -67,15 +69,15 @@ function Navbar () {
     </button>
 
         <li class="nav-item">
-          <a class="nav-link" href="/pedidos">Pedidos</a>
-          <a class="nav-link" href="/editMenu">Edit Menu</a>
-          <a class="nav-link" href="/editUsuarios">Edit Usuarios</a>
+        <Link to="/editPedido" class="nav-link">Editar Pedidos</Link>
+        <Link to="/editMenu" class="nav-link">Editar Menu</Link>
+        <a class="nav-link" href="/editUsuario">Editar Usuario</a>
           
         </li>
-        <li class="nav-item">
+        <li class="nav-link">
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Carta
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -84,11 +86,11 @@ function Navbar () {
             <li><a class="dropdown-item" href="/postres">Postres</a></li>
           </ul>
         </li>
-        <li class="nav-item" >
+        <li class="nav-link" >
           <Link to={Home} onClick={()=>{
             logOut()
           }}>
-          <a class="nav-link" href="/pedidos">LogOut</a>
+          <a class="nav-link">LogOut</a>
           </Link>
 
           
@@ -141,7 +143,7 @@ function Navbar () {
           <a class="nav-link" href="/registro">Registro</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="true">
             Carta
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

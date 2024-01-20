@@ -1,29 +1,29 @@
 import React from 'react';
-//mport {useForm} from 'react-hook-form'
-//import { Button } from 'bootstrap';
-//import Registro from './Registro';
-//import { useAuth } from '../contexts/AuthContex';
-//import { useEffect } from 'react';
-//import {  useNavigate, Link } from 'react-router-dom';
+// import {useForm} from 'react-hook-form'
+// import { Button } from 'bootstrap';
+// import Registro from './Registro';
+// import { useAuth } from '../contexts/AuthContex';
+// import { useEffect } from 'react';
+// import {  useNavigate, Link } from 'react-router-dom';
 
 
 
-/*const Home = () => {*/
+// const Home = () => {
 
- /* const {register,handleSubmit,formState:{errors},} = useForm()
-  const {signup,isAuthenticated,errors:RegisterErrors} = useAuth()
-  const navigate = useNavigate()*/
-/*
-  useEffect(()=>{
-    if(isAuthenticated) navigate("./Home")
+//   const {register,handleSubmit,formState:{errors},} = useForm()
+//   const {signup,isAuthenticated,errors:RegisterErrors} = useAuth()
+//   const navigate = useNavigate()*/
 
-  },[isAuthenticated])*/
+//   useEffect(()=>{
+//     if(isAuthenticated) navigate("./Home")
 
-/*
+//   },[isAuthenticated])*/
 
-  const onSubmit = handleSubmit(async (values) => {
-      signup(values)
-      })*/
+
+
+//   const onSubmit = handleSubmit(async (values) => {
+//       signup(values)
+//       })
 
       function Home() {
         return (

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { UseForm } from 'react-hook-form';
+import { Button } from 'bootstrap';
 
-const EditarPedido = (props) => {
+const EditPedido = (props) => {
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [precio, setPrecio] = useState("");
@@ -87,4 +89,4 @@ const EditarPedido = (props) => {
   );
 };
 
-export default EditarPedido;
+export default EditPedido;

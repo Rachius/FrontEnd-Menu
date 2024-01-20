@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+
+
 function Login (){
     const {register, handleSubmit,formState:{errors}} = useForm()
     const {signin,isAuthenticated,errors:signinErrors} = useAuth()
@@ -22,55 +24,42 @@ function Login (){
 
 
   return (
+<div className='d-flex justify-content-center bg-verde-blanco container vh-100 formulario-fondo'>
+  <div className='row-12 col-12'>
+    <br />
+  <div className="text-center col-sm-12 col-lg-6 bg-verde-claro mx-auto pb-5 pt-1">
     <div>
-      Loginasd
-      <div className="d-flex justify-content-center">
-        <div>
-          <br />
-          <br />
-          <h3>Inicia sesión</h3>
-          <br />
-          {signinErrors.map((error, i)=> (
-              <div className='bg-red-500 p-2'key={i}>
-                
-                {error}
-              </div>))}
-
-          <form onSubmit={onSubmit} noValidate>
-
-
-    <div class="mb-3">
-    <label for="InputEmailReg" className="form-label">email</label>
-    <input type="email" className="form-control" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: true })}/>
-    {errors.email && <p className='text-red-500'>Email is required</p>}
-
-  </div>
-    <div class="mb-3">
-    <label for="InputPasswordReg" className="form-label">password</label>
-    <input type="password" className="form-control" id="InputPasswordReg" {...register('password', { required: true })}/>
-    {errors.password && <p className='text-red-500'>Password is required</p>}
-    <span id="passwordHelpInline" className="form-text">Debe tener entre 8-20 characteres de largo.</span>
-      
+      <h3 className='mt-5 negrita-color-blanco'>Iniciar sesión</h3>
+      <br />
     </div>
-{/* <div class="mb-3 form-check">
-<input type="checkbox" class="form-check-input" id="exampleCheck1" />
-<label class="form-check-label" for="exampleCheck1">Check me out</label>
-</div> */}
-    <div>         
-    <button type="submit" className="btn btn-success"  >Submit</button>
-    <p>
-      Don't have an account? <Link to="/registro">Sign up</Link>
-    </p>
-
+    <div className='bordered d-flex justify-content-center col-sm-10 mx-auto'>
+      {signinErrors.map((error, i) => (
+        <div className='bg-red-500 p-2' key={i}>{error}</div>
+      ))}
+      <form onSubmit={onSubmit} noValidate>
+        <div className="mb-5">
+          <label htmlFor="InputEmailReg" className="form-label form-group mt-5 mb-3 justify-content-right d-flex negrita-color-negro">Correo Electrónico</label>
+          <input type="email" className="form-control form-group w-100" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: true })} />
+          {errors.email && <p className='text-red-500'>Email is required</p>}
+        </div>
+        <div className="mb-5">
+          <label htmlFor="InputPasswordReg" className="form-label form-group mt-5 mb-3 justify-content-right d-flex negrita-color-negro">Contraseña</label>
+          <input type="password" className="form-control form-group w-100" id="InputPasswordReg" {...register('password', { required: true })} />
+          {errors.password && <p className='text-red-500'>Password is required</p>}
+          <span id="passwordHelpInline" className="form-text">Debe contener como mínimo 6 caracteres</span>
+        </div>
+        <div className='mb-5'>
+          <button type="submit" className="btn btn-success mb-5" >Ingresar</button>
+          <p>Aun no tienes una cuenta? <Link to="/registro">Registrate aquí</Link></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
 </div>
 
-
-
-
-</form>
-        </div>
-      </div>
-    </div>
+    
+    
   );
 }
 
