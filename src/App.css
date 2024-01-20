@@ -40,6 +40,14 @@
 
 
 
+.button-hover {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-hover:hover {
+  background-color: #1dc60ed9;
+  color: #fff;
+}
 
 
 
@@ -48,9 +56,26 @@
   background-color: #1c5c16d9;
 }
 
+.bg-verde-total {
+  background-color: #1c5c16;
+  color:white;
+}
+
+.bg-blanco-total {
+ 
+  color:white;
+}
+
+
 .bg-verde-blanco {
   background-color: #fffffff6;
 }
+
+.bg-rojo {
+  background-color: #c6200ed9;
+}
+
+
 
 
 
@@ -71,6 +96,19 @@
   font-family: Arial, sans-serif; /* Cambia este valor por la fuente que desees */
 }
 
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
 
 .negrita-color-negro {
   font-weight: bold;

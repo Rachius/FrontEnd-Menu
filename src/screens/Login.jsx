@@ -49,11 +49,14 @@ function Login (){
           <span id="passwordHelpInline" className="form-text">Debe contener como mínimo 6 caracteres</span>
         </div>
         <div className='mb-5'>
-          <button type="submit" className="btn btn-success mb-5" >Ingresar</button>
-          <p>Aun no tienes una cuenta? <Link to="/registro">Registrate aquí</Link></p>
+          <button type="submit" className="btn bg-verde-total button-hover mb-5" >Ingresar</button>
         </div>
       </form>
     </div>
+            <br />
+            <div className='bg-blanco-total'>
+            <p>Aun no tienes una cuenta? <Link to="/registro" className='bg-verde-total button-hover'>Registrate aquí</Link></p>
+            </div>
   </div>
   </div>
 </div>

@@ -16,15 +16,8 @@ import LogOut from './screens/LogOut';
 import ProtectedRoute from './ProtectedRoutes';
 import { AdminRoute } from './ProtectedRoutes';
 import EditPedido from './screens/EditPedido.jsx';
-import EditUsuario from './screens/EditUsuarios.jsx';
-import editMenu from './screens/EditMenu'
-import EditMenu from './screens/EditMenu';
-
-
-
-
-
-
+import EditUsuario from './screens/EditUsuario.jsx';
+import EditMenu from './screens/EditMenu.jsx';
 
 
 function App() {
@@ -45,15 +38,11 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/Home" element={<Home/>}/>
             <Route path="/platos" element={<Platos/>}/>
-            <Route path="/bebidas" element={<Bebidas/>}/>
-            <Route path="/postres" element={<Postres/>}/>
             </Route>
             <Route>
             <Route element={<AdminRoute/>}>
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/platos" element={<Platos/>}/>
-            <Route path="/bebidas" element={<Bebidas/>}/>
-            <Route path="/postres" element={<Postres/>}/>
             <Route path="/logOut" element={<LogOut/>}/>
             <Route path="/editMenu" element={<EditMenu/>}/>
             <Route path="/editUsuario" element={<EditUsuario/>}/>
@@ -64,8 +53,6 @@ function App() {
             <Route element={<ProtectedRoute/>}>            
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/platos" element={<Platos/>}/>
-            <Route path="/bebidas" element={<Bebidas/>}/>
-            <Route path="/postres" element={<Postres/>}/>
             <Route path="/logOut" element={<LogOut/>}/>
           </Route>
         

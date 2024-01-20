@@ -24,58 +24,54 @@ function Registro(){
       })
 
   return (
-      <div class="d-flex justify-content-center">
-        <div >
+   
+    <div className='d-flex justify-content-center bg-verde-blanco container vh-100 formulario-fondo'>
+          <div className='row-12 col-12'>
           <br />
-          <br />
-            <h3>Formulario de registración</h3>
-            <br />
-        
-              {RegisterErrors.map((error, i)=> (
-              <div className='bg-red-500 p-2'key={i}>
-                
-                {error}
-              </div>))}
+          <div className="text-center col-sm-12 col-lg-6 bg-verde-claro mx-auto pb-5 pt-1">
+                <div className=''>
+                <h3 className='negrita-color-blanco mt-5'>Formulario de registración</h3>
+                <br />
+                </div>
+                <div className='bordered d-flex justify-content-center col-sm-10 mx-auto'>
+                      {RegisterErrors.map((error, i)=> (
+                      <div className='bg-red-500 p-2'key={i}>{error}
+                      </div>))}
+                      <form onSubmit={onSubmit} noValidate>
 
-           
-            <form onSubmit={onSubmit} noValidate>
+                        <div class="mb-3 needs-validation px-5" noValidate>
+                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Nombre</label>
+                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: true })} />
+                        {errors.username && <p className='text-red-500'>Userame is required</p>}
+                        </div>
+                        
+                        <div class="mb-3 px-5">
+                        <label for="InputEmailReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Correo Electrónico</label>
+                        <input type="email" className=" form-control form-group w-100" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: true })}/>
+                        {errors.email && <p className='text-red-500'>Email is required</p>}
+                        </div>
+                        <div class="mb-3 px-5">
+                        <label for="InputPasswordReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Contraseña</label>
+                        <input type="password" className="form-control" id="InputPasswordReg" {...register('password', { required: true })}/>
+                        {errors.password && <p className='text-red-500'>Password is required</p>}
+                        <span id="passwordHelpInline" className="form-text">La contraseña ingresada debe tener como mínimo 6 caracteres</span>
+                        </div>
 
-              <div class="mb-3 needs-validation" noValidate>
-              <label for="InputNameReg" className="form-label">username</label>
-              <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: true })} />
-              {errors.username && <p className='text-red-500'>Userame is required</p>}
-            </div>
-            <div class="mb-3">
-              <label for="InputEmailReg" className="form-label">email</label>
-              <input type="email" className="form-control" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: true })}/>
-              {errors.email && <p className='text-red-500'>Email is required</p>}
-            
-            </div>
-            <div class="mb-3">
-              <label for="InputPasswordReg" className="form-label">password</label>
-              <input type="password" className="form-control" id="InputPasswordReg" {...register('password', { required: true })}/>
-              {errors.password && <p className='text-red-500'>Password is required</p>}
-              <span id="passwordHelpInline" className="form-text">Debe tener entre 8-20 characteres de largo.</span>
-                    
-            </div>
-            {/* <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div> */}
-            <div>         
-            <button type="submit" className="btn btn-success">Submit</button>
-            <p>
-                Do you have an account? <Link to="/login">Sign in</Link>
-                </p>
-            
-            </div>
-
-
-            
-            
-          </form>
-          
-          </div>
+                        <div>         
+                        <button type="submit" className="btn bg-verde-total button-hover mb-3 ">Registrarse</button>
+                        </div>
+                        
+                      </form>
+                      
+                    </div>
+                    <br />
+                        <div className='bg-blanco-total'>
+                        <p>
+                          Estas a un paso de conocer los mejores sabores!
+                        </p>
+                        </div>
+                </div>
+           </div>
       </div>
   )
 }

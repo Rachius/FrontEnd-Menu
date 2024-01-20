@@ -1,4 +1,5 @@
 
+
 import { UseForm } from 'react-hook-form';
 import { Button } from 'bootstrap';
 import React, { useState, useEffect } from "react";
@@ -6,21 +7,18 @@ import axios from "axios";
 
 
 
-function EditMenu () {
+const EditMenu = () => {
 
   return (
     
-    <div className='d-flex justify-content-between'>Home
+    <div className='d-flex justify-content-between conteiner-fluid'>Home
       <br />
       <br />
       
       <div className='justify-content-left col-5'>   
                           
                                   <h4>Lista de Menus</h4>
-                                  <br />
-
-                                
-                                
+                                  <br />                                
                                   <form>        
                                   <table class="table">
                             <thead>

@@ -76,15 +76,8 @@ function Navbar () {
         </li>
         <li class="nav-link">
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Carta
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/platos">Platos</a></li>
-            <li><a class="dropdown-item" href="/bebidas">Bebidas</a></li>
-            <li><a class="dropdown-item" href="/postres">Postres</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="/platos">Menu</a>
         </li>
         <li class="nav-link" >
           <Link to={Home} onClick={()=>{
@@ -108,26 +101,18 @@ function Navbar () {
         </li>
         <li class="nav-item">
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Carta
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/platos">Platos</a></li>
-            <li><a class="dropdown-item" href="/bebidas">Bebidas</a></li>
-            <li><a class="dropdown-item" href="/postres">Postres</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="/platos">Menu</a>
         </li>
+
         <li class="nav-item" >
           <Link to='/Home' onClick={()=>{
             logOut()
           }}>
           <a class="nav-link" href="/pedidos">LogOut</a>
           </Link>
-
-          
-         
         </li>
+
           </>) : (<>
             <a class="navbar-brand" href="/Home">Inicio</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -137,21 +122,13 @@ function Navbar () {
           <a class="nav-link active" aria-current="page" href="/login">Login</a>
         </li>
         <li class="nav-item">
-       
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/registro">Registro</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-            Carta
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/platos">Platos</a></li>
-            <li><a class="dropdown-item" href="/bebidas">Bebidas</a></li>
-            <li><a class="dropdown-item" href="/postres">Postres</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="/platos">Menu</a>
         </li>
+        
+        
           </>
 
         )}
