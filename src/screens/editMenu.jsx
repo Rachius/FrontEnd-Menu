@@ -21,9 +21,9 @@ function EditMenu ()  {
         
       try {
             const listadeM = await listarMenuRequest()
-            console.log(listadeM.data)
+            
             setlistaMenu(listadeM.data)
-            console.log(listaMenu)
+
 
            } catch (error) {
             console.log(error.data)
@@ -44,42 +44,47 @@ function EditMenu ()  {
     <div className='d-flex justify-content-between conteiner-fluid'>
       <br />
       <br />
-      
-      <div className='justify-content-left col-5'>   
-                                  <h4>Lista de Menus</h4>
-                                  <br />                                
-                                  <form>        
-                                  <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Menú</th>
-                                <th scope="col">Categoria</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Estado</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>Menú1</td>
-                                <td>Plato1</td>
-                                <td>Precio1</td>
-                                <td><div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" /></div></td>
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Menú1</td>
-                                <td>Plato1</td>
-                                <td>Precio1</td>
-                                <td><div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" /></div></td>
-                              </tr>
 
-                            </tbody>
-                   </table>
-                </form>
-                                 
-          </div>
+      
+      <div className='justify-content-left col-5'>
+      <h4>Lista de Menus</h4>
+      <br />
+      <form>
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Menú</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {listaMenu.map((elemento, index) => (
+              <tr key={index}>
+                <th scope="row">{index + 1}</th>
+                <td>{elemento.tituloMenu}</td>
+                <td>{elemento.categoriaMenu || 'N/A'}</td>
+                <td>{elemento.precioMenu}</td>
+                <td>
+                  <div className="form-check form-switch">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id={`flexSwitchCheckDefault_${index}`}
+                      checked={elemento.estado}
+                      readOnly
+                    />
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </form>
+    </div>
         
         {/* <div className='d-flex  col-4 flex-wrap'>
             <form>
