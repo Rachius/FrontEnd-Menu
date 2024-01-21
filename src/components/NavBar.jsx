@@ -54,25 +54,19 @@ function Navbar () {
 
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-      <ul class="navbar-nav">
-        
-        {isAuthenticated  && user.rol ==='admin' ? (
-          <>
-
-        <Link to="/Home" class="navbar-brand">Inicio</Link>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            {isAuthenticated  && user.rol ==='admin' ? (
+            <>
+            <Link to="/Home" class="navbar-brand">Inicio</Link>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
         <li class="nav-item">
-        <Link to="/editPedido" class="nav-link">Editar Pedidos</Link>
-        <Link to="/editMenu" class="nav-link">Editar Menu</Link>
-        <a class="nav-link" href="/editUsuario">Editar Usuario</a>
-          
+            <Link to="/editPedido" class="nav-link">Editar Pedidos</Link>
+            <Link to="/editMenu" class="nav-link">Editar Menu</Link>
+            <a class="nav-link" href="/editUsuario">Editar Usuario</a>
         </li>
         <li class="nav-link">
         </li>
@@ -114,6 +108,7 @@ function Navbar () {
         </li>
 
           </>) : (<>
+          
             <a class="navbar-brand" href="/Home">Inicio</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>

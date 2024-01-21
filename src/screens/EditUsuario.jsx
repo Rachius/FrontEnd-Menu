@@ -29,8 +29,8 @@ function EditUsuario() {
 
 
     return(
-  <div>
-      <div className='justify-content-left col-5'>   
+  <div className='col-12 d-flex'>
+      <div className='justify-content-center col-6'>   
                           
                                    <h4>Usuarios activos </h4>
                                    <br />
@@ -40,32 +40,33 @@ function EditUsuario() {
                              <thead>
                                <tr>
                                  <th scope="col">ID</th>
-                                 <th scope="col">Usuario</th>
+                                 <th scope="col">Nombre</th>
+                                 <th scope="col">Email</th>
                                  <th scope="col">Estado</th>
                                </tr>
                              </thead>
                              <tbody>
                                <tr>
                                  <th scope="row">1</th>
-                                 <td>Usuario</td>
-                            
-                            
+                                 <td>Nombre</td>
+                                 <td>Email</td>
                                  <td><div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" /></div></td>
                                </tr>
+                               
                                <tr>
-                                 <th scope="row">2</th>
-                                 <td>Usuario</td>
-                            
-                            
+                                 <th scope="row">1</th>
+                                 <td>Nombre</td>
+                                 <td>Email</td>
                                  <td><div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" /></div></td>
                                </tr>
+                              
                                     </tbody>
                     </table>
                  </form>
                              
            </div>
         
-           <div className='d-flex  col-4 flex-wrap'>
+        <div className='justify-content-center col-6'>
              <div>
              <div class="d-flex justify-content-center">
          <div >
@@ -81,18 +82,18 @@ function EditUsuario() {
                         
                   <form onSubmit={onSubmit} noValidate>
                            <div class="mb-3 needs-validation" noValidate>
-                    <label for="InputNameReg" className="form-label">Nombre</label>
+                    <label for="InputNameReg" className="form-label">Nombre del usuario</label>
                     <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: true })} />
                     {errors.username && <p className='text-red-500'>Nombre es requerido</p>}
                   </div>
                   <div class="mb-3">
-                    <label for="InputEmailReg" className="form-label">Email</label>
+                    <label for="InputEmailReg" className="form-label">Email del usuario</label>
                     <input type="email" className="form-control" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: true })}/>
                     {errors.email && <p className='text-red-500'>Email es requerido</p>}
                   
                   </div>
                   <div class="mb-3">
-                    <label for="InputPasswordReg" className="form-label">Contraseña</label>
+                    <label for="InputPasswordReg" className="form-label">Contraseña del usuario</label>
                     <input type="password" className="form-control" id="InputPasswordReg" {...register('password', { required: true })}/>
                     {errors.password && <p className='text-red-500'>Contraseña es requerida</p>}
                     <span id="passwordHelpInline" className="form-text"></span>
@@ -100,9 +101,7 @@ function EditUsuario() {
                   </div>
                  
                   <div>         
-                  <button type="submit" className="btn btn-primary">Crear usuario</button>
-                  
-                  
+                  <button type="submit" className="btn btn-primary">Dar de alta</button>
                   </div>
                                 
                   
