@@ -17,7 +17,7 @@ import ProtectedRoute from './ProtectedRoutes';
 import { AdminRoute } from './ProtectedRoutes';
 import EditPedido from './screens/EditPedido.jsx';
 import EditUsuario from './screens/EditUsuario.jsx';
-import EditMenu from './screens/EditMenu.jsx';
+import EditMenu from './screens/editMenu.jsx';
 
 
 function App() {
