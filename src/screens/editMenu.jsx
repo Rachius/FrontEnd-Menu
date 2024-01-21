@@ -70,8 +70,7 @@ function EditMenu ()  {
                   <div className="form-check form-switch">
                     <input
                       className="form-check-input"
-                      type="checkbox"
-                      role="switch"
+                      type="checkbox" role="switch"
                       id={`flexSwitchCheckDefault_${index}`}
                       checked={elemento.estado}
                       readOnly
