@@ -54,6 +54,7 @@ function EditMenu ()  {
               <th scope="col">ID</th>
               <th scope="col">Menú</th>
               <th scope="col">Categoria</th>
+              <th scope="col">Descripcion</th>
               <th scope="col">Precio</th>
               <th scope="col">Estado</th>
             </tr>
@@ -64,6 +65,7 @@ function EditMenu ()  {
                 <th scope="row">{index + 1}</th>
                 <td>{elemento.tituloMenu}</td>
                 <td>{elemento.categoriaMenu || 'N/A'}</td>
+                <td>{elemento.descripcionMenu}</td>
                 <td>{elemento.precioMenu}</td>
                 <td>
                   <div className="form-check form-switch">

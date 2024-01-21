@@ -71,7 +71,7 @@ function Navbar () {
         <li class="nav-link">
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/platos">Menu</a>
+          <a class="nav-link" href="/carta">Menu</a>
         </li>
         <li class="nav-link" >
           <Link to={Home} onClick={()=>{
@@ -96,7 +96,7 @@ function Navbar () {
         <li class="nav-item">
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/platos">Menu</a>
+          <a class="nav-link" href="/carta">Menu</a>
         </li>
 
         <li class="nav-item" >
@@ -120,7 +120,7 @@ function Navbar () {
           <a class="nav-link" href="/registro">Registro</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/platos">Menu</a>
+          <a class="nav-link" href="/carta">Menu</a>
         </li>
         
         

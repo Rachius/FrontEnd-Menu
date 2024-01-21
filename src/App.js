@@ -18,6 +18,7 @@ import { AdminRoute } from './ProtectedRoutes';
 import EditPedido from './screens/EditPedido.jsx';
 import EditUsuario from './screens/EditUsuario.jsx';
 import EditMenu from './screens/editMenu.jsx';
+import CartaMenu from './screens/Menus.jsx';
 
 
 function App() {
@@ -38,12 +39,12 @@ function App() {
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/Home" element={<Home/>}/>
-            <Route path="/platos" element={<Platos/>}/>
+            <Route path="/carta" element={<CartaMenu/>}/>
             </Route>
             <Route>
             <Route element={<AdminRoute/>}>
             <Route path="/pedidos" element={<Pedidos/>}/>
-            <Route path="/platos" element={<Platos/>}/>
+            <Route path="/carta" element={<CartaMenu/>}/>
             <Route path="/logOut" element={<LogOut/>}/>
             <Route path="/editMenu" element={<EditMenu/>}/>
             <Route path="/editUsuario" element={<EditUsuario/>}/>
@@ -53,7 +54,7 @@ function App() {
             </Route>
             <Route element={<ProtectedRoute/>}>            
             <Route path="/pedidos" element={<Pedidos/>}/>
-            <Route path="/platos" element={<Platos/>}/>
+            <Route path="/carta" element={<CartaMenu/>}/>
             <Route path="/logOut" element={<LogOut/>}/>
           </Route>
         
