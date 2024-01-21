@@ -18,7 +18,6 @@ function EditMenu ()  {
   useEffect(()=>{
     async function listadeMenus(){
         
-        
       try {
             const listadeM = await listarMenuRequest()
             
