@@ -19,9 +19,11 @@ export function Unlogin() {
 }*/
 
 export  function AdminRoute(){
-    const [user,isAuthenticated] = useAuth()
-    const isAdmin = isAuthenticated && user && user.rol === 'admin';
-    if (!isAdmin) return <Navigate to="/Home" replace />;
+
+    const {loading,user,isAuthenticated } = useAuth()
+    if(loading) return <h1>Loading...</h1>
+    const isAdmin =isAuthenticated && user && user.rol === 'admin';
+    if (!loading && !isAdmin) return <Navigate to="/Home" replace />;
 
    return <Outlet/>
 }

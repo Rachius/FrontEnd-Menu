@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { UseForm } from 'react-hook-form';
+import { useParams } from 'react-router-dom';
+
 import { Button } from 'bootstrap';
 
 const EditPedido = (props) => {
+ /* const { id } = useParams();
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [precio, setPrecio] = useState("");
@@ -45,41 +48,23 @@ const EditPedido = (props) => {
       .catch((error) => {
         console.log(error);
       });
-  };
+  };*/
 
   return (
     <div className="container">
       <h2>Editar Pedido</h2>
-      <form onSubmit={handleSubmit}>
+      <form >
         <div className="form-group">
           <label htmlFor="nombre">Nombre:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="nombre"
-            value={nombre}
-            onChange={(event) => setNombre(event.target.value)}
-          />
+  
         </div>
         <div className="form-group">
           <label htmlFor="descripcion">Descripción:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="descripcion"
-            value={descripcion}
-            onChange={(event) => setDescripcion(event.target.value)}
-          />
+ 
         </div>
         <div className="form-group">
           <label htmlFor="precio">Precio:</label>
-          <input
-            type="number"
-            className="form-control"
-            id="precio"
-            value={precio}
-            onChange={(event) => setPrecio(event.target.value)}
-          />
+
         </div>
         <button type="submit" className="btn btn-primary">
           Editar Pedido

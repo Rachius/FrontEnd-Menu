@@ -1,5 +1,5 @@
 import { createContext,useState, useContext,useEffect } from "react";
-import { registerRequest,loginRequest,verifyTokenRequest,logOutRequest } from "../api/auth";
+import { registerRequest,loginRequest,verifyTokenRequest,logOutRequest,crearMenuRequest } from "../api/auth";
 import Cookies from "js-cookie";
 
 export const AuthContext = createContext()
@@ -15,6 +15,7 @@ export const useAuth = () =>{
 
 export const AuthProvider = ({children}) => {
     const [user,setUser] =  useState(null)
+    const [menu,setMenu] =  useState(null)
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [errors, setErrors] = useState([])
     const [loading,setLoading] = useState(true)
@@ -69,6 +70,11 @@ export const AuthProvider = ({children}) => {
 
     }
 
+
+
+
+    
+
         useEffect(()=> {
         if(errors.length>0) {
            const timer = setTimeout(()=>{
@@ -77,6 +83,21 @@ export const AuthProvider = ({children}) => {
             return ()=>clearTimeout(timer)
         }
     })
+    const crearMenu = async (menu)=>{
+
+      try {
+          const res = await crearMenuRequest(menu)
+          console.log(res.data)
+          setMenu(res.data)
+        
+          
+      } catch (error) {
+          console.log(error.response)
+         setErrors(error.response.data)
+
+      }
+
+  }
 
  /*   useEffect(() => {
         const checkAuthentication = async () => {
@@ -142,7 +163,7 @@ export const AuthProvider = ({children}) => {
         },[])
 
 
-    return (<AuthContext.Provider value={{signin,signup,logOut,user,isAuthenticated,errors,loading}}>
+    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,menu,user,isAuthenticated,errors,loading}}>
         {children}
     </AuthContext.Provider>)
 

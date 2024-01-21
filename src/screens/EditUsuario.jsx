@@ -14,10 +14,10 @@ function EditUsuario() {
   const {signup,isAuthenticated,errors:RegisterErrors} = useAuth()
   const navigate = useNavigate()
 
-  useEffect(()=>{
-    if(isAuthenticated) navigate("./Home")
+/*  useEffect(()=>{
+    if(isAuthenticated) navigate("/editUsuario")
 
-  },[isAuthenticated])
+  },[isAuthenticated])*/
 
 
 
