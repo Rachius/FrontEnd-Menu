@@ -1,32 +1,19 @@
 
 
-import { useForm  } from 'react-hook-form';
-
+import { UseForm } from 'react-hook-form';
 import { Button } from 'bootstrap';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContex';
 
 
-function EditMenu ()  {
-  const {register,handleSubmit,formState:{errors},} = useForm()
-  const {crearMenu,isAuthenticated,errors:RegisterErrors} = useAuth()
-  const navigate = useNavigate()
 
-  
-  const onSubmit = handleSubmit(async (values) => {
-    crearMenu(values)
-    console.log(values)
-    })
-  
+const EditMenu = () => {
 
   return (
     
-    <div className='d-flex justify-content-between conteiner-fluid'>
+    <div className='d-flex justify-content-between conteiner-fluid'>Home
       <br />
       <br />
-      
       <div className='justify-content-left col-5'>   
                                   <h4>Lista de Menus</h4>
                                   <br />                                
@@ -63,7 +50,7 @@ function EditMenu ()  {
                                  
           </div>
         
-        {/* <div className='d-flex  col-4 flex-wrap'>
+      <div className='d-flex  col-4 flex-wrap'>
             <form>
              <h4>Editar Menu</h4>
 
@@ -98,66 +85,7 @@ function EditMenu ()  {
                 <button type="submit" class="btn btn-danger mb-3">Eliminar</button>
                 </form>
 
-          </div> */}
-          
-          <div className="text-center col-sm-12 col-lg-6 mx-auto pb-5 pt-1">
-                <div className=''>
-                <h3 className='negrita-color-negro mt-2'>Editar Menu</h3>
-                <br />
-                
-                </div>
-                <div className='bordered d-flex justify-content-center col-sm-10 mx-auto'>
-                      {RegisterErrors.map((error, i)=> (
-                      <div className='bg-red-500 p-2'key={i}>{error}
-                      </div>))}
-                      <form onSubmit={onSubmit} noValidate>
-
-                      <div class="mb-3 needs-validation px-5" noValidate>
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Ingrese el ID del menú a editar</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('_id', { required: false })} />
-                        {errors._id && <p className='text-red-500'>Id is required</p>}
-                        </div>
-                        <div class="mb-3 needs-validation px-5" noValidate>
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Nombre del menu</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('tituloMenu', { required: true })} />
-                        {errors.tituloMenu && <p className='text-red-500'>Nombre is required</p>}
-                        </div>
-                      
-                        
-                        <div class="mb-3 px-5">
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Descripción</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"  {...register('descripcion', { required: true })}/>
-                        {errors.descripcion && <p className='text-red-500'>Descripción is required</p>}
-                        </div>
-                        <div class="mb-3 px-5">
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Categoria</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('categoria', { required: true })}/>
-                        {errors.categoria && <p className='text-red-500'>Categoria is required</p>}
-
-                        </div>
-                        <div class="mb-3 px-5">
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Precio</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('precio', { required: true })}/>
-                        {errors.precio && <p className='text-red-500'>Precio is required</p>}
-
-                        </div>
-
-                        <div>         
-                   
-                        <button type="submit" class="btn btn-success mb-3 m-1">Crear</button>
-                        <button type="submit" class="btn btn-warning mb-3 m-1">Editar</button>
-                        <button type="submit" class="btn btn-danger mb-3 m-1">Eliminar</button>
-                        </div>
-                        
-                      </form>
-                      
-                    </div>
-     
-     
-                </div>
-
-
-
+          </div>
           </div>
       
   
