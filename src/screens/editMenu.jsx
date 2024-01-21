@@ -7,17 +7,35 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContex';
+import { listarMenuRequest } from '../api/auth';
 
 
 function EditMenu ()  {
   const {register,handleSubmit,formState:{errors},} = useForm()
-  const {crearMenu,isAuthenticated,errors:RegisterErrors} = useAuth()
+  const [listaMenu,setlistaMenu] =  useState([])
+  const {crearMenu,listarMn,isAuthenticated,errors:RegisterErrors} = useAuth()
   const navigate = useNavigate()
+  useEffect(()=>{
+    async function listadeMenus(){
+        
+        
+      try {
+            const listadeM = await listarMenuRequest()
+            console.log(listadeM.data)
+            setlistaMenu(listadeM.data)
+            console.log(listaMenu)
 
+           } catch (error) {
+            console.log(error.data)
+
+           }
+        }
+        listadeMenus()
+    },[])
   
   const onSubmit = handleSubmit(async (values) => {
     crearMenu(values)
-    console.log(values)
+    
     })
   
 
@@ -126,19 +144,19 @@ function EditMenu ()  {
                         
                         <div class="mb-3 px-5">
                         <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Descripción</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"  {...register('descripcion', { required: true })}/>
-                        {errors.descripcion && <p className='text-red-500'>Descripción is required</p>}
+                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"  {...register('descripcionMenu', { required: true })}/>
+                        {errors.descripcionMenu && <p className='text-red-500'>Descripción is required</p>}
                         </div>
                         <div class="mb-3 px-5">
                         <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Categoria</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('categoria', { required: true })}/>
-                        {errors.categoria && <p className='text-red-500'>Categoria is required</p>}
+                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('categoriaMenu', { required: true })}/>
+                        {errors.categoriaMenu && <p className='text-red-500'>Categoria is required</p>}
 
                         </div>
                         <div class="mb-3 px-5">
                         <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Precio</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('precio', { required: true })}/>
-                        {errors.precio && <p className='text-red-500'>Precio is required</p>}
+                        <input type="number" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('precioMenu', { required: true })}/>
+                        {errors.precioMenu && <p className='text-red-500'>Precio is required</p>}
 
                         </div>
 

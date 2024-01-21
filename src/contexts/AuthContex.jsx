@@ -16,6 +16,7 @@ export const useAuth = () =>{
 export const AuthProvider = ({children}) => {
     const [user,setUser] =  useState(null)
     const [menu,setMenu] =  useState(null)
+    
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [errors, setErrors] = useState([])
     const [loading,setLoading] = useState(true)
@@ -98,6 +99,13 @@ export const AuthProvider = ({children}) => {
       }
 
   }
+
+
+
+
+
+
+
 
  /*   useEffect(() => {
         const checkAuthentication = async () => {
