@@ -68,6 +68,14 @@ function Navbar () {
         </li>
         <li class="nav-item">
         <Link to="/editMenu" class="nav-link">Editar Menu</Link>
+<<<<<<< HEAD
+=======
+        <Link to="/editUsuario" class="nav-link">Editar Usuario</Link>
+        
+          
+        </li>
+        <li class="nav-link">
+>>>>>>> dev
         </li>
         <li class="nav-item">
         <a class="nav-link" href="/editUsuario">Editar Usuario</a>
