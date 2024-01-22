@@ -68,35 +68,13 @@ function EditUsuario() {
                              <thead>
                                <tr>
                                  <th scope="col">ID</th>
-<<<<<<< HEAD
-                                 <th scope="col">Nombre</th>
-                                 <th scope="col">Email</th>
-=======
                                  <th scope="col">Usuario</th>
                                  <th scope="col">email</th>
                                  <th scope="col">rol</th>
->>>>>>> dev
                                  <th scope="col">Estado</th>
                                </tr>
                              </thead>
                              <tbody>
-<<<<<<< HEAD
-                               <tr>
-                                 <th scope="row">1</th>
-                                 <td>Nombre</td>
-                                 <td>Email</td>
-                                 <td><div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" /></div></td>
-                               </tr>
-                               
-                               <tr>
-                                 <th scope="row">1</th>
-                                 <td>Nombre</td>
-                                 <td>Email</td>
-                                 <td><div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" /></div></td>
-                               </tr>
-                              
-                                    </tbody>
-=======
                              {listaUsuario.map((elemento) => (
   <tr key={elemento._id} data-id={elemento._id}>
     <th scope="row">{elemento._id}</th>
@@ -170,7 +148,6 @@ function EditUsuario() {
 ))}
           </tbody>
 
->>>>>>> dev
                     </table>
                  </form>
                              
@@ -192,11 +169,7 @@ function EditUsuario() {
                         
                   <form onSubmit={onSubmit} noValidate>
                            <div class="mb-3 needs-validation" noValidate>
-<<<<<<< HEAD
-                    <label for="InputNameReg" className="form-label">Nombre del usuario</label>
-=======
                     <label for="InputNameReg" className="form-label">username</label>
->>>>>>> dev
                     <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: true })} />
                     {errors.username && <p className='text-red-500'>Username es requerido</p>}
                   </div>
