@@ -1,5 +1,5 @@
 import { createContext,useState, useContext,useEffect } from "react";
-import { registerRequest,loginRequest,verifyTokenRequest,logOutRequest,crearMenuRequest } from "../api/auth";
+import { registerRequest,loginRequest,verifyTokenRequest,logOutRequest,crearMenuRequest, admCrearUsuarioRequest,modificarUsuarioRequest } from "../api/auth";
 import Cookies from "js-cookie";
 
 export const AuthContext = createContext()
@@ -16,6 +16,8 @@ export const useAuth = () =>{
 export const AuthProvider = ({children}) => {
     const [user,setUser] =  useState(null)
     const [menu,setMenu] =  useState(null)
+    const [admUserCreate,setadmUserCreate] =  useState(null)
+    const [admUserEdit,setadmUserEdit] =  useState(null)
     
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [errors, setErrors] = useState([])
@@ -53,6 +55,40 @@ export const AuthProvider = ({children}) => {
         } 
       setErrors([error.response.data.message]) }
     }  
+
+    const admSignup = async (admUserCreate)=>{
+
+      try {
+          const res = await admCrearUsuarioRequest(admUserCreate)
+          console.log(res.data)
+          setadmUserEdit(res.data)
+          
+         
+          
+      } catch (error) {
+          console.log(error.response)
+         setErrors(error.response.data)
+
+      }
+
+  }
+  const admEdit = async (useredit)=>{
+
+    try {
+        const res = await modificarUsuarioRequest(useredit)
+        console.log(res.data)
+        setadmUserCreate(res.data)
+        
+       
+        
+    } catch (error) {
+        console.log(error.response)
+       setErrors(error.response.data)
+
+    }
+
+}
+
 
 
 
@@ -171,7 +207,7 @@ export const AuthProvider = ({children}) => {
         },[])
 
 
-    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,menu,user,isAuthenticated,errors,loading}}>
+    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,admSignup,admUserEdit,menu,user,isAuthenticated,errors,loading,admUserCreate}}>
         {children}
     </AuthContext.Provider>)
 

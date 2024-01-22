@@ -71,7 +71,8 @@ function Navbar () {
         <li class="nav-item">
         <Link to="/editPedido" class="nav-link">Editar Pedidos</Link>
         <Link to="/editMenu" class="nav-link">Editar Menu</Link>
-        <a class="nav-link" href="/editUsuario">Editar Usuario</a>
+        <Link to="/editUsuario" class="nav-link">Editar Usuario</Link>
+        
           
         </li>
         <li class="nav-link">

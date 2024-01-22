@@ -14,3 +14,9 @@ export const crearMenuRequest = menu => axios.post(`/admMenu/crearMenu`, menu);
 
 export const listarMenuRequest = menu => axios.get(`/admMenu/listarMenu`);
 
+export const listarUsuariosRequest = user => axios.get(`/admUser/listarUsuarios`);
+
+export const admCrearUsuarioRequest = admUserCreate => axios.post(`/admUser/admRegister`,admUserCreate);
+
+export const modificarUsuarioRequest = useredit => axios.put(`/admUser/${useredit._id}`,useredit); 
+
