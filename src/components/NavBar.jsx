@@ -63,21 +63,23 @@ function Navbar () {
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-        <li class="nav-item">
+          <li class="nav-item">
             <Link to="/editPedido" class="nav-link">Editar Pedidos</Link>
-            <Link to="/editMenu" class="nav-link">Editar Menu</Link>
-            <a class="nav-link" href="/editUsuario">Editar Usuario</a>
         </li>
-        <li class="nav-link">
+        <li class="nav-item">
+        <Link to="/editMenu" class="nav-link">Editar Menu</Link>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/editUsuario">Editar Usuario</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/carta">Menu</a>
         </li>
-        <li class="nav-link" >
+        <li class="nav-item" >
           <Link to={Home} onClick={()=>{
             logOut()
           }}>
-          <a class="nav-link">LogOut</a>
+          <li class="nav-link">LogOut</li>
           </Link>
 
           

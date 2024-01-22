@@ -25,7 +25,7 @@ function Registro(){
 
   return (
    
-    <div className='d-flex justify-content-center bg-verde-blanco container vh-100 formulario-fondo'>
+    <div className='d-flex justify-content-center bg-verde-blanco container vh-100 carta-banner'>
           <div className='row-12 col-12'>
           <br />
           <div className="text-center col-sm-12 col-lg-6 bg-verde-claro mx-auto pb-5 pt-1">

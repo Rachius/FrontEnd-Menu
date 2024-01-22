@@ -24,12 +24,12 @@ function Login (){
 
 
   return (
-<div className='d-flex justify-content-center bg-verde-blanco container vh-100 formulario-fondo'>
+<div className='d-flex justify-content-center bg-verde-blanco container vh-100 carta-banner'>
   <div className='row-12 col-12'>
     <br />
-  <div className="text-center col-sm-12 col-lg-6 bg-verde-claro mx-auto pb-5 pt-1">
-    <div>
-      <h3 className='mt-5 negrita-color-blanco'>Iniciar sesión</h3>
+  <div className="text-center col-sm-12 col-lg-6 bg-verde-claro mx-auto pb-5 pt-1 ">
+    <div className=''>
+      <h3 className=' negrita-color-blanco mt-5 '>Iniciar sesión</h3>
       <br />
     </div>
     <div className='bordered d-flex justify-content-center col-sm-10 mx-auto'>

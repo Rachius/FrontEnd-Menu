@@ -14,3 +14,5 @@ export const crearMenuRequest = menu => axios.post(`/admMenu/crearMenu`, menu);
 
 export const listarMenuRequest = menu => axios.get(`/admMenu/listarMenu`);
 
+export const listarCarritoRequest = menu => axios.get(`/admMenu/listarCarrito`);
+

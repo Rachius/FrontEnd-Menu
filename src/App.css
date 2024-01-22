@@ -13,6 +13,15 @@
   }
 }
 
+@media (max-width: 767px) { .fuente-nombrePlato, .fuente-PrecioPlato, .fuente-descripcionPlato { font-size: 18px; } }
+
+/* 
+@media (max-width: 767px) {
+  .card {
+     width: 100%;
+  }
+ }
+  */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -40,17 +49,44 @@
 
 
 
+
+
 .button-hover {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .button-hover:hover {
   background-color: #1dc60ed9;
-  color: #fff;
+  color: #010000;
 }
+.bordeCarta {
+  border: 3px solid #1c5c16d9;
+ }
+ 
+ .list-group-item {
+  border: 1px solid rgba(0, 0, 0, 0);;
+ }
+ 
+ .cardCarta {
+  border: 1px solid red;
+ }
+ 
+ .card-headerCarta {
+  background-color: #f7e896;
+  
+  
+ }
+ 
+ .bg-yellow {
+  background-color: #ffffb3;
+ }
+ 
+ .rounded {
+  border-radius: 10px;
+ }
 
 
-
+ 
 
 .bg-verde-claro {
   background-color: #1c5c16d9;
@@ -74,8 +110,6 @@
 .bg-rojo {
   background-color: #c6200ed9;
 }
-
-
 
 
 
@@ -129,3 +163,81 @@
   opacity: 0.9;
   color: rgb(0, 0, 0); /* Cambia el color del texto para que se vea bien con el fondo difuminado */
 }
+
+
+
+
+.carta-banner {
+  background-image: url('/comida-carta.jpg');
+  background-repeat: repeat;
+  background-size:contain;
+  background-position:top;
+  background-blend-mode:multiply ; /* Agrega el efecto de difuminado */
+  opacity: 0.9;
+  color: rgb(0, 0, 0); /* Cambia el color del texto para que se vea bien con el fondo difuminado */
+}
+
+
+.carta-wallpaper {
+  background-image: url('/fondo-carta2.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:  center;
+  background-blend-mode:multiply ; /* Agrega el efecto de difuminado */
+  opacity: 0.9;
+  color: rgb(0, 0, 0); /* Cambia el color del texto para que se vea bien con el fondo difuminado */ ;
+}
+
+
+
+
+.carta-titulo{
+background-color: #01000073;
+border-radius: 10px;
+color: white;
+
+}
+
+.white-star-titulo {
+  font-family: 'White Star', cursive;
+  font-size: 50px;
+  color:#ffffff;
+  background-color: #1c5c16d9);
+  text-shadow: 2px 2px 2px #115d0a, -2px -2px 2px #115d0a; /* dos sombras con diferentes desplazamientos y colores */
+}
+
+.fuente-nombrePlato {
+  font-family:'Times New Roman';
+  font-style: italic;
+  color:rgb(255, 255, 255);
+  font-size: 30px;
+}
+
+.fondo-CardPlato {
+  background-color: #010000b5;
+}
+
+
+
+
+.fuente-PrecioPlato {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color:rgb(255, 255, 255);
+  font-size: 25px;
+}
+
+.fuente-descripcionPlato {
+  font-family:'Times New Roman' , cursive;
+  font-style:normal;
+  color:rgb(255, 255, 255);
+  font-size: 23px;
+}
+
+
+
+.carta-fondo{
+  background-color: #F4F0E2;
+  }
+  
+  
+  
