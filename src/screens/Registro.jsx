@@ -28,7 +28,7 @@ function Registro(){
     <div className='d-flex justify-content-center bg-verde-blanco container vh-100 carta-banner'>
           <div className='row-12 col-12'>
           <br />
-          <div className="text-center col-sm-12 col-lg-6 bg-verde-claro mx-auto pb-5 pt-1">
+          <div className="text-center col-sm-12 carta-titulo col-lg-6 bg-verde-claro mx-auto pb-5 pt-1">
                 <div className=''>
                 <h3 className='negrita-color-blanco mt-5'>Formulario de registración</h3>
                 <br />
@@ -66,9 +66,8 @@ function Registro(){
                     </div>
                     <br />
                         <div className='bg-blanco-total'>
-                        <p>
-                          Estas a un paso de conocer los mejores sabores!
-                        </p>
+                        <p>Estas a un paso de conocer los mejores sabores!</p>
+                        <p>Si ya tenes cuenta <Link to="/login" className='bg-verde-total button-hover'>ingresa aquí</Link></p>
                         </div>
                 </div>
            </div>
