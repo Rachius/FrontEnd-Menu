@@ -39,16 +39,16 @@ function CartaMenu ()  {
     <div className='row align-items-center carta-banner'>
 
         <section>
-          <div className='container'>
-            <div className='bordeCarta white-star-titulo mt-5'>
-              <div className='col-lg-12 col-sm-12'>
-                <h1 className='text-center mb-3 mt-3'>Platos</h1>
-                <div className='Card rounded-4'>
-                  <ul className="list-group  px-5">
+          <div className='container '>
+            <div className='bordeCarta white-star-carta mt-5 justify-content-center d-flex'>
+              <div className='col-lg-12 col-sm-12  '>
+                <h1 className='text-center mb-3 mt-3 '>Platos</h1>
+                <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
+                  <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
                     {listaMenu.map((elemento, index) => (
                          elemento.tituloMenu === "MenuCriminal" && (
-                      <li className="list-group-item fondo-CardPlato" key={index}>
-                        <div className="d-flex w-100 justify-content-between">
+                      <li className="list-group-item  fondo-CardPlato mb-4" key={index}>
+                        <div  className=" d-flex w-100 justify-content-between">
                           <h5 className="mb-1 fuente-nombrePlato">{elemento.tituloMenu}</h5>
                           <small className='fuente-PrecioPlato'>${elemento.precioMenu}</small>
                         </div>
@@ -58,26 +58,29 @@ function CartaMenu ()  {
                             <button type="submit" className="btn bg-verde-total button-hover">Agregar</button>
                           </small>
                         </div>
+                        
                       </li>
+                      
                     )
                     ))}
                   </ul>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
         <br />
         <section>
-          <div className='container'>
-            <div className='bordeCarta white-star-titulo mt-5'>
-              <div className='col-lg-12 col-sm-12'>
-                <h1 className='text-center mb-3 mt-3'>Bebibas</h1>
-                <div className='Card rounded-4'>
-                  <ul className="list-group  px-5">
-                    {listaMenu.map((elemento, index) => (
+        <div className='container '>
+            <div className='bordeCarta white-star-carta mt-5 justify-content-center d-flex'>
+              <div className='col-lg-12 col-sm-12  '>
+                <h1 className='text-center mb-3 mt-3 '>Platos</h1>
+                <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
+                  <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
+                      {listaMenu.map((elemento, index) => (
                          elemento.tituloMenu === "MenuCriminales" &&  (
-                      <li className="list-group-item fondo-CardPlato" key={index}>
+                      <li className="list-group-item fondo-CardPlato mb-4" key={index}>
                         <div className="d-flex w-100 justify-content-between">
                           <h5 className="mb-1 fuente-nombrePlato">{elemento.tituloMenu}</h5>
                           <small className='fuente-PrecioPlato'>${elemento.precioMenu}</small>
@@ -99,15 +102,15 @@ function CartaMenu ()  {
         </section>
         <br />
         <section>
-          <div className='container'>
-            <div className='bordeCarta white-star-titulo mt-5'>
-              <div className='col-lg-12 col-sm-12'>
-                <h1 className='text-center mb-3 mt-3'>Postres</h1>
-                <div className='Card rounded-4'>
-                  <ul className="list-group  px-5">
+        <div className='container '>
+            <div className='bordeCarta white-star-carta mt-5 justify-content-center d-flex'>
+              <div className='col-lg-12 col-sm-12  '>
+                <h1 className='text-center mb-3 mt-3 '>Platos</h1>
+                <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
+                  <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
                     {listaMenu.map((elemento, index) => (
                          elemento.tituloMenu === "primer menu" && (
-                      <li className="list-group-item fondo-CardPlato" key={index}>
+                      <li className="list-group-item fondo-CardPlato mb-4" key={index}>
                         <div className="d-flex w-100 justify-content-between">
                           <h5 className="mb-1 fuente-nombrePlato">{elemento.tituloMenu}</h5>
                           <small className='fuente-PrecioPlato'>${elemento.precioMenu}</small>

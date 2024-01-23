@@ -116,6 +116,7 @@
 .bordered {
   border: 0.5px solid black;
   background-color: white;
+  border-radius: 10px;
 }
 
 
@@ -125,9 +126,10 @@
  }
 
  .negrita-color-blanco {
-  font-weight: bold;
+  font-family:'Times New Roman';
   color: rgb(255, 255, 255); /* Cambia este valor por el color que desees */
   font-family: Arial, sans-serif; /* Cambia este valor por la fuente que desees */
+  font-size: 35px;
 }
 
 
@@ -145,10 +147,10 @@
 }
 
 .negrita-color-negro {
-  font-weight: bold;
+  font-family:'Times New Roman';
   color: rgb(0, 0, 0); /* Cambia este valor por el color que desees */
   font-family: Arial, sans-serif; /* Cambia este valor por la fuente que desees */
-  
+  font-size: 20px;
 }
 
 
@@ -198,13 +200,24 @@ color: white;
 
 }
 
-.white-star-titulo {
-  font-family: 'White Star', cursive;
+.login-borde{
+  border: #000000;
+  border-radius: 10px;
+  color: rgb(6, 88, 27);
+  
+  }
+
+
+
+.white-star-carta {
+  font-family:'Times New Roman';
   font-size: 50px;
   color:#ffffff;
-  background-color: #1c5c16d9);
+  background-color: #ffffffd9);
   text-shadow: 2px 2px 2px #115d0a, -2px -2px 2px #115d0a; /* dos sombras con diferentes desplazamientos y colores */
 }
+
+
 
 .fuente-nombrePlato {
   font-family:'Times New Roman';
@@ -236,7 +249,7 @@ color: white;
 
 
 .carta-fondo{
-  background-color: #F4F0E2;
+  background-color: #06811f9c;
   }
   
   

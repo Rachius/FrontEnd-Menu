@@ -24,15 +24,15 @@ function Login (){
 
 
   return (
-<div className='d-flex justify-content-center bg-verde-blanco container vh-100 carta-banner'>
-  <div className='row-12 col-12'>
+<div className='d-flex justify-content-center bg-verde-blanco   container vh-100 carta-banner'>
+  <div className='row-12 col-12 '>
     <br />
-  <div className="text-center col-sm-12 col-lg-6 bg-verde-claro mx-auto pb-5 pt-1 ">
-    <div className=''>
+  <div className="text-center col-sm-12 col-lg-6 bg-verde-claro  carta-titulo  mx-auto pb-5 pt-1 ">
+    
       <h3 className=' negrita-color-blanco mt-5 '>Iniciar sesión</h3>
       <br />
-    </div>
-    <div className='bordered d-flex justify-content-center col-sm-10 mx-auto'>
+    
+    <div className='bordered d-flex justify-content-center  col-sm-10  mx-auto'>
       {signinErrors.map((error, i) => (
         <div className='bg-red-500 p-2' key={i}>{error}</div>
       ))}
