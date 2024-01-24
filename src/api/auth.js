@@ -14,16 +14,6 @@ export const crearMenuRequest = menu => axios.post(`/admMenu/crearMenu`, menu);
 
 export const listarMenuRequest = () => axios.get(`/admMenu/listarMenu`);
 
-<<<<<<< HEAD
-
-export const listarCarritoRequest = menu => axios.get(`/admMenu/listarCarrito`);
-
-export const listarUsuariosRequest = user => axios.get(`/admUser/listarUsuarios`);
-
-export const admCrearUsuarioRequest = admUserCreate => axios.post(`/admUser/admRegister`,admUserCreate);
-
-export const modificarUsuarioRequest = useredit => axios.put(`/admUser/${useredit._id}`,useredit); 
-=======
 export const listarUsuariosRequest = () => axios.get(`/admUser/listarUsuarios`);
 
 export const admCrearUsuarioRequest = admUserCreate => axios.post(`/admUser/admRegister`,admUserCreate);
@@ -31,5 +21,4 @@ export const admCrearUsuarioRequest = admUserCreate => axios.post(`/admUser/admR
 export const modificarUsuarioRequest = (useredit,editingUserId) => axios.put(`/admUser/${editingUserId}`,useredit); 
 
 export const modificarMenuRequest = (menuEdit,editingUserId) => axios.put(`/admMenu/${editingUserId}`,menuEdit); 
->>>>>>> dev
 

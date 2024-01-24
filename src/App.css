@@ -202,8 +202,8 @@
 
 .carta-banner {
   background-image: url('/comida-carta.jpg');
-  background-repeat: no-repeat;
-  background-size:cover;
+  background-repeat: repeat;
+  background-size:contain;
   background-position:top;
   background-blend-mode:multiply ; /* Agrega el efecto de difuminado */
   opacity: 0.9;
@@ -242,7 +242,7 @@ color: white;
 
 .white-star-carta {
   font-family:'Times New Roman';
-  font-size: 50px;
+  font-size: 40px;
   color:#ffffff;
   background-color: #ffffffd9);
   text-shadow: 2px 2px 2px #115d0a, -2px -2px 2px #115d0a; /* dos sombras con diferentes desplazamientos y colores */
