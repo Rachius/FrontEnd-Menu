@@ -202,8 +202,8 @@
 
 .carta-banner {
   background-image: url('/comida-carta.jpg');
-  background-repeat: repeat;
-  background-size:contain;
+  background-repeat: no-repeat;
+  background-size:cover;
   background-position:top;
   background-blend-mode:multiply ; /* Agrega el efecto de difuminado */
   opacity: 0.9;

@@ -8,53 +8,54 @@ const Pedidos = () => {
   return (
 
   
-  <div class="d-flex justify-content-around">
-        <div class="col-7">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>            
-              </div>
-          <br />
-              <div class="card" >
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>            
-              </div>
-              <br />
-              <div class="card" >
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>            
-              </div>
+  <div class="d-flex col-12 row">
+    <div class="conteiner-fluid row">
+          <div class="card col-lg-8 mx-auto mt-5 shadow-lg rounded-2" >
+            <div class="card-header text-center">
+                <p>Orden de pedido</p>
+
+            </div>
+            <div className="card-body" >
+             <table class="table table-warning" >
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th class="text-start">Menú</th>
+                    <th class="text-start">Precio</th>
+                    
+                    
+
+                  </tr>
+                </thead>
+                    <tbody class="table-light">
+                        <tr>
+                        <td>
+                            <p>N</p>
+                          </td>
+                          <td>
+                            <p>Menú</p>
+                          </td>
+                          <td>
+                            <p>Precio</p>
+                          </td>
+                          
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="text-center">Total del carrito</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <div class="card col-sm-12 col-md-6 col-lg-6 col-xl-6 align-items-center justify-content-around mx-auto mt-1 mb-5">
+                    <h5 class="card-title mt-2">Total a Pagar:$$</h5>
+                        <a href="../pages/carritof.html" class="btn btn-outline-success mb-3  col-md-6 ">Seguir ordenando</a>
+                        <a href="../pages/carritof.html" class="btn btn-outline-success mb-3  col-md-6">Finalizar pedido​</a>
+                </div>
+            </div>
+          </div>
         </div>
         
-        <div class="col-5">
-        <div class="card col-10">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>            
-              </div>
-
-
-        </div>
-
   </div>
   )
 }
