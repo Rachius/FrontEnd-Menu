@@ -12,7 +12,7 @@ function EditUsuario() {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();
   const { admSignup, admEdit, isAuthenticated, errors: RegisterErrors } = useAuth();
   const [usernameEdit,setUsernameEdit] = useState()
-  
+  const [username2Edit,setUsername2Edit] = useState()
   const [editEmail,setEmailEdit] = useState()
   const [editRol,setRolEdit] = useState()
   const [editEstado,setEstadoEdit] = useState()
@@ -41,7 +41,7 @@ function EditUsuario() {
       setEstadoEdit(elemento.estado)
       console.log(elemento.estado)
   
-      console.log(elemento.username)
+      console.log(elemento)
     } catch (error) {
       console.log(error)
     }
@@ -171,7 +171,7 @@ function EditUsuario() {
                                 </div>
                                 <div class="mb-3">
                                   <label for="InputEmailReg" className="form-label fuente-formMenuAdmin">Email del usuario</label>
-                                  <input type="email" className="form-control" id="InputEmailReg"  {...register('email', { required: false })} defaultValue={editEmail}/>
+                                  <input type="email" className="form-control" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: false })} />
                                   {errors.email && <p className='text-red-500'>Email es requerido</p>}
                                 </div>
                               <div className="mb-3 needs-validation" noValidate>
