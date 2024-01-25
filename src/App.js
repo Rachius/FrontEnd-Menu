@@ -5,7 +5,7 @@ import { AuthProvider,useAuth} from './contexts/AuthContex';
 import './App.css';
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import NavBar from './components/NavBar';
-import Home from './screens/Home';
+import CartaMenu from './screens/Home';
 import Registro from './screens/Registro';
 import Login from './screens/Login';
 import Pedidos from './screens/Pedidos';
@@ -15,7 +15,7 @@ import { AdminRoute } from './ProtectedRoutes';
 import EditPedido from './screens/EditPedido.jsx';
 import EditUsuario from './screens/EditUsuario.jsx';
 import EditMenu from './screens/editMenu.jsx';
-import CartaMenu from './screens/Menus.jsx';
+
 
 
 function App() {
@@ -35,9 +35,9 @@ function App() {
             <Route path="/registro" element={<Registro/>}/>
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/Home" element={<CartaMenu/>}/>
-            {/* <Route path="/carta" element={<CartaMenu/>}/> */}
+            <Route path="/home" element={<CartaMenu/>}/>
             </Route>
+
             <Route>
             <Route element={<AdminRoute/>}>
             <Route path="/pedidos" element={<Pedidos/>}/>
@@ -57,7 +57,6 @@ function App() {
         
           </Routes>
           </Router>
-
 
       </AuthProvider>
 

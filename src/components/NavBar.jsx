@@ -53,7 +53,7 @@ function Navbar () {
   return (
 
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
@@ -71,9 +71,6 @@ function Navbar () {
         </li>
         <li class="nav-item">
         <Link to="/editUsuario" class="nav-link">Editar Usuario</Link>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/carta">Menu</a>
         </li>
         <li class="nav-item" >
           <Link to={Home} onClick={()=>{
@@ -97,9 +94,6 @@ function Navbar () {
         </li>
         <li class="nav-item">
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/carta">Menu</a>
-        </li>
 
         <li class="nav-item" >
           <Link to='/Home' onClick={()=>{
@@ -121,15 +115,8 @@ function Navbar () {
         <li class="nav-item">
           <a class="nav-link" href="/registro">Registro</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/carta">Menu</a>
-        </li>
-        
-        
           </>
-
         )}
-        
       </ul>
     </div>
   </div>

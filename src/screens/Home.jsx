@@ -39,14 +39,15 @@ function CartaMenu ()  {
         <section>
         
         <div class="card fondo-CardPlato text-center" >
-          <img src="..." class="card-img-top" alt="..." />
+          {/* <img src="..." class="card-img-top" alt="..." /> */}
             <div class="card-body">
-            <h5 class="card-title carta-home-titulo"> El restaurante </h5>
-            <p class="card-text"></p>
-            <a href="#" class="btn btn-primary"> Go somewhere</a>
+            <h5 class="card-title carta-home-titulo"> Le Forky</h5>
+            <p class="card-text carta-home-titulo"> Los mejores Platos</p>
             </div>
         </div>
-        
+        <div>
+        <a href="#" class="btn btn-primary"> Iniciar Pedido</a>
+        </div>
 
         </section>
         <section>
@@ -142,109 +143,10 @@ function CartaMenu ()  {
           </div>
         </section>
         <footer className="bg-dark text-light pt-5 pb-4">
-      
-    </footer>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ea vero quo dolor dolorum, commodi at excepturi eum eaque tempora minima itaque culpa, perferendis iste nostrum ipsa, eveniet adipisci nihil!</p>
+        </footer>
 
-      </div>
-  
-
-//     <div className='d-flex justify-content-around conteiner-fluid carta-fondo'>      
-    
-//       {/* <div className='mt-5 col-6'>
-//       <h4>Lista de Menus</h4>
-//       <br />
-//       <form>
-//         <table className="table">
-//           <thead>
-//             <tr>
-//               <th scope="col">ID</th>
-//               <th scope="col">Menú</th>
-//               <th scope="col">Categoria</th>
-//               <th scope="col">Descripcion</th>
-//               <th scope="col">Precio</th>
-//               <th scope="col">Estado</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {listaMenu.map((elemento, index) => (
-//               <tr key={index}>
-//                 <th scope="row">{index + 1}</th>
-//                 <td>{elemento.tituloMenu}</td>
-//                 <td>{elemento.categoriaMenu || 'N/A'}</td>
-//                 <td>{elemento.descripcionMenu}</td>
-//                 <td>{elemento.precioMenu}</td>
-//                 <td>
-//                   <div className="form-check form-switch">
-//                     <input
-//                       className="form-check-input"
-//                       type="checkbox" role="switch"
-//                       id={`flexSwitchCheckDefault_${index}`}
-//                       checked={elemento.estado}
-//                       readOnly
-//                     />
-//                   </div>
-//                 </td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </form>
-//     </div> */}
-    
-// {/*     
-//     <div className='justify-content-center col-4 mt-5 card formulario-fondo '>
-//         <div className='bordeCarta '>
-//             <div class="card-header card-headerCarta  ">
-//                 Platos
-//             </div>
-//             <div className='Card rounded-4 '>
-//                 <ul className="list-group list-group-flush bg-yellow rounded">
-//             {listaMenu.map((elemento, index) => (
-//                 <li class="list-group-item" key={index}>
-//                 <div class="d-flex w-100 justify-content-between">
-//                     <h5 class="mb-1">{elemento.tituloMenu}</h5>
-//                     <small>{elemento.precioMenu}</small>
-//                 </div>
-//                 <div class="d-flex w-100 justify-content-between">
-//                     <p class="mb-1">{elemento.descripcionMenu}</p>
-//                 </div>
-//                 <div class="d-flex w-100 justify-content-between">
-//                     <small>
-//                     <button type="submit" className="btn bg-verde-total button-hover mb-5">Agregar al pedido</button>
-//                     </small>
-//                 </div>
-//                 </li>
-//             ))}
-//             </ul>
-//         </div>
-//         </div>
-//         </div>
-
-
-//         <div className='justify-content-center col-4 mt-5'>
-//         <div class="card">  
-//             <div class="card-header">
-//                 Platos
-//             </div>
-//         <ul class="list-group list-group-flush">
-//             {listaMenu.map   ((elemento, index) => (
-//             <li class="list-group-item" key={index}>
-//             <div class="d-flex w-100 justify-content-between">
-//             <h5 class="mb-1">{elemento.tituloMenu}</h5>
-//             <small>{elemento.categoriaMenu || 'N/A'}</small>
-//             </div>
-//             <p class="mb-1">{elemento.descripcionMenu}</p>
-//             <small>{elemento.precioMenu}</small>
-//             </li>
-//             ))}
-//         </ul>
-//             </div>
-//         </div> */}
-
-
-//     </div>
-
-
+      </div>  
 
     
     )
