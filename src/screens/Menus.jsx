@@ -10,8 +10,15 @@ import { listarCarritoRequest } from '../api/auth';
 
 
 
+
+
+
+
+
+
 function CartaMenu ()  {
   const {handleSubmit,formState:{errors},} = useForm()
+  const [carrito, setCarrito] = useState([]);
   const [listaMenu,setlistaMenu] =  useState([])
   useEffect(()=>{
     async function listadeMenus(){
@@ -29,9 +36,25 @@ function CartaMenu ()  {
         }
         listadeMenus()
     },[])
-  
-  
-  
+
+    const agregarAlCarrito = (elemento) => {
+      // Copiar el pedido actual y agregar el nuevo elemento
+      const nuevoCarrito = [...carrito, elemento];
+      
+      // Actualizar el estado del pedido
+      setCarrito(nuevoCarrito);
+      
+      // Guardar en localStorage
+      localStorage.setItem('pedido', JSON.stringify(nuevoCarrito));
+    };
+
+
+
+
+
+
+
+
 
   return (
     
@@ -67,7 +90,8 @@ function CartaMenu ()  {
                         <div className="d-flex w-100 justify-content-between mb-3 mt-3">
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
-                            <button type="submit" className="btn bg-verde-total button-hover">Agregar</button>
+                          <button type="button" className="btn bg-verde-total button-hover" onClick={() => agregarAlCarrito(elemento)}>Agregar
+                          </button>
                           </small>
                         </div>
                         
@@ -100,7 +124,7 @@ function CartaMenu ()  {
                         <div className="d-flex w-100 justify-content-between mb-3 mt-3">
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
-                            <button type="submit" className="btn bg-verde-total button-hover">Agregar</button>
+                            
                           </small>
                         </div>
                       </li>
@@ -130,7 +154,8 @@ function CartaMenu ()  {
                         <div className="d-flex w-100 justify-content-between mb-3 mt-3">
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
-                            <button type="submit" className="btn bg-verde-total button-hover">Agregar</button>
+                          <button type="button" className="btn bg-verde-total button-hover" onClick={() => agregarAlCarrito(elemento)}>Agregar
+                          </button>
                           </small>
                         </div>
                       </li>
