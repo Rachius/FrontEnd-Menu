@@ -7,6 +7,7 @@ function EditUsuario() {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();
   const { admSignup, admEdit, isAuthenticated, errors: RegisterErrors } = useAuth();
   const [usernameEdit,setUsernameEdit] = useState()
+  const [username2Edit,setUsername2Edit] = useState()
   const [editEmail,setEmailEdit] = useState()
   const [editRol,setRolEdit] = useState()
   const [editEstado,setEstadoEdit] = useState()
