@@ -37,7 +37,19 @@ function CartaMenu ()  {
     
 
     <div className='row align-items-center carta-banner'>
+        <section>
+        
+        <div class="card fondo-CardPlato text-center" >
+          <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+            <h5 class="card-title carta-home-titulo"> El restaurante </h5>
+            <p class="card-text"></p>
+            <a href="#" class="btn btn-primary"> Go somewhere</a>
+            </div>
+        </div>
+        
 
+        </section>
         <section>
           <div className='container '>
             <div className='bordeCarta white-star-carta mt-5 justify-content-center d-flex'>
@@ -130,13 +142,12 @@ function CartaMenu ()  {
             </div>
           </div>
         </section>
-
+        <footer className="bg-dark text-light pt-5 pb-4">
+      
+    </footer>
 
       </div>
   
-
-
-
 
 //     <div className='d-flex justify-content-around conteiner-fluid carta-fondo'>      
     

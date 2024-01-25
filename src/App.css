@@ -159,7 +159,7 @@
 .fondo-logReg {
   background-image: url('/comida-carta.jpg');
   background-repeat:no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-position: center center;
   background-blend-mode:multiply ; /* Agrega el efecto de difuminado */
   opacity: 0.9;
@@ -225,11 +225,25 @@
 
 
 .carta-titulo{
+  
 background-color: #01000073;
 border-radius: 10px;
 color: white;
 
 }
+
+
+.carta-home-titulo{
+  font-family:'Times New Roman';
+  font-size: 40px;
+  
+  border-radius: 10px;
+  color: white;
+  
+  }
+
+
+
 
 .login-borde{
   border: #000000;

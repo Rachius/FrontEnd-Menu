@@ -25,9 +25,9 @@ export const AuthProvider = ({children}) => {
     const [loading,setLoading] = useState(true)
 
 
-    const signup = async (user)=>{
+    const signup = async (user)=>{           
 
-        try {
+          try {
             const res = await registerRequest(user)
             console.log(res.data)
             setUser(res.data)
@@ -41,7 +41,7 @@ export const AuthProvider = ({children}) => {
 
     }
         
-    const signin = async(user)=>{
+    const signin = async(user)=>{      
         try {
             const res=  await loginRequest(user)
             console.log(res.data)
@@ -227,7 +227,7 @@ const menuEdit = async (menuEdit,editingUserId)=>{
         },[])
 
 
-    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,admSignup,admEdit,menuEdit,menu,user,isAuthenticated,errors,loading,admUserCreate}}>
+    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,admSignup,admEdit,menuEdit,menu,user,isAuthenticated,errors,loading,admUserCreate,admUserEdit}}>
         {children}
     </AuthContext.Provider>)
 
