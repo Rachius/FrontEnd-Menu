@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { useAuth } from '../contexts/AuthContex';
 import { listarUsuariosRequest, modificarUsuarioRequest } from '../api/auth';
 
+
 function EditUsuario() {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();
   const { admSignup, admEdit, isAuthenticated, errors: RegisterErrors } = useAuth();
@@ -17,7 +18,7 @@ function EditUsuario() {
   const [listaUsuario, setListaUsuario] = useState([]);
   const [editingUserId, setEditingUserId] = useState(null);
 
-  useEffect(() => {
+  useEffect(() => {                            //Pide la lista de usuarios, de haber error lo muestra
     async function listaDeUsuarios() {
       try {
         const listadeU = await listarUsuariosRequest();
@@ -30,7 +31,7 @@ function EditUsuario() {
   }, []);
 
 
-  const handleEditarUsuario =  (elemento) => {
+  const handleEditarUsuario =  (elemento) => {    //Crea la constante elemento intenta asignar
     try { 
       setEditingUserId(elemento._id)
       setUsernameEdit(elemento.username)
@@ -71,17 +72,9 @@ function EditUsuario() {
 
 
   return (
-    
-  
-
-
-
-
-
-
 
   <div className='container-fluid fondo-admin d-flex col-12 flex-wrap justify-content-around'>
-              <div className='col-lg-6 col-md-12 col-sm-12 mt-5'>
+              <div className='  col-lg-6 col-md-12 col-sm-12 mt-5 '>
                 <h4 className='editMenuTitulo text-center white-star-carta  '>Usuarios</h4>
                 <form onSubmit={onSubmit} noValidate>
                 <div className="table-container" style={{ maxHeight: "550px", overflowY: "auto" }}>
@@ -134,7 +127,7 @@ function EditUsuario() {
                               <button
                                 className="btn btn-danger"
                                 type="button"
-                                onClick={() => setEditingUserId(null)}
+                                onClick={() => setEditingUserId(elemento)}
                               >
                                 Cancelar
                               </button>
@@ -143,7 +136,7 @@ function EditUsuario() {
                             <button
                               className="btn btn-secondary"
                               type="button"
-                              onClick={() => handleEditarUsuario(elemento)}
+                              onClick={() => handleEditarUsuario(null)}
                             >
                               Editar
                             </button>
