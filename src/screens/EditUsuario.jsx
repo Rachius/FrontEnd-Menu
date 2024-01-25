@@ -12,7 +12,7 @@ function EditUsuario() {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();
   const { admSignup, admEdit, isAuthenticated, errors: RegisterErrors } = useAuth();
   const [usernameEdit,setUsernameEdit] = useState()
-  const [username2Edit,setUsername2Edit] = useState()
+  
   const [editEmail,setEmailEdit] = useState()
   const [editRol,setRolEdit] = useState()
   const [editEstado,setEstadoEdit] = useState()
@@ -41,7 +41,7 @@ function EditUsuario() {
       setEstadoEdit(elemento.estado)
       console.log(elemento.estado)
   
-      console.log(elemento)
+      console.log(elemento.username)
     } catch (error) {
       console.log(error)
     }
@@ -128,7 +128,7 @@ function EditUsuario() {
                               <button
                                 className="btn btn-danger"
                                 type="button"
-                                onClick={() => setEditingUserId(elemento)}
+                                onClick={() => setEditingUserId(null)}
                               >
                                 Cancelar
                               </button>
@@ -137,7 +137,7 @@ function EditUsuario() {
                             <button
                               className="btn btn-secondary"
                               type="button"
-                              onClick={() => handleEditarUsuario(null)}
+                              onClick={() => handleEditarUsuario(elemento)}
                             >
                               Editar
                             </button>
@@ -152,8 +152,9 @@ function EditUsuario() {
               </div>
           
  
-      
-          <div className='col-lg-3   col-md-12 col-sm-12 pb-5 pt-1 mt-5 '>
+                            {editingUserId? (<>         
+                            
+                              <div className='col-lg-3   col-md-12 col-sm-12 pb-5 pt-1 mt-5 '>
           <h4 className='editMenuTitulo text-center white-star-carta  mb-3 '>Editar Usuario</h4>
                 <div className='d-flex justify-content-around col-10 mx-auto'>
                   
@@ -165,12 +166,12 @@ function EditUsuario() {
                      <form onSubmit={onSubmit} noValidate>
                                 <div class="mb-3 needs-validation" noValidate>
                                   <label for="InputNameReg" className="form-label fuente-formMenuAdmin">username</label>
-                                  <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: true })} />
+                                  <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: false })} defaultValue={usernameEdit}/>
                                   {errors.username && <p className='text-red-500'>Username es requerido</p>}
                                 </div>
                                 <div class="mb-3">
                                   <label for="InputEmailReg" className="form-label fuente-formMenuAdmin">Email del usuario</label>
-                                  <input type="email" className="form-control" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: false })} defaultValue={editEmail}/>
+                                  <input type="email" className="form-control" id="InputEmailReg"  {...register('email', { required: false })} defaultValue={editEmail}/>
                                   {errors.email && <p className='text-red-500'>Email es requerido</p>}
                                 </div>
                               <div className="mb-3 needs-validation" noValidate>
@@ -204,12 +205,25 @@ function EditUsuario() {
                  </div>                      
            </div>
 
-  </div>
+            </div>
+                            
+                            
+                            
+                            
+                                         </>):(<>
+          
+
+
           <div className='col-lg-3   col-md-12 col-sm-12 pb-5 mt-5  '>
           <h4 className='editMenuTitulo text-center white-star-carta  mb-3 '>Alta de usuario</h4>
                  <div className='d-flex justify-content-around editMenuFondo col-10 mx-auto'>
+                 {RegisterErrors.map((error, i)=> (
+                          <div className='bg-red-500 p-2'key={i}>   
+                            {error}
+                          </div>))} 
                         <form>
                         <h3 className='fuente-formMenuAdmin'>Alta de usuario</h3>
+                        
                         
                         <div class="mb-3 needs-validation" noValidate>                 
                           <label for="InputNameReg" className="form-label fuente-formMenuAdmin">username</label>
@@ -233,6 +247,7 @@ function EditUsuario() {
                         </form>
                     </div>        
             </div>  
+            </>) }
   </div>
 
 
