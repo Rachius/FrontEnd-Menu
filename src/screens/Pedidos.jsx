@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAuth } from '../contexts/AuthContex'
 import { useEffect, useState } from 'react';
-
+import { Helmet } from 'react-helmet';
 
 
   const Carrito = () => {
@@ -18,6 +18,9 @@ import { useEffect, useState } from 'react';
     
   return (
   <div class="d-flex col-12 row carta-banner justify-content-center   ">
+      <Helmet>
+        <title>Pedidos</title>
+      </Helmet>
           <div class="card col-lg-8 col-md-10 col-sm-10 mx-auto mt-5 shadow-lg rounded-2 bordeCarta  fondo-CardCarrito" >
             <div class="card-header  text-center carta-home-titulo "><p>Orden de pedido</p></div>
             <div className="card-body justify-content-center d-flex" >

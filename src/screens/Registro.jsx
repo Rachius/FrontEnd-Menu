@@ -3,6 +3,7 @@ import {useForm} from 'react-hook-form'
 import { useAuth } from '../contexts/AuthContex'
 import { useEffect } from 'react'
 import {  useNavigate,Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 
 
@@ -26,6 +27,9 @@ function Registro(){
   return (
    
     <div className='d-flex justify-content-center bg-verde-blanco fondo-logReg  vh-100 '>
+        <Helmet>
+        <title>Registración</title>
+      </Helmet>
           <div className='row-12 col-12'>
           <br />
           <div className="text-center col-sm-12 carta-titulo col-lg-6 bg-verde-claro mx-auto pb-5 pt-1">

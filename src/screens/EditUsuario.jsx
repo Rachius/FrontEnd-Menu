@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../contexts/AuthContex';
 import { listarUsuariosRequest, modificarUsuarioRequest } from '../api/auth';
+import { Helmet } from 'react-helmet';
 
 
 function EditUsuario() {
@@ -75,6 +76,9 @@ function EditUsuario() {
   return (
 
   <div className='container-fluid fondo-admin d-flex col-12 flex-wrap justify-content-around'>
+      <Helmet>
+        <title>Editar Usuario</title>
+      </Helmet>
               <div className='  col-lg-6 col-md-12 col-sm-12 mt-5 '>
                 <h4 className='editMenuTitulo text-center white-star-carta  '>Usuarios</h4>
                 <form onSubmit={onSubmit} noValidate>

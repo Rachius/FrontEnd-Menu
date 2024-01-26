@@ -1,9 +1,11 @@
-import React from 'react'
-import {useForm} from 'react-hook-form'
-import { useAuth } from '../contexts/AuthContex'
-import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react';
+import {useForm} from 'react-hook-form';
+import { useAuth } from '../contexts/AuthContex';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+
 
 
 
@@ -26,6 +28,9 @@ function Login (){
   return (
 <div className='d-flex justify-content-center bg-verde-blanco fondo-logReg  vh-100 '>
   <div className='row-12 col-12 '>
+  <Helmet>
+        <title>Iniciar Sesión</title>
+      </Helmet>
     <br />
   <div className="text-center col-sm-12 col-lg-6 bg-verde-claro  carta-titulo  mx-auto pb-5 pt-1 ">
     

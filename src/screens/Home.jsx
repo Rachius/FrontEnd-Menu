@@ -7,14 +7,18 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContex';
 import { listarMenuRequest } from '../api/auth';
 import { listarCarritoRequest } from '../api/auth';
+import { Helmet } from 'react-helmet';
+import Alert from 'bootstrap';
 
 
 
 
 
 function CartaMenu ()  {
+  const [carrito, setCarrito] = useState([]);
   const {handleSubmit,formState:{errors},} = useForm()
   const [listaMenu,setlistaMenu] =  useState([])
+  const [showAlert, setShowAlert] = useState(false);
   useEffect(()=>{
     async function listadeMenus(){
         
@@ -32,10 +36,35 @@ function CartaMenu ()  {
         listadeMenus()
     },[])
 
+
+
+    const agregarAlCarrito = (elemento) => {
+      // Copiar el pedido actual y agregar el nuevo elemento
+      const nuevoCarrito = [...carrito, elemento];
+      
+      // Actualizar el estado del pedido
+      setCarrito(nuevoCarrito);
+      setShowAlert(true);
+      // Ocultar el alert después de 3 segundos (puedes ajustar este tiempo)
+      setTimeout(() => {
+      setShowAlert(false);
+        }, 3000);
+      // Guardar en localStorage
+      localStorage.setItem('pedido', JSON.stringify(nuevoCarrito));
+    };
+
+
+
+
+
   return (
     
 
     <div className='row align-items-center carta-banner'>
+      
+        <Helmet>
+        <title>Le Forky</title>
+      </Helmet>
         <section>
         
         <div class="card fondo-CardPlato text-center" >
@@ -58,7 +87,7 @@ function CartaMenu ()  {
                 <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
                   <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
                     {listaMenu.map((elemento, index) => (
-                         elemento.tituloMenu === "MenuCriminal" && (
+                         elemento.categoriaMenu === "Platos" && (
                       <li className="list-group-item  fondo-CardPlato mb-4" key={index}>
                         <div  className=" d-flex w-100 justify-content-between">
                           <h5 className="mb-1 fuente-nombrePlato">{elemento.tituloMenu}</h5>
@@ -67,7 +96,8 @@ function CartaMenu ()  {
                         <div className="d-flex w-100 justify-content-between mb-3 mt-3">
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
-                            <button type="submit" className="btn bg-verde-total button-hover">Agregar</button>
+                          <button type="button" className="btn bg-verde-total button-hover" onClick={() => agregarAlCarrito(elemento)}>Agregar
+                          </button>
                           </small>
                         </div>
                         
@@ -87,11 +117,11 @@ function CartaMenu ()  {
         <div className='container '>
             <div className='bordeCarta white-star-carta mt-5 justify-content-center d-flex'>
               <div className='col-lg-12 col-sm-12  '>
-                <h1 className='text-center mb-3 mt-3 '>Platos</h1>
+                <h1 className='text-center mb-3 mt-3 '>Postres</h1>
                 <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
                   <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
                       {listaMenu.map((elemento, index) => (
-                         elemento.tituloMenu === "MenuCriminales" &&  (
+                         elemento.categoriaMenu === "Postres" && (
                       <li className="list-group-item fondo-CardPlato mb-4" key={index}>
                         <div className="d-flex w-100 justify-content-between">
                           <h5 className="mb-1 fuente-nombrePlato">{elemento.tituloMenu}</h5>
@@ -100,7 +130,8 @@ function CartaMenu ()  {
                         <div className="d-flex w-100 justify-content-between mb-3 mt-3">
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
-                            <button type="submit" className="btn bg-verde-total button-hover">Agregar</button>
+                          <button type="button" className="btn bg-verde-total button-hover" onClick={() => agregarAlCarrito(elemento)}>Agregar
+                          </button>
                           </small>
                         </div>
                       </li>
@@ -117,11 +148,11 @@ function CartaMenu ()  {
         <div className='container '>
             <div className='bordeCarta white-star-carta mt-5 justify-content-center d-flex'>
               <div className='col-lg-12 col-sm-12  '>
-                <h1 className='text-center mb-3 mt-3 '>Platos</h1>
+                <h1 className='text-center mb-3 mt-3 '>Bebidas</h1>
                 <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
                   <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
                     {listaMenu.map((elemento, index) => (
-                         elemento.tituloMenu === "primer menu" && (
+                         elemento.categoriaMenu === "Bebidas" && (
                       <li className="list-group-item fondo-CardPlato mb-4" key={index}>
                         <div className="d-flex w-100 justify-content-between">
                           <h5 className="mb-1 fuente-nombrePlato">{elemento.tituloMenu}</h5>
@@ -130,7 +161,8 @@ function CartaMenu ()  {
                         <div className="d-flex w-100 justify-content-between mb-3 mt-3">
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
-                            <button type="submit" className="btn bg-verde-total button-hover">Agregar</button>
+                          <button type="button" className="btn bg-verde-total button-hover" onClick={() => agregarAlCarrito(elemento)}>Agregar
+                          </button>
                           </small>
                         </div>
                       </li>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { UseForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-
+import { Helmet } from "react-helmet";
 import { Button } from 'bootstrap';
 
 const EditPedido = (props) => {
@@ -52,6 +52,9 @@ const EditPedido = (props) => {
 
   return (
     <div className="container">
+        <Helmet>
+        <title>Editar Pedido</title>
+      </Helmet>
       <h2>Editar Pedido</h2>
       <form >
         <div className="form-group">

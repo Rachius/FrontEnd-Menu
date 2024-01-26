@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContex';
 import { listarMenuRequest } from '../api/auth';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -41,6 +42,9 @@ function EditMenu ()  {
   return (
     
     <div className='container-fluid fondo-admin d-flex col-12 flex-wrap'>
+        <Helmet>
+        <title>Editar Menú</title>
+      </Helmet>
       <div className='row justify-content-around col-12'>
                   <div className='col-lg-6 col-md-5 col-sm-12 mt-5'>
                     <h4 className='editMenuTitulo text-center'>Lista de Menus</h4>

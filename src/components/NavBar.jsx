@@ -6,6 +6,7 @@ import ProtectedRoute from '../ProtectedRoutes';
 import { AdminRoute } from '../ProtectedRoutes';
 
 
+
 /*
 
 const links=
@@ -53,7 +54,7 @@ function Navbar () {
   return (
 
 
-  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-collapse-md navbar-dark bg-dark">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
@@ -120,7 +121,9 @@ function Navbar () {
       </ul>
     </div>
   </div>
+  
 </nav>
+
   )
 }
 
