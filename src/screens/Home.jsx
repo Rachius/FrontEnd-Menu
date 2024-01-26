@@ -1,5 +1,5 @@
 
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import { Button } from 'bootstrap';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -14,19 +14,32 @@ import { listarCarritoRequest } from '../api/auth';
 
 function CartaMenu ()  {
   const {handleSubmit,formState:{errors},} = useForm()
+  const {user}= useAuth()
   const [listaMenu,setlistaMenu] =  useState([])
   const [selectedItems, setSelectedItems] = useState([]);
+  const [id,setid] = useState()
+  const [username,setUsername] = useState()
+  const [total, setTotal] = useState(0);
 
-  
+
   const handleAddToCart = (item) => {
-    // Agrega el elemento seleccionado al estado
-    setSelectedItems((prevItems) => [...prevItems, item]);
+    // Obten el carrito actual del almacenamiento local
+    const savedCart = localStorage.getItem('cart');
+    const existingCart = savedCart ? JSON.parse(savedCart) : { id, username, items: [], total: 0 };
   
-    // Guarda el carrito en el almacenamiento local
-    localStorage.setItem('cart', JSON.stringify([...selectedItems, item]));
+    // Agrega el nuevo elemento al carrito
+    existingCart.items.push(item);
+  
+    // Calcula el nuevo total sumando los precios de los elementos en el carrito
+    const newTotal = existingCart.items.reduce((acc, currentItem) => acc + currentItem.precioMenu, 0);
+    existingCart.total = newTotal;
+  
+    // Guarda el carrito actualizado en el almacenamiento local
+    localStorage.setItem('cart', JSON.stringify(existingCart));
+  
+    // Actualiza el total en el estado local
+    setTotal(newTotal);
   };
-
-
 
 
 
@@ -36,9 +49,11 @@ function CartaMenu ()  {
         
       try {
             const listadeM = await listarMenuRequest()
+            setid(user.id)
+            setUsername(user.username)
             
             setlistaMenu(listadeM.data)
-
+          console.log(user.id)
 
            } catch (error) {
             console.log(error.data)
@@ -96,7 +111,7 @@ function CartaMenu ()  {
                           <button
   type="button"
   className="btn bg-verde-total button-hover"
-  onClick={() => handleAddToCart(elemento)}
+  onClick={() => handleAddToCart(elemento,username,id)}
 >
   Agregar
 </button>

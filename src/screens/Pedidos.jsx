@@ -6,14 +6,16 @@ import { useEffect, useState } from 'react';
 
   const Carrito = () => {
     const [carrito, setCarrito] = useState([]);
-  
+    const [totalAPagar, setTotalAPagar] = useState(0);
+    
     useEffect(() => {
       // Recuperar datos del local storage
-      const carritoData = JSON.parse(localStorage.getItem('pedido')) || [];
-      setCarrito(carritoData);
-    }, []);  
+      const carritoData = JSON.parse(localStorage.getItem('cart')) || { id: null, username: null, items: [], total: 0 };
+      setCarrito(carritoData.items);
+      setTotalAPagar(carritoData.total);
+    }, []);
 
-    const totalAPagar = carrito.reduce((total, item) => total + item.precioMenu, 0);
+    // const totalAPagar = carrito.reduce((total, item) => total + item.precioMenu, 0);
 
     
   return (
@@ -51,8 +53,8 @@ import { useEffect, useState } from 'react';
 
           <div class="card col-sm-10 col-md-6 col-lg-6 botonesCarrito  align-items-center justify-content-around mx-auto mt-1 mb-5">
           <h5 className="card-title mt-2">Total a Pagar: ${totalAPagar}</h5>
-               <a href="../pages/carritof.html" class="btn btn-outline-success mb-3  col-md-6 ">Seguir ordenando</a>
-               <a href="../pages/carritof.html" class="btn btn-outline-success mb-3  col-md-6">Finalizar pedido​</a>
+               <a href="/home" class="btn btn-outline-success mb-3  col-md-6 ">Seguir ordenando</a>
+               <a href="" class="btn btn-outline-success mb-3  col-md-6">Finalizar pedido​</a>
            </div>
            <footer className="bg-dark text-light pt-5 pb-4">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quo quae cum odio tempore quibusdam, earum soluta, commodi architecto repellat fuga autem aspernatur ratione id ipsum incidunt excepturi, doloribus laudantium.</p>
