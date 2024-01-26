@@ -22,24 +22,27 @@ function CartaMenu ()  {
   const [total, setTotal] = useState(0);
 
 
-  const handleAddToCart = (item) => {
-    // Obten el carrito actual del almacenamiento local
+  const handleAddToCart = (item, username, id) => {
     const savedCart = localStorage.getItem('cart');
-    const existingCart = savedCart ? JSON.parse(savedCart) : { id, username, items: [], total: 0 };
+    let existingCart = savedCart ? JSON.parse(savedCart) : { id, username, items: [], total: 0 };
   
-    // Agrega el nuevo elemento al carrito
-    existingCart.items.push(item);
+    const existingItemIndex = existingCart.items.findIndex(existingItem => existingItem._id === item._id);
   
-    // Calcula el nuevo total sumando los precios de los elementos en el carrito
-    const newTotal = existingCart.items.reduce((acc, currentItem) => acc + currentItem.precioMenu, 0);
-    existingCart.total = newTotal;
+    if (existingItemIndex !== -1) {
+      // Si el artículo ya existe, aumenta la cantidad
+      existingCart.items[existingItemIndex].cantidad += 1;
+    } else {
+      // Si es un nuevo artículo, agrégalo con cantidad 1
+      item.cantidad = 1;
+      existingCart.items.push(item);
+    }
   
-    // Guarda el carrito actualizado en el almacenamiento local
+    existingCart.total = existingCart.items.reduce((acc, currentItem) => acc + currentItem.precioMenu * currentItem.cantidad, 0);
+  
     localStorage.setItem('cart', JSON.stringify(existingCart));
-  
-    // Actualiza el total en el estado local
-    setTotal(newTotal);
+    setTotal(existingCart.total);
   };
+  
 
 
 

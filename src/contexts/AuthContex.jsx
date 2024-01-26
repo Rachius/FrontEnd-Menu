@@ -1,5 +1,5 @@
 import { createContext,useState, useContext,useEffect } from "react";
-import { registerRequest,loginRequest,verifyTokenRequest,logOutRequest,crearMenuRequest, admCrearUsuarioRequest,modificarUsuarioRequest,modificarMenuRequest } from "../api/auth";
+import { registerRequest,loginRequest,verifyTokenRequest,logOutRequest,crearMenuRequest, admCrearUsuarioRequest,modificarUsuarioRequest,modificarMenuRequest,crearPedidoRequest } from "../api/auth";
 import Cookies from "js-cookie";
 
 export const AuthContext = createContext()
@@ -92,13 +92,12 @@ export const AuthProvider = ({children}) => {
 }
 
 
-const carritoPedidos = async (useredit,editingUserId)=>{
+const carritoPedidos = async (pedido)=>{
 
   try {
-      const res = await modificarUsuarioRequest(useredit,editingUserId)
-      console.log(editingUserId)
+      const res = await crearPedidoRequest(pedido)
+      
       console.log(res.data)
-      setadmUserEdit(res.data)
       
      
       
@@ -247,7 +246,7 @@ const menuEdit = async (menuEdit,editingUserId)=>{
         },[])
 
 
-    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,admSignup,admEdit,menuEdit,menu,user,isAuthenticated,errors,loading,admUserCreate,admUserEdit}}>
+    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,admSignup,admEdit,menuEdit,carritoPedidos,menu,user,isAuthenticated,errors,loading,admUserCreate,admUserEdit}}>
         {children}
     </AuthContext.Provider>)
 
