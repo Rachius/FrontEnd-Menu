@@ -24,10 +24,10 @@ import { useEffect, useState } from 'react';
     // const totalAPagar = carrito.reduce((total, item) => total + item.precioMenu, 0);
 
     const handleRemoveFromCart = (index) => {
-      // Obten el carrito actual del almacenamiento local
+      // Obtiene el carrito actual del local storage
       const savedCart = JSON.parse(localStorage.getItem('cart')) || { id: null, username: null, items: [], total: 0 };
   
-      // Elimina el elemento en la posición 'index' del carrito
+      // Elimina el elemento en la posición index del carrito
       savedCart.items.splice(index, 1);
   
       // Calcula el nuevo total sumando los precios de los elementos restantes en el carrito
@@ -43,10 +43,10 @@ import { useEffect, useState } from 'react';
     };
   
     const handleIncreaseQuantity = (index) => {
-      // Obten el carrito actual del almacenamiento local
+      // Obten el carrito actual del local storage
       const savedCart = JSON.parse(localStorage.getItem('cart')) || { id: null, username: null, items: [], total: 0 };
   
-      // Aumenta la cantidad del elemento en la posición 'index' del carrito
+      // Aumenta la cantidad del elemento en la posición index del carrito
       savedCart.items[index].cantidad = (savedCart.items[index].cantidad || 1) + 1;
   
       // Calcula el nuevo total sumando los precios de los elementos en el carrito

@@ -51,16 +51,16 @@ function CartaMenu ()  {
     async function listadeMenus(){
         
       try {
-            const listadeM = await listarMenuRequest()
+            const listadeM = await listarMenuRequest()    //aguarda recibir la información para mostrar la carta
             setid(user.id)
             setUsername(user.username)
-            
             setlistaMenu(listadeM.data)
           console.log(user.id)
+          console.log("hay carta disponible")
 
            } catch (error) {
             console.log(error.data)
-
+            console.log("no hay carta disponible, logueate bb")  
            }
         }
         listadeMenus()
@@ -72,9 +72,6 @@ function CartaMenu ()  {
         setSelectedItems(JSON.parse(savedCart));
       }
     }, []);
-
-
-    
 
   return (
     
@@ -96,13 +93,13 @@ function CartaMenu ()  {
         </section>
         <section>
           <div className='container '>
-            <div className='bordeCarta white-star-carta mt-5 justify-content-center d-flex'>
+            <div className='bordeCarta white-star-carta mt-5 justify-content-center d-flex '>
               <div className='col-lg-12 col-sm-12  '>
                 <h1 className='text-center mb-3 mt-3 '>Platos</h1>
                 <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
                   <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
                     {listaMenu.map((elemento, index) => (
-                         elemento.tituloMenu === "MenuCriminal" && (
+                         elemento.categoriaMenu === "Platos" && (
                       <li className="list-group-item  fondo-CardPlato mb-4" key={index}>
                         <div  className=" d-flex w-100 justify-content-between">
                           <h5 className="mb-1 fuente-nombrePlato">{elemento.tituloMenu}</h5>
@@ -120,15 +117,12 @@ function CartaMenu ()  {
 </button>
                           </small>
                         </div>
-                        
                       </li>
-                      
                     )
                     ))}
                   </ul>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
@@ -141,7 +135,7 @@ function CartaMenu ()  {
                 <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
                   <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
                       {listaMenu.map((elemento, index) => (
-                         elemento.tituloMenu === "MenuCriminales" &&  (
+                         elemento.categoriaMenu === "Postres" && (
                       <li className="list-group-item fondo-CardPlato mb-4" key={index}>
                         <div className="d-flex w-100 justify-content-between">
                           <h5 className="mb-1 fuente-nombrePlato">{elemento.tituloMenu}</h5>
@@ -150,7 +144,13 @@ function CartaMenu ()  {
                         <div className="d-flex w-100 justify-content-between mb-3 mt-3">
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
-                            <button type="submit" className="btn bg-verde-total button-hover">Agregar</button>
+                          <button
+                                  type="button"
+                                  className="btn bg-verde-total button-hover"
+                                  onClick={() => handleAddToCart(elemento,username,id)}
+                                >
+                                  Agregar
+                                </button>
                           </small>
                         </div>
                       </li>
@@ -171,7 +171,7 @@ function CartaMenu ()  {
                 <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
                   <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
                     {listaMenu.map((elemento, index) => (
-                         elemento.tituloMenu === "primer menu" && (
+                         elemento.categoriaMenu === "Bebidas" && (
                       <li className="list-group-item fondo-CardPlato mb-4" key={index}>
                         <div className="d-flex w-100 justify-content-between">
                           <h5 className="mb-1 fuente-nombrePlato">{elemento.tituloMenu}</h5>
@@ -180,7 +180,13 @@ function CartaMenu ()  {
                         <div className="d-flex w-100 justify-content-between mb-3 mt-3">
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
-                            <button type="submit" className="btn bg-verde-total button-hover">Agregar</button>
+                          <button
+                            type="button"
+                            className="btn bg-verde-total button-hover"
+                            onClick={() => handleAddToCart(elemento,username,id)}
+                          >
+                            Agregar
+                          </button>
                           </small>
                         </div>
                       </li>
