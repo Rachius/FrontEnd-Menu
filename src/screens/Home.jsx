@@ -133,7 +133,7 @@ function CartaMenu ()  {
                         <div className="d-flex w-100 justify-content-between mb-3 mt-3">
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
-                            {!isAuthenticated || (isAuthenticated && user.rol === 'user') ? (
+                          {(isAuthenticated && user.rol === 'user') ? (
                               <button
                                 type="button"
                                 className="btn bg-verde-total button-hover"
@@ -172,7 +172,7 @@ function CartaMenu ()  {
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
                               {/* Mostrar botón solo si no es admin */}
-                              {!isAuthenticated || (isAuthenticated && user.rol === 'user') ? (
+                              {(isAuthenticated && user.rol === 'user') ? (
                                 <button
                                   type="button"
                                   className="btn bg-verde-total button-hover"
@@ -211,7 +211,7 @@ function CartaMenu ()  {
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
         {/* Mostrar botón solo si no es admin */}
-        {!isAuthenticated || (isAuthenticated && user.rol === 'user') ? (
+        {(isAuthenticated && user.rol === 'user') ? (
           <button
             type="button"
             className="btn bg-verde-total button-hover"
