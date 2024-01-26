@@ -22,3 +22,5 @@ export const modificarUsuarioRequest = (useredit,editingUserId) => axios.put(`/a
 
 export const modificarMenuRequest = (menuEdit,editingUserId) => axios.put(`/admMenu/${editingUserId}`,menuEdit); 
 
+// export const carritoPedido = () => axios.put(/admUser/${editingUserId}`)
+

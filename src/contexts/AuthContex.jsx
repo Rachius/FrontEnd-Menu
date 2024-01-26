@@ -91,6 +91,25 @@ export const AuthProvider = ({children}) => {
 
 }
 
+
+const carritoPedidos = async (useredit,editingUserId)=>{
+
+  try {
+      const res = await modificarUsuarioRequest(useredit,editingUserId)
+      console.log(editingUserId)
+      console.log(res.data)
+      setadmUserEdit(res.data)
+      
+     
+      
+  } catch (error) {
+      console.log(error.response)
+     setErrors(error.response.data)
+
+  }
+
+}
+
 const menuEdit = async (menuEdit,editingUserId)=>{
 
   try {
@@ -215,6 +234,7 @@ const menuEdit = async (menuEdit,editingUserId)=>{
 
                 setIsAuthenticated(true)
                 setUser(res.data)
+                console.log(res.data)
                
                 setLoading(false)
                } catch (error) {

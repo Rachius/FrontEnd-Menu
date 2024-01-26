@@ -15,6 +15,22 @@ import { listarCarritoRequest } from '../api/auth';
 function CartaMenu ()  {
   const {handleSubmit,formState:{errors},} = useForm()
   const [listaMenu,setlistaMenu] =  useState([])
+  const [selectedItems, setSelectedItems] = useState([]);
+
+  
+  const handleAddToCart = (item) => {
+    // Agrega el elemento seleccionado al estado
+    setSelectedItems((prevItems) => [...prevItems, item]);
+  
+    // Guarda el carrito en el almacenamiento local
+    localStorage.setItem('cart', JSON.stringify([...selectedItems, item]));
+  };
+
+
+
+
+
+
   useEffect(()=>{
     async function listadeMenus(){
         
@@ -31,6 +47,16 @@ function CartaMenu ()  {
         }
         listadeMenus()
     },[])
+
+    useEffect(() => {
+      const savedCart = localStorage.getItem('cart');
+      if (savedCart) {
+        setSelectedItems(JSON.parse(savedCart));
+      }
+    }, []);
+
+
+    
 
   return (
     
@@ -67,7 +93,13 @@ function CartaMenu ()  {
                         <div className="d-flex w-100 justify-content-between mb-3 mt-3">
                           <p className="mb-1 fuente-descripcionPlato">{elemento.descripcionMenu}</p>
                           <small>
-                            <button type="submit" className="btn bg-verde-total button-hover">Agregar</button>
+                          <button
+  type="button"
+  className="btn bg-verde-total button-hover"
+  onClick={() => handleAddToCart(elemento)}
+>
+  Agregar
+</button>
                           </small>
                         </div>
                         
