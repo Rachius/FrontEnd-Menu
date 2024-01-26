@@ -1,5 +1,5 @@
 import { createContext,useState, useContext,useEffect } from "react";
-import { registerRequest,loginRequest,verifyTokenRequest,logOutRequest,crearMenuRequest, admCrearUsuarioRequest,modificarUsuarioRequest,modificarMenuRequest } from "../api/auth";
+import { registerRequest,loginRequest,verifyTokenRequest,logOutRequest,crearMenuRequest, admCrearUsuarioRequest,modificarUsuarioRequest,modificarMenuRequest,crearPedidoRequest } from "../api/auth";
 import Cookies from "js-cookie";
 
 export const AuthContext = createContext()
@@ -88,6 +88,24 @@ export const AuthProvider = ({children}) => {
        setErrors(error.response.data)
 
     }
+
+}
+
+
+const carritoPedidos = async (pedido)=>{
+
+  try {
+      const res = await crearPedidoRequest(pedido)
+      
+      console.log(res.data)
+      
+     
+      
+  } catch (error) {
+      console.log(error.response)
+     setErrors(error.response.data)
+
+  }
 
 }
 
@@ -215,6 +233,7 @@ const menuEdit = async (menuEdit,editingUserId)=>{
 
                 setIsAuthenticated(true)
                 setUser(res.data)
+                console.log(res.data)
                
                 setLoading(false)
                } catch (error) {
@@ -227,7 +246,7 @@ const menuEdit = async (menuEdit,editingUserId)=>{
         },[])
 
 
-    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,admSignup,admEdit,menuEdit,menu,user,isAuthenticated,errors,loading,admUserCreate,admUserEdit}}>
+    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,admSignup,admEdit,menuEdit,carritoPedidos,menu,user,isAuthenticated,errors,loading,admUserCreate,admUserEdit}}>
         {children}
     </AuthContext.Provider>)
 

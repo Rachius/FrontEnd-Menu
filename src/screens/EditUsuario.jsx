@@ -41,7 +41,6 @@ function EditUsuario() {
       setRolEdit(elemento.rol)
       setEstadoEdit(elemento.estado)
       console.log(elemento.estado)
-  
       console.log(elemento)
     } catch (error) {
       console.log(error)
@@ -131,7 +130,7 @@ function EditUsuario() {
                               </button>*/}
                               <button
                                 className="btn btn-danger"
-                                type="button"
+                                type="submit"
                                 onClick={() => setEditingUserId(null)}
                               >
                                 Cancelar
@@ -140,7 +139,7 @@ function EditUsuario() {
                           ) : (
                             <button
                               className="btn btn-secondary"
-                              type="button"
+                              type="submit"
                               onClick={() => handleEditarUsuario(elemento)}
                             >
                               Editar

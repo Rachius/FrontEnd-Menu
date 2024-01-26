@@ -85,7 +85,7 @@ function Navbar () {
         </li>
           </>): isAuthenticated  && user.rol ==='user' ?(
           <>
-                          <a class="navbar-brand" href="/Home">Inicio</a>
+                           <Link to="/Home" class="navbar-brand">Inicio</Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
                 </button>
@@ -106,7 +106,7 @@ function Navbar () {
 
           </>) : (<>
           
-            <a class="navbar-brand" href="/Home">Inicio</a>
+            <Link to="/Home" class="navbar-brand">Inicio</Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
                 </button>
