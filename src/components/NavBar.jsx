@@ -4,7 +4,7 @@ import { useAuth,checklogin } from '../contexts/AuthContex';
 import Home from '../screens/Home';
 import ProtectedRoute from '../ProtectedRoutes';
 import { AdminRoute } from '../ProtectedRoutes';
-
+import { Button } from 'bootstrap';
 
 
 /*
@@ -54,34 +54,33 @@ function Navbar () {
   return (
 
 
-  <nav class="navbar sticky-top navbar-expand-lg navbar-collapse-md navbar-dark bg-dark">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            {isAuthenticated  && user.rol ==='admin' ? (
-            <>
-            <Link to="/Home" class="navbar-brand">Inicio</Link>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          <li class="nav-item">
-            <Link to="/editPedido" class="nav-link">Editar Pedidos</Link>
-        </li>
-        <li class="nav-item">
-        <Link to="/editMenu" class="nav-link">Editar Menu</Link>
-        </li>
-        <li class="nav-item">
-        <Link to="/editUsuario" class="nav-link">Editar Usuario</Link>
-        </li>
-        <li class="nav-item" >
-          <Link to={Home} onClick={()=>{
+
+
+    <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark">
+       <div class="container-fluid">
+         <div class="" id="navbarNavDropdown">
+           <ul class="navbar-nav">
+             {isAuthenticated  && user.rol ==='admin' ? (
+             <>
+             <Link to="/Home" class="navbar-brand">Inicio</Link>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+           <li class="nav-item">
+             <Link to="/editPedido" class="nav-link">Editar Pedidos</Link>
+         </li>
+         <li class="nav-item">
+         <Link to="/editMenu" class="nav-link">Editar Menu</Link>
+         </li>
+         <li class="nav-item">
+         <Link to="/editUsuario" class="nav-link">Editar Usuario</Link>
+         </li>
+         <li class="nav-item" >
+           <Link to={Home} onClick={()=>{
             logOut()
           }}>
           <li class="nav-link">LogOut</li>
           </Link>
-
-          
-         
         </li>
           </>): isAuthenticated  && user.rol ==='user' ?(
           <>
@@ -122,7 +121,7 @@ function Navbar () {
     </div>
   </div>
   
-</nav>
+</nav> 
 
   )
 }

@@ -36,6 +36,7 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/home" element={<CartaMenu/>}/>
+            <Route path="/" element={<CartaMenu/>}/>
             </Route>
 
             <Route>
@@ -46,6 +47,7 @@ function App() {
             <Route path="/editMenu" element={<EditMenu/>}/>
             <Route path="/editUsuario" element={<EditUsuario/>}/>
             <Route path="/editPedido" element={<EditPedido/>}/>
+            <Route path="/" element={<CartaMenu/>}/>
             </Route>
 
             </Route>
@@ -53,6 +55,7 @@ function App() {
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/home" element={<CartaMenu/>}/>
             <Route path="/logOut" element={<LogOut/>}/>
+            <Route path="/" element={<CartaMenu/>}/>
           </Route>
         
           </Routes>
