@@ -261,6 +261,7 @@
   background-blend-mode:multiply ; /* Agrega el efecto de difuminado */
   opacity: 0.95;
   color: rgb(0, 0, 0); /* Cambia el color del texto para que se vea bien con el fondo difuminado */
+  image-resolution:inherit;
 }
 
 
@@ -271,7 +272,7 @@
   background-image: url('/comida-carta.jpg');
   background-repeat: repeat;
   background-size:contain;
-  background-position:top;
+  
   background-blend-mode:multiply ; /* Agrega el efecto de difuminado */
   opacity: 0.9;
   color: rgb(0, 0, 0); /* Cambia el color del texto para que se vea bien con el fondo difuminado */
@@ -301,6 +302,15 @@
   color: rgb(0, 0, 0); /* Cambia el color del texto para que se vea bien con el fondo difuminado */ ;
 }
 
+
+
+.lapiz{
+  
+ background-image: url(/public/pencil-fill.svg);
+ background-repeat: no-repeat;
+ background-size:auto;
+  }
+  
 
 
 
@@ -366,6 +376,9 @@ color: white;
 }
 
 
+.fondo-formMenuAdmin {
+  background-color: #031f049f;
+}
 
 
 
@@ -374,7 +387,7 @@ color: white;
 .fuente-formMenuAdmin {
   font-family:Georgia, 'Times New Roman', Times, serif;
   color:rgb(255, 255, 255);
-  font-size: 20px;
+  font-size: 17px;
 }
 
 

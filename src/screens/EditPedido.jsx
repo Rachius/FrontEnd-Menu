@@ -61,17 +61,17 @@ function EditMenu ()  {
         <Helmet>
         <title>Editar Pedidos</title>
       </Helmet>
-      <div className='row justify-content-around col-12'>
-                  <div className='col-lg-6 col-md-5 col-sm-12 mt-5'>
-                    <h4 className='editMenuTitulo text-center'>Lista de Pedidos</h4>
-                    <div className="table-container" style={{ maxHeight: "550px", overflowY: "auto" }}>
-                      <table className="table">
+      <div className='row justify-content-around col-12 '>
+                  <div className='col-lg-6 col-md-5 col-sm-12 mt-5 '>
+                    <h4 className='editMenuTitulo text-center white-star-carta'>Pedidos</h4>
+                    <div className="table-container text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
+                      <table className=" fondo-formMenuAdmin ">
                   <thead>
-                    <tr>
+                    <tr className=''>
                       <th scope="col">ID</th>
-                      <th scope="col">Nombre Cliente</th>
-                      <th scope="col">Fecha de Pedido</th>
-                      <th scope="col">Ticket Final</th>
+                      <th scope="col">Cliente</th>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Ticket</th>
                       <th scope="col">Estado</th>
                       <th scope="col">Detalle</th>
                     </tr>
@@ -96,7 +96,7 @@ function EditMenu ()  {
      
           
           <div className='col-lg-4 col-md-6 col-sm-10 pb-5 pt-1  '>
-              <h3 className='negrita-color-negro mt-5 editMenuTitulo text-center'>Detalle del pedido</h3>
+              <h3 className='editMenuTitulo text-center white-star-carta mt-5'>Detalle del pedido</h3>
               <div className='bordered d-flex justify-content-center col-md-12 editMenuFondo mx-auto'>
                       {RegisterErrors.map((error, i)=> (
                       <div className='bg-red-500  justify-content-center'key={i}>{error}

@@ -73,27 +73,27 @@ function EditUsuario() {
 
 
   return (
-
-  <div className='container-fluid fondo-admin d-flex col-12 flex-wrap justify-content-around'>
+          
+  <div className='container-fluid d-flex fondo-admin col-12 flex-wrap justify-content-around'>
       <Helmet>
         <title>Editar Usuario</title>
       </Helmet>
               <div className='  col-lg-6 col-md-12 col-sm-12 mt-5 '>
-                <h4 className='editMenuTitulo text-center white-star-carta  '>Usuarios</h4>
+                <h4 className='editMenuTitulo text-center white-star-carta'>Usuarios</h4>
                 <form onSubmit={onSubmit} noValidate>
-                <div className="table-container" style={{ maxHeight: "550px", overflowY: "auto" }}>
-                <table className="table justify-content-center">
+                <div className="fondo-formMenuAdmin  text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
+                <table className="col-12  text-center  fuente-formMenuAdmin">
                 <thead>
-                  <tr>
+                  <tr className=''>
                     {/* <th scope="col">ID</th> */}
-                    <th scope="col">username</th>
-                    <th scope="col">email</th>
-                    <th scope="col">rol</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Rol</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Acciones</th>
                   </tr>
                 </thead>
-                  <tbody>
+                  <tbody className=''>
                     {listaUsuario.map((elemento) => (
                       <tr key={elemento._id} data-id={elemento._id}>
                         {/* <th scope="row">{elemento._id}</th> */}
@@ -201,8 +201,8 @@ function EditUsuario() {
                             />
                             {errors.estado && <p className='text-red-500'>estado es requerido</p>}
                           </div>
-                          <div>       
-                          <button type="submit" className="btn btn-primary">Modificar</button>
+                          <div className='text-center mb-3'>       
+                          <button type="submit" className="btn btn-success">Modificar</button>
                           </ div> 
                           </form>
                  </div>                      
@@ -244,15 +244,15 @@ function EditUsuario() {
                           {errors.password && <p className='text-red-500'>Contraseña es requerida</p>}
                           <span id="passwordHelpInline" className="form-text"></span>      
                           </div>
-                        <div className='justify-content-center'>       
-                        <button type="submit" className="btn btn-primary">Dar de alta</button>
+                        <div className='text-center mb-3'>       
+                        <button type="submit" className="btn btn-success">Dar de alta</button>
                         </div>
                         </form>
                     </div>        
             </div>  
             </>) }
   </div>
-
+  
 
   
 

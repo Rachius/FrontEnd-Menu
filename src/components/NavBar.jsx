@@ -58,7 +58,7 @@ function Navbar () {
 
     <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark">
        <div class="container-fluid">
-         <div class="" id="navbarNavDropdown">
+         <div class="">
            <ul class="navbar-nav">
              {isAuthenticated  && user.rol ==='admin' ? (
              <>

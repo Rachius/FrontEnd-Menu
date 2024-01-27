@@ -97,14 +97,14 @@ function CartaMenu ()  {
 
   return (
     
-    <div className='row align-items-center carta-banner'>
-    <div>
+    <div className='row align-items-center carta-banner col-12'>
+    
   
         <Helmet>
         <title>Le Forky</title>
       </Helmet>
         <section>
-          {(isAuthenticated && user.rol !== 'admin' || 'user') ? (
+          {(!isAuthenticated) ? (
           <div className="alert alert-success">Tienes que iniciar sesion para poder encargar</div>
           ):null}
           
@@ -231,7 +231,7 @@ function CartaMenu ()  {
             </div>
           </div>
         </section>
-        </div>  
+        
         <footer className="bg-dark text-light pt-5 pb-4">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ea vero quo dolor dolorum, commodi at excepturi eum eaque tempora minima itaque culpa, perferendis iste nostrum ipsa, eveniet adipisci nihil!</p>
         </footer>

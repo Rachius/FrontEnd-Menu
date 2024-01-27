@@ -47,9 +47,9 @@ function EditMenu ()  {
       </Helmet>
       <div className='row justify-content-around col-12'>
                   <div className='col-lg-6 col-md-5 col-sm-12 mt-5'>
-                    <h4 className='editMenuTitulo text-center'>Lista de Menus</h4>
-                    <div className="table-container" style={{ maxHeight: "550px", overflowY: "auto" }}>
-                      <table className="table">
+                    <h4 className='editMenuTitulo text-center white-star-carta'>Menus</h4>
+                    <div className="table-container " style={{ maxHeight: "550px", overflowY: "auto" }}>
+                      <table className="fondo-formMenuAdmin text-center fuente-formMenuAdmin">
                   <thead>
                     <tr>
                       <th scope="col">ID</th>
@@ -82,7 +82,7 @@ function EditMenu ()  {
                             />
                           </div>
                         </td>
-                        <td><button type="submit" class="btn btn-warning mb-3 m-1">Editar</button></td>
+                        <td><button type="submit" class="btn btn-secondary mb-3 m-1">Editar</button></td>
                         <td><button type="submit" class="btn btn-danger mb-3 m-1">Eliminar</button></td>
                       </tr>
                     ))}
@@ -93,7 +93,7 @@ function EditMenu ()  {
      
           
           <div className='col-lg-4 col-md-6 col-sm-10 pb-5 pt-1  '>
-              <h3 className='negrita-color-negro mt-5 editMenuTitulo text-center'>Editar Menu</h3>
+              <h3 className='mt-5 editMenuTitulo text-center white-star-carta'>Editar Menu</h3>
               <div className='bordered d-flex justify-content-center col-md-12 editMenuFondo mx-auto'>
            
                       {RegisterErrors.map((error, i)=> (
