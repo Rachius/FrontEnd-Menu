@@ -306,7 +306,7 @@
 
 .lapiz{
   
- background-image: url(/public/pencil-fill.svg);
+ /* background-image: url(/public/pencil-fill.svg); */
  background-repeat: no-repeat;
  background-size:auto;
   }
@@ -350,7 +350,7 @@ color: white;
   font-family:'Times New Roman';
   font-size: 40px;
   color:#ffffff;
-  background-color: #ffffffd9);
+  background-color: #ffffffd9;
   text-shadow: 2px 2px 2px #115d0a, -2px -2px 2px #115d0a; 
 }
 

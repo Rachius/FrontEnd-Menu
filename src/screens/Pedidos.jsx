@@ -92,17 +92,21 @@ import { Helmet } from 'react-helmet';
 
 
     const handleFinalizarPedido = () => {
-      // Obtener datos del carrito del localStorage
-      const savedCart = localStorage.getItem('cart');
-      const existingCart = savedCart ? JSON.parse(savedCart) : { id: null, username: null, items: [], total: 0 };
-      // Extraer datos necesarios
-      const { id, username, total, items } = existingCart;
 
-      const enviarPedido =   JSON.stringify({ id, username, total, items })
+      const savedCart = JSON.parse(localStorage.getItem('cart')) || { id: null, username: null, items: [], total: 0 };
+
+      // Obtener datos del carrito del localStorage
+
+      // Extraer datos necesarios
+      const { id, username, total, items } = savedCart;
+
+      const enviarPedido = { id, username, total, items }
+
+      console.log(enviarPedido)
 
       // Realizar la petición POST al backend
      
-      carritoPedidos(enviarPedido)
+       carritoPedidos(enviarPedido)
     };
   
   

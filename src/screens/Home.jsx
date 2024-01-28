@@ -1,14 +1,13 @@
 
-import { set, useForm } from 'react-hook-form';
-import { Button } from 'bootstrap';
+import {  useForm } from 'react-hook-form';
+
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+
 import { useAuth, AuthProvider } from '../contexts/AuthContex.jsx';
 import { listarMenuRequest } from '../api/auth';
-import { listarCarritoRequest } from '../api/auth';
+
 import { Helmet } from 'react-helmet';
-import Alert from 'bootstrap';
+
 
 
 
@@ -25,28 +24,34 @@ function CartaMenu ()  {
   const [username,setUsername] = useState()
   const [total, setTotal] = useState(0);
 
-
   const handleAddToCart = (item, username, id) => {
     const savedCart = localStorage.getItem('cart');
     let existingCart = savedCart ? JSON.parse(savedCart) : { id, username, items: [], total: 0 };
-  
-    const existingItemIndex = existingCart.items.findIndex(existingItem => existingItem._id === item._id);
-  
+
+    console.log(existingCart)
+    const existingItemIndex = existingCart.items.findIndex(existingItem => existingItem.idmenu === item._id.toString());
+
     if (existingItemIndex !== -1) {
       // Si el artículo ya existe, aumenta la cantidad
       existingCart.items[existingItemIndex].cantidad += 1;
     } else {
       // Si es un nuevo artículo, agrégalo con cantidad 1
-      item.cantidad = 1;
-      existingCart.items.push(item);
+      const newItem = {
+        idmenu: item._id.toString(),
+        tituloMenu: item.tituloMenu,
+        categoriaMenu: item.categoriaMenu,
+        precioMenu: item.precioMenu,
+        cantidad: 1
+      };
+      existingCart.items.push(newItem);
     }
-  
+
     existingCart.total = existingCart.items.reduce((acc, currentItem) => acc + currentItem.precioMenu * currentItem.cantidad, 0);
-  
+
     localStorage.setItem('cart', JSON.stringify(existingCart));
     setTotal(existingCart.total);
-  };
-  
+    console.log(existingCart);
+};
 
   useEffect(()=>{
 
@@ -54,6 +59,12 @@ function CartaMenu ()  {
       try {
             const listadeM = await listarMenuRequest()      
             setlistaMenu(listadeM.data)
+            
+            setUsername(user.username)
+            setid(user._id)
+            console.log(user._id)
+            console.log(user.username)
+
            } catch (error) {
             console.log(error.data)
 
@@ -67,20 +78,6 @@ function CartaMenu ()  {
 
 
 
-    const agregarAlCarrito = (elemento) => {
-      // Copiar el pedido actual y agregar el nuevo elemento
-      const nuevoCarrito = [...carrito, elemento];
-      
-      // Actualizar el estado del pedido
-      setCarrito(nuevoCarrito);
-      setShowAlert(true);
-      // Ocultar el alert después de 3 segundos (puedes ajustar este tiempo)
-      setTimeout(() => {
-      setShowAlert(false);
-        }, 3000);
-      // Guardar en localStorage
-      localStorage.setItem('pedido', JSON.stringify(nuevoCarrito));
-    };
 
 
 
