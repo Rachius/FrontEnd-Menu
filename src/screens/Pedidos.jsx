@@ -52,14 +52,21 @@ const Carrito = () => {
     setTotalAPagar(newTotal);
   };
 
-  const handleFinalizarPedido = () => {
-    const savedCart = localStorage.getItem('cart');
-    const existingCart = savedCart ? JSON.parse(savedCart) : { id: null, username: null, items: [], total: 0 };
-    const { id, username, total, items } = existingCart;
-    const enviarPedido = JSON.stringify({ id, username, total, items });
-    carritoPedidos(enviarPedido);
-  };
+    const handleFinalizarPedido = () => {
 
+      const savedCart = JSON.parse(localStorage.getItem('cart')) || { id: null, username: null, items: [], total: 0 };
+      const { id, username, total, items } = savedCart;
+      const enviarPedido = { id, username, total, items }
+
+      console.log(enviarPedido)
+
+      // Realizar la petición POST al backend
+     
+       carritoPedidos(enviarPedido)
+    };
+  
+  
+    
   return (
     <div className="d-flex col-12 row carrito-banner justify-content-center">
       <Helmet>

@@ -1,11 +1,14 @@
+
+import { set, useForm } from 'react-hook-form';
+import { Button } from 'bootstrap';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useAuth, AuthProvider } from '../contexts/AuthContex.jsx';
 import { listarMenuRequest } from '../api/auth';
+import { listarCarritoRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
-import Alert from 'bootstrap';
+
 
 function CartaMenu() {
   const [carrito, setCarrito] = useState([]);
@@ -21,12 +24,13 @@ function CartaMenu() {
   const handleAddToCart = (item, username, id) => {
     const savedCart = localStorage.getItem('cart');
     let existingCart = savedCart ? JSON.parse(savedCart) : { id, username, items: [], total: 0 };
-
+  
     const existingItemIndex = existingCart.items.findIndex(existingItem => existingItem._id === item._id);
-
+  
     if (existingItemIndex !== -1) {
       existingCart.items[existingItemIndex].cantidad += 1;
     } else {
+      // Si es un nuevo artículo, agrégalo con cantidad 1
       item.cantidad = 1;
       existingCart.items.push(item);
     }
@@ -36,28 +40,44 @@ function CartaMenu() {
     localStorage.setItem('cart', JSON.stringify(existingCart));
     setTotal(existingCart.total);
   };
+  
 
-  useEffect(() => {
-    async function listadeMenus() {
+  useEffect(()=>{
+
+    async function listadeMenus(){
       try {
-        const listadeM = await listarMenuRequest();
-        setlistaMenu(listadeM.data);
-      } catch (error) {
-        console.log(error.data);
-      }
-    }
-    listadeMenus();
-  }, []);
+            const listadeM = await listarMenuRequest()      
+            setlistaMenu(listadeM.data)
+           } catch (error) {
+            console.log(error.data)
 
-  const agregarAlCarrito = (elemento) => {
-    const nuevoCarrito = [...carrito, elemento];     // Copiar el pedido actual y agregar el nuevo elemento
-    setCarrito(nuevoCarrito);                        // Actualizar el estado del carrito
-    setShowAlert(true);
-    setTimeout(() => {
+           }
+        }
+        listadeMenus()
+    },[])
+
+
+
+
+
+
+    const agregarAlCarrito = (elemento) => {
+      // Copiar el pedido actual y agregar el nuevo elemento
+      const nuevoCarrito = [...carrito, elemento];
+      
+      // Actualizar el estado del pedido
+      setCarrito(nuevoCarrito);
+      setShowAlert(true);
+      // Ocultar el alert después de 3 segundos (puedes ajustar este tiempo)
+      setTimeout(() => {
       setShowAlert(false);
-    }, 3000);
-    localStorage.setItem('pedido', JSON.stringify(nuevoCarrito)); // Guardar en localStorage
-  };
+        }, 3000);
+      // Guardar en localStorage
+      localStorage.setItem('pedido', JSON.stringify(nuevoCarrito));
+    };
+
+
+
 
   useEffect(() => {
     const savedCart = localStorage.getItem('cart');
