@@ -2,9 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContex';
 import Home from '../screens/Home';
+import LogoutButton from '../screens/LogOut';
 
 function Navbar() {
   const { isAuthenticated, logOut, user } = useAuth();
+
+  
+
+
 
   return (
     <nav className="navbar sticky-top navbar-expand navbar-dark bg-dark">
@@ -27,11 +32,7 @@ function Navbar() {
                   <Link to="/editUsuario" className="nav-link">Editar Usuario</Link>
                 </li>
                 <li className="nav-item" >
-                  <Link to={Home} onClick={() => {
-                    logOut();
-                  }}>
-                    <li className="nav-link">LogOut</li>
-                  </Link>
+                 <LogoutButton />
                 </li>
               </>
             ) : isAuthenticated && user.rol === 'user' ? (
@@ -42,15 +43,10 @@ function Navbar() {
                 </button>
                 <li className="nav-item">
                   <a className="nav-link" href="/pedidos">Pedidos</a>
-                </li>
-                <li className="nav-item">
+                  
                 </li>
                 <li className="nav-item" >
-                  <Link to='/Home' onClick={() => {
-                    logOut();
-                  }}>
-                    <a className="nav-link" href="/pedidos">LogOut</a>
-                  </Link>
+                 <LogoutButton />
                 </li>
               </>
             ) : (

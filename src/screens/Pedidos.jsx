@@ -73,17 +73,17 @@ const Carrito = () => {
         <title>Pedidos</title>
       </Helmet>
       <div className="card col-lg-8 col-md-10 col-sm-10 mt-5 shadow-lg rounded-2 bordeCarta fondo-CardCarrito">
-        <h4 className="mt-3 mb-3 text-center white-star-carta">Orden de pedido</h4>
+        <h4 className="mt-3 mb-3 text-center  white-star-carta">Orden de pedido</h4>
         <div className="table-container text-center" style={{ maxHeight: "550px", overflowY: "auto" }}>
-          <table className="col-12 justify-content-around">
+          <table className="col-12 justify-content-around mb-3">
             <thead className="">
               <tr className="">
                 <th className="bg-transparent bordeTituloCarrito">ID</th>
                 <th className="bg-transparent bordeTituloCarrito">Producto</th>
                 <th className="bg-transparent bordeTituloCarrito">Precio</th>
                 <th className="bg-transparent bordeTituloCarrito"></th>
-                <th className="bg-transparent bordeTituloCarrito"></th>
-                <th className="bg-transparent bordeTituloCarrito"></th>
+                <th className="bg-transparent bordeTituloCarrito">Quitar</th>
+                <th className="bg-transparent bordeTituloCarrito">Agregar</th>
               </tr>
             </thead>
             <tbody className="">
@@ -126,15 +126,28 @@ const Carrito = () => {
         </div>
       </div>
 
-      <div className="card col-sm-10 col-md-6 col-lg-6 botonesCarrito align-items-center justify-content-around mx-auto mt-1 mb-5">
+      <div className="card col-sm-10 col-md-6 col-lg-6 botonesCarrito align-items-center justify-content-around mx-auto mt-3 mb-5">
         <h5 className="card-title mt-2">Total a Pagar: ${totalAPagar}</h5>
-        <a href="/home" className="btn btn-outline-success mb-3 col-md-6">Seguir ordenando</a>
-        <button onClick={handleFinalizarPedido} className="btn btn-outline-success mb-3 col-md-6">
+        <a href="/home" className="btn bg-verde-total button-hover mb-3 col-md-6">Seguir ordenando</a>
+        <button onClick={handleFinalizarPedido} className="btn btn-outline-success button-hover mb-3 col-md-6">
           Finalizar pedido
         </button>
       </div>
-      <footer className="fixed-bot bg-dark text-light pt-5 pb-4">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quo quae cum odio tempore quibusdam, earum soluta, commodi architecto repellat fuga autem aspernatur ratione id ipsum incidunt excepturi, doloribus laudantium.</p>
+      <footer className="bg-dark text-light pt-5 pb-2 mt-5 text-center ">
+        <div className=' col-lg-12 row'>
+          <div className='col-lg-4 col-md-12 col-sm-12'>
+          <p>Dirección: Congreso de Tucumán 141, San Miguel de Tucumán, Tucumán </p>
+          <p>Horarios de atención: Lun a Dom de 11:30-16:00 hs. | 19:00-1:00 hs.</p>
+          </div>
+          <div className='col-lg-4 col-md-12 col-sm-12'>
+          <p>LOGO</p>
+          </div>
+          <div className='col-lg-4 col-md-12 col-sm-12'>
+          <p>Contacto: <a href="tel:03815958693" className='link-color'>0381-5958693</a></p>
+          <p>Email: <a href="mailto:info@leforky.com.ar" className='link-color'>info@leforky.com.ar</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/francoamado7/" className='link-color' target="_blank" rel="noopener noreferrer">@francoamado7</a></p>
+          </div>
+        </div>
       </footer>
     </div>
   );
