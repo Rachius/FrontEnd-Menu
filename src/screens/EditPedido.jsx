@@ -79,10 +79,10 @@ function EditPedidos() {
         <title>Editar Pedidos</title>
       </Helmet>
       <div className='row justify-content-around col-12 '>
-        <div className='col-lg-6 col-md-5 col-sm-12 mt-5 '>
+        <div className='col-lg-6 col-md-12 col-sm-12 mt-5 '>
           <h4 className='editMenuTitulo text-center white-star-carta'>Pedidos</h4>
-          <div className="table-container text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
-            <table className="fondo-formMenuAdmin ">
+          <div className="table-container  text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
+            <table className="fondo-formMenuAdmin col-12 ">
               <thead>
                 <tr className=''>
                   <th scope="col">ID</th>
@@ -90,10 +90,10 @@ function EditPedidos() {
                   <th scope="col">Cliente</th>
                   <th scope="col">Total</th>
                   <th scope="col">Estado</th>
-                  <th scope="col">Detalle</th>
+                  
                 </tr>
               </thead>
-              <tbody>
+              <tbody className='col-12'>
                 {listaPedido.map((elemento, index) => (
                   <tr key={index}>
                     <th scope="row">{index + 1}</th>
@@ -101,7 +101,7 @@ function EditPedidos() {
                     <td>{elemento.username}</td>
                     <td>{elemento.total}</td>
                     <td>{elemento.estado}</td>
-                    <td>  {elemento.items.map((item, itemIndex) => (
+                    {/* <td>  {elemento.items.map((item, itemIndex) => (
                       
         <div key={itemIndex}>
           {item.tituloMenu}
@@ -109,9 +109,9 @@ function EditPedidos() {
           </div>
       ))}
 
-          </td>
+          </td> */}
 
-
+          <td className='col-4'>
           {pedidoEditID === elemento._id ? (
                         <>
                           <button
@@ -120,16 +120,12 @@ function EditPedidos() {
                             onClick={() => {
                               setPedidoId(null);
                               reset(); 
-                              
                             }}
-                          >
-                            Cancelar
+                          > Cancelar
                           </button>
                           <button type="button" 
                           onClick={onSubmit}
-                class="btn btn-success mb-3 m-1">Confirmar</button>
-
-                          
+                class="btn btn-success m-1">Confirmar</button> 
                         </>
                       ) : (
                         <button
@@ -142,7 +138,7 @@ function EditPedidos() {
 
                         
                       )}
-                   
+                </td>     
                   </tr>
                 ))}
               </tbody>
