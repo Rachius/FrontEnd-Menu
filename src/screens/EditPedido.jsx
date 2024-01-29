@@ -55,7 +55,7 @@ function EditPedidos() {
   }, []);
 
   const onSubmit = () => {
-    // Asegúrate de tener un pedidoEditID válido antes de proceder
+   
     if (pedidoEditID) {
       const cleanedValues = {
         estado: 'realizado',  
