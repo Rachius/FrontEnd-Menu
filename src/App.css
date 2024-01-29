@@ -335,6 +335,15 @@ color: white;
   }
   
 
+  .link-color {
+    color:  #1f7917; 
+    text-decoration: none;
+  }
+  
+  .link-color:hover {
+    color: #10bb10;
+  }
+  
 
 
 
@@ -342,7 +351,7 @@ color: white;
   font-family:'Times New Roman';
   font-size: 40px;
   color:#ffffff;
-  background-color: #ffffffd9;
+  
   text-shadow: 2px 2px 2px #115d0a, -2px -2px 2px #115d0a; 
 }
 

@@ -15,6 +15,8 @@ import { AdminRoute } from './ProtectedRoutes';
 import EditPedido from './screens/EditPedido.jsx';
 import EditUsuario from './screens/EditUsuario.jsx';
 import EditMenu from './screens/editMenu.jsx';
+import Logout from './screens/LogOut';
+import LogoutScr from './screens/LogoutScr.jsx';
 
 
 
@@ -37,25 +39,30 @@ function App() {
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/home" element={<CartaMenu/>}/>
             <Route path="/" element={<CartaMenu/>}/>
+            <Route path="/logoutscr" element={<LogoutScr/>}/>
+            
             </Route>
 
             <Route>
             <Route element={<AdminRoute/>}>
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/home" element={<CartaMenu/>}/>
-            <Route path="/logOut" element={<LogOut/>}/>
+            <Route path="/logout" element={<LogOut/>}/>
             <Route path="/editMenu" element={<EditMenu/>}/>
             <Route path="/editUsuario" element={<EditUsuario/>}/>
             <Route path="/editPedido" element={<EditPedido/>}/>
             <Route path="/" element={<CartaMenu/>}/>
+            <Route path="/logout" element={<LogOut/>}/>
+            <Route path="/logoutscr" element={<LogoutScr/>}/>
             </Route>
 
             </Route>
             <Route element={<ProtectedRoute/>}>            
             <Route path="/pedidos" element={<Pedidos/>}/>
             <Route path="/home" element={<CartaMenu/>}/>
-            <Route path="/logOut" element={<LogOut/>}/>
+            <Route path="/logout" element={<LogOut/>}/>
             <Route path="/" element={<CartaMenu/>}/>
+            <Route path="/logoutscr" element={<LogoutScr/>}/>
           </Route>
         
           </Routes>
