@@ -3,11 +3,13 @@ import { Navigate, Outlet } from "react-router-dom"
 
 
 function ProtectedRoute() {
-    const {loading,isAuthenticated}= useAuth()
+    const {loading,user,isAuthenticated } = useAuth()
     if(loading) return <h1>Loading...</h1>
-    if(!loading && !isAuthenticated) return <Navigate to='/login' replace/>
+    const isUser =isAuthenticated && user && user.rol === 'user';
+    console.log(user.rol)
+    if (!loading && !isUser) return <Navigate to="/Home" replace />;
 
-    return <Outlet/>
+   return <Outlet/>
 }
 /*
 export function Unlogin() {

@@ -79,8 +79,8 @@ function EditMenu ()  {
 
   return (
     
-    <div className='d-flex justify-content-between conteiner-fluid'>
-      <br />
+<div className='container-fluid fondo-admin d-flex col-12 flex-wrap'>
+        <br />
       <br />
       
       <div className='justify-content-left col-7'>
@@ -88,8 +88,10 @@ function EditMenu ()  {
       <h4>Lista de Menus</h4>
       </Helmet>
       <br />
+      <h4 className='editMenuTitulo text-center white-star-carta'>Menus</h4>
+      <div className="table-container text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
       <form>
-        <table className="table">
+        <table className="fondo-formMenuAdmin ">
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -154,32 +156,28 @@ function EditMenu ()  {
           </tbody>
         </table>
       </form>
+      </div>
     </div>
         
     
                 <div className=''>
                 {editingUserId ? (<> 
-                      <div className="text-center col-sm-12 col-lg-6 mx-auto pb-5 pt-1">
-                
+                  <div className='container-fluid fondo-admin d-flex col-12 flex-wrap'>                
          
 
-                
+
                           
-                              <h3 className='negrita-color-negro mt-2'>Editar Menu</h3>
+                              <h3 className='editMenuTitulo text-center white-star-carta'>Editar Menu</h3>
                                 <br />
                 
                       </div>
-                        <div className='bordered d-flex justify-content-center col-sm-10 mx-auto'>
+                        <div className="fondo-formMenuAdmin " >
                       {RegisterErrors.map((error, i)=> (
                       <div className='bg-red-500  justify-content-center'key={i}>{error}
                       </div>))}
                       <form onSubmit={onSubmit} noValidate>
 
-                      <div class="mb-3 needs-validation px-5" noValidate>
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Ingrese el ID del menú a editar</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('_id', { required: false })} />
-                        {errors._id && <p className='text-red-500'>Id is required</p>}
-                        </div>
+                      
                         <div class="mb-3 needs-validation px-5" noValidate>
                         <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Nombre del menu</label>
                         <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('tituloMenu', { required: false })} defaultValue={editTitulo} />
@@ -206,18 +204,16 @@ function EditMenu ()  {
                         </div>
 
                         <div className="form-check form-switch">
-  <label htmlFor="InputEstado" className="form-label">
-    Estado
-  </label>
+  <label htmlFor="InputEstado" className="fuente-formMenuAdmin form-label">Estado</label>
   <input
     className="form-check-input"
     type="checkbox"
     id="InputEstado"
     checked={editEstado}
     {...register('estado', { required: false })}
-    onChange={(e) => setEstadoEdit(e.target.value === 'true')}
+    onChange={(e) => setEstadoEdit(e.target.checked)}
   />
-  {errors.estado && <p className='text-red-500'>estado es requerido</p>}
+  {errors.estado && <p className='text-red-500'>Estado es requerido</p>}
 </div>
                         <div>         
                    
@@ -244,11 +240,7 @@ function EditMenu ()  {
                       </div>))}
                       <form onSubmit={onSubmit} noValidate>
 
-                      <div class="mb-3 needs-validation px-5" noValidate>
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Ingrese el ID del menú a editar</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('_id', { required: false })} />
-                        {errors._id && <p className='text-red-500'>Id is required</p>}
-                        </div>
+                
                         <div class="mb-3 needs-validation px-5" noValidate>
                         <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Nombre del menu</label>
                         <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('tituloMenu', { required: true })} />

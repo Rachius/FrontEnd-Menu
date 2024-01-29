@@ -7,7 +7,7 @@ import { listarMenuRequest, listarPedidoRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
 
 function EditPedidos() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit,reset ,formState: { errors } } = useForm();
   const [listaMenu, setlistaMenu] = useState([]);
   const [listaPedido, setlistaPedido] = useState([]);
   const { crearMenu, listarMn, pedidoEdit,isAuthenticated, errors: RegisterErrors } = useAuth();
@@ -74,7 +74,7 @@ function EditPedidos() {
 
 
   return (
-    <div className='container-fluid fondo-admin d-flex col-12 flex-wrap'>
+      <div className='container-fluid fondo-admin d-flex col-12 flex-wrap'>
       <Helmet>
         <title>Editar Pedidos</title>
       </Helmet>
@@ -116,8 +116,12 @@ function EditPedidos() {
                         <>
                           <button
                             className="btn btn-danger"
-                            type="submit"
-                            onClick={() => setPedidoId(null)}
+                            type="button"
+                            onClick={() => {
+                              setPedidoId(null);
+                              reset(); 
+                              
+                            }}
                           >
                             Cancelar
                           </button>
@@ -158,22 +162,21 @@ function EditPedidos() {
             ))}
             <form onSubmit={onSubmit} noValidate>
       
-
-              <div class="mb-2 needs-validation px-5" noValidate>
-                <label for="InputNameReg" className=" fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Usuario</label>
-                <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('tituloMenu', { required: true })} defaultValue={editUsername} />
-                {errors.tituloMenu && <p className='text-red-500'>Fecha</p>}
-              </div>
-              <div class="mb-2 needs-validation px-5" noValidate>
-                <label for="InputNameReg" className=" fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Fecha Pedido</label>
-                <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('tituloMenu', { required: true })} defaultValue={editFecha} />
-                {errors.tituloMenu && <p className='text-red-500'>Fecha</p>}
-              </div>
+            <div class="mb-2 needs-validation px-5" noValidate>
+  <label for="InputNameRegUsuario" className="fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Usuario</label>
+  <input type="text" className="form-control" id="InputNameRegUsuario" aria-describedby="nameregHelp" {...register('username', { required: true })} value={editUsername} />
+  {errors.username && <p className='text-red-500'>Campo requerido</p>}
+</div>
+<div class="mb-2 needs-validation px-5" noValidate>
+  <label for="InputNameRegFecha" className="fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Fecha Pedido</label>
+  <input type="text" className="form-control" id="InputNameRegFecha" aria-describedby="nameregHelp" {...register('fechaPedido', { required: true })} value={editFecha} />
+  {errors.fechaPedido && <p className='text-red-500'>Campo requerido</p>}
+</div>
               <div className="mb-2 needs-validation px-5" noValidate>
   <label htmlFor="selectEstado" className="fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">
     Estado
   </label>
-  <select id="selectEstado" className="form-control" {...register('estado', { required: true })} defaultValue={editEstado}>
+  <select id="selectEstado" className="form-control" {...register('estado', { required: true })} value={editEstado}>
     <option value="pendiente">Pendiente</option>
     <option value="realizado">Realizado</option>
   </select>
@@ -188,7 +191,7 @@ function EditPedidos() {
 
               <div class="mb-2 px-5">
                 <label for="InputNameReg" className="fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Precio</label>
-                <input type="number" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('precioMenu', { required: false })} defaultValue={editTotal} />
+                <input type="number" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('precioMenu', { required: false })} value={editTotal} />
                 {errors.precioMenu && <p className='text-red-500'>Precio is required</p>}
               </div>
 

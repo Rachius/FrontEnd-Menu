@@ -137,12 +137,12 @@ function EditUsuario() {
                 <form onSubmit={onSubmit} noValidate>
                   <div class="mb-3 needs-validation" noValidate>
                     <label for="InputNameReg" className="form-label fuente-formMenuAdmin">username</label>
-                    <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: false })} defaultValue={usernameEdit} />
+                    <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: false })} value={usernameEdit} />
                     {errors.username && <p className='text-red-500'>Username es requerido</p>}
                   </div>
                   <div class="mb-3">
                     <label for="InputEmailReg" className="form-label fuente-formMenuAdmin">Email del usuario</label>
-                    <input type="email" className="form-control" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: false })} />
+                    <input type="email" className="form-control" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: false })} value={editEmail}/>
                     {errors.email && <p className='text-red-500'>Email es requerido</p>}
                   </div>
                   <div className="mb-3 needs-validation" noValidate>
@@ -158,17 +158,17 @@ function EditUsuario() {
                     {errors.rol && <p className='text-red-500'>Rol es requerido</p>}
                   </div>
                   <div className="form-check form-switch">
-                    <label htmlFor="InputEstado" className=" fuente-formMenuAdmin form-label">Estado</label>
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="InputEstado"
-                      checked={editEstado}
-                      {...register('estado', { required: false })}
-                      onChange={(e) => setEstadoEdit(e.target.value === 'true')}
-                    />
-                    {errors.estado && <p className='text-red-500'>estado es requerido</p>}
-                  </div>
+  <label htmlFor="InputEstado" className="fuente-formMenuAdmin form-label">Estado</label>
+  <input
+    className="form-check-input"
+    type="checkbox"
+    id="InputEstado"
+    checked={editEstado}
+    {...register('estado', { required: false })}
+    onChange={(e) => setEstadoEdit(e.target.checked)}
+  />
+  {errors.estado && <p className='text-red-500'>Estado es requerido</p>}
+</div>
                   <div className='text-center mb-3'>
                     <button type="submit" className="btn btn-success">Modificar</button>
                   </div>

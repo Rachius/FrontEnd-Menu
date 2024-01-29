@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/AuthContex';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
+
 
 const Carrito = () => {
+  const navigate = useNavigate();
   const [carrito, setCarrito] = useState([]);
   const [totalAPagar, setTotalAPagar] = useState(0);
   const { carritoPedidos } = useAuth();
@@ -60,9 +63,12 @@ const Carrito = () => {
 
       console.log(enviarPedido)
 
-      // Realizar la petición POST al backend
-     
+      
        carritoPedidos(enviarPedido)
+       localStorage.clear();
+      
+       navigate('/esperaPedido');
+
     };
   
   

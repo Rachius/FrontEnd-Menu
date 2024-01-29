@@ -9,6 +9,7 @@ import CartaMenu from './screens/Home';
 import Registro from './screens/Registro';
 import Login from './screens/Login';
 import Pedidos from './screens/Pedidos';
+import Platos from './screens/Platos';
 import LogOut from './screens/LogOut';
 import ProtectedRoute from './ProtectedRoutes';
 import { AdminRoute } from './ProtectedRoutes';
@@ -17,6 +18,7 @@ import EditUsuario from './screens/EditUsuario.jsx';
 import EditMenu from './screens/editMenu.jsx';
 import Logout from './screens/LogOut';
 import LogoutScr from './screens/LogoutScr.jsx';
+import EsperandoPedido from './screens/esperaPedido.jsx';
 
 
 
@@ -34,13 +36,16 @@ function App() {
 
           <Routes>
             <Route >
-            <Route path="/registro" element={<Registro/>}/>
-            <Route path="/login" element={<Login/>}/>
             <Route path="/pedidos" element={<Pedidos/>}/>
+
+            <Route path="/registro" element={<Registro/>}/>
+              <Route path="/login" element={<Login/>}/>
             <Route path="/home" element={<CartaMenu/>}/>
             <Route path="/" element={<CartaMenu/>}/>
             <Route path="/logoutscr" element={<LogoutScr/>}/>
+            <Route path="/esperaPedido" element={<EsperandoPedido/>} />
             
+       
             </Route>
 
             <Route>
@@ -63,6 +68,8 @@ function App() {
             <Route path="/logout" element={<LogOut/>}/>
             <Route path="/" element={<CartaMenu/>}/>
             <Route path="/logoutscr" element={<LogoutScr/>}/>
+            <Route path="/esperaPedido" element={<EsperandoPedido/>} />
+
           </Route>
         
           </Routes>

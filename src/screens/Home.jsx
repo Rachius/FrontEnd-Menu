@@ -58,6 +58,8 @@ function CartaMenu() {
       try {
             const listadeM = await listarMenuRequest()      
             setlistaMenu(listadeM.data)
+            setUsername(user.username)
+            setid(user.id)
            } catch (error) {
             console.log(error.data)
            }
@@ -67,20 +69,7 @@ function CartaMenu() {
 
 
 
-    const agregarAlCarrito = (elemento) => {
-      // Copiar el pedido actual y agregar el nuevo elemento
-      const nuevoCarrito = [...carrito, elemento];
-      
-      // Actualizar el estado del pedido
-      setCarrito(nuevoCarrito);
-      setShowAlert(true);
-      // Ocultar el alert después de 3 segundos (puedes ajustar este tiempo)
-      setTimeout(() => {
-      setShowAlert(false);
-        }, 3000);
-      // Guardar en localStorage
-      localStorage.setItem('pedido', JSON.stringify(nuevoCarrito));
-    };
+ 
 
 
 
