@@ -65,7 +65,7 @@ const Carrito = () => {
 
       
        carritoPedidos(enviarPedido)
-       localStorage.clear();
+        localStorage.clear();
       
        navigate('/esperaPedido');
 
