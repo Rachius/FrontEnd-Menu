@@ -85,7 +85,7 @@ function EditPedidos() {
         <title>Editar Pedidos</title>
       </Helmet>
       <div className='row justify-content-around col-12 '>
-        <div className='col-lg-6 col-md-5 col-sm-12 mt-5 '>
+        <div className='col-lg-6 col-md-12 col-sm-12 mt-5 '>
           <h4 className='editMenuTitulo text-center white-star-carta'>Pedidos</h4>
           <button onClick={handleToggleFiltrarPendientes} className="btn btn-primary mb-3 m-1">
             {filtrarPendientes ? 'Mostrar Todos' : 'Mostrar Pendientes'}
@@ -99,7 +99,7 @@ function EditPedidos() {
                   <th scope="col">Cliente</th>
                   <th scope="col">Total</th>
                   <th scope="col">Estado</th>
-                  <th scope="col">Detalle</th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -128,8 +128,7 @@ function EditPedidos() {
                               setPedidoId(null);
                               reset();
                             }}
-                          >
-                            Cancelar
+                          > Cancelar
                           </button>
                           <button
                             type="button"

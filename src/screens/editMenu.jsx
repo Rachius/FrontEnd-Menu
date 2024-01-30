@@ -79,16 +79,16 @@ function EditMenu ()  {
 
   return (
     
-<div className='container-fluid fondo-admin d-flex col-12 flex-wrap'>
+<div className='container-fluid justify-content-around fondo-admin d-flex col-12 flex-wrap'>
         <br />
       <br />
       
-      <div className='justify-content-left col-7'>
+      <div className='justify-content-left col-lg-7 col-md-12 col-sm-12'>
       <Helmet>
       <h4>Lista de Menus</h4>
       </Helmet>
       <br />
-      <h4 className='editMenuTitulo text-center white-star-carta'>Menus</h4>
+      <h4 className='editMenuTitulo text-center mt-4 white-star-carta'>Menus</h4>
       <div className="table-container text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
       <form>
         <table className="fondo-formMenuAdmin ">
@@ -160,18 +160,10 @@ function EditMenu ()  {
     </div>
         
     
-                <div className=''>
+              <div className='col-lg-4 col-md-12 col-sm-10 pb-5 pt-1  '>
                 {editingUserId ? (<> 
-                  <div className='container-fluid fondo-admin d-flex col-12 flex-wrap'>                
-         
-
-
-                          
-                              <h3 className='editMenuTitulo text-center white-star-carta'>Editar Menu</h3>
-                                <br />
-                
-                      </div>
-                        <div className="fondo-formMenuAdmin " >
+                    <h3 className='mt-5 editMenuTitulo mx-auto text-center white-star-carta'>Editar Menu</h3>
+                      <div className="bordered d-flex justify-content-center col-md-12 editMenuFondo mx-auto" >
                       {RegisterErrors.map((error, i)=> (
                       <div className='bg-red-500  justify-content-center'key={i}>{error}
                       </div>))}
@@ -179,102 +171,94 @@ function EditMenu ()  {
 
                       
                         <div class="mb-3 needs-validation px-5" noValidate>
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Nombre del menu</label>
+                        <label for="InputNameReg" className="fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Nombre del menu</label>
                         <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('tituloMenu', { required: false })} defaultValue={editTitulo} />
                         {errors.tituloMenu && <p className='text-red-500'>Nombre is required</p>}
                       </div>
                       
                         
                         <div class="mb-3 px-5">
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Descripción</label>
+                        <label for="InputNameReg" className="fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Descripción</label>
                         <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"  {...register('descripcionMenu', { required: false })} defaultValue={editDescripcion}/>
                         {errors.descripcionMenu && <p className='text-red-500'>Descripción is required</p>}
                         </div>
                         <div class="mb-3 px-5">
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Categoria</label>
+                        <label for="InputNameReg" className="fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Categoria</label>
                         <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('categoriaMenu', { required: false })} defaultValue={editCategoria}/>
                         {errors.categoriaMenu && <p className='text-red-500'>Categoria is required</p>}
 
                         </div>
                         <div class="mb-3 px-5">
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Precio</label>
+                        <label for="InputNameReg" className="fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Precio</label>
                         <input type="number" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('precioMenu', { required: false })}defaultValue={editPrecio}/>
                         {errors.precioMenu && <p className='text-red-500'>Precio is required</p>}
-
                         </div>
-
                         <div className="form-check form-switch">
-  <label htmlFor="InputEstado" className="fuente-formMenuAdmin form-label">Estado</label>
-  <input
-    className="form-check-input"
-    type="checkbox"
-    id="InputEstado"
-    checked={editEstado}
-    {...register('estado', { required: false })}
-    onChange={(e) => setEstadoEdit(e.target.checked)}
-  />
-  {errors.estado && <p className='text-red-500'>Estado es requerido</p>}
-</div>
+                        <label htmlFor="InputEstado" className=" fuente-formMenuAdmin form-label">Estado</label>
+                          <input
+                            className="form-check-input "
+                            type="checkbox"
+                            id="InputEstado"
+                            checked={editEstado}
+                            {...register('estado', { required: false })}
+                            onChange={(e) => setEstadoEdit(e.target.checked)}
+                          />
+                          {errors.estado && <p className='text-red-500'>Estado es requerido</p>}
+                        </div>
                         <div>         
                    
-                        <button type="submit" class="btn btn-warning mb-3 m-1">Editar</button>
+                        <button type="submit" class="btn text-center btn-warning mb-3 m-1">Editar</button>
                         </div>
                         
                       </form>
                      
                     </div>
                     </>) : (<> 
-                      <div className="text-center col-sm-12 col-lg-6 mx-auto pb-5 pt-1">
-                
-         
-
-                
-                          
-                              <h3 className='negrita-color-negro mt-2'>Crear Menu</h3>
-                                <br />
-                
-                      </div>
-                        <div className='bordered d-flex justify-content-center col-sm-10 mx-auto'>
+                      <h3 className='mt-5 editMenuTitulo mx-auto text-center white-star-carta'>Crear Menu</h3>
+                      <div className="bordered d-flex justify-content-center col-md-12 editMenuFondo mx-auto" >
                       {RegisterErrors.map((error, i)=> (
-                      <div className='bg-red-500 p-2'key={i}>{error}
+                      <div className='bg-red-500  justify-content-center'key={i}>{error}
                       </div>))}
                       <form onSubmit={onSubmit} noValidate>
 
                 
-                        <div class="mb-3 needs-validation px-5" noValidate>
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Nombre del menu</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('tituloMenu', { required: true })} />
-                        {errors.tituloMenu && <p className='text-red-500'>Nombre is required</p>}
-                        </div>
-                      
-                        
-                        <div class="mb-3 px-5">
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Descripción</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"  {...register('descripcionMenu', { required: true })}/>
-                        {errors.descripcionMenu && <p className='text-red-500'>Descripción is required</p>}
-                        </div>
-                        <div class="mb-3 px-5">
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Categoria</label>
-                        <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('categoriaMenu', { required: true })}/>
-                        {errors.categoriaMenu && <p className='text-red-500'>Categoria is required</p>}
+<div class="mb-3 needs-validation px-5" noValidate>
+<label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Nombre del menu</label>
+<input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('tituloMenu', { required: true })} />
+{errors.tituloMenu && <p className='text-red-500'>Nombre is required</p>}
+</div>
 
-                        </div>
-                        <div class="mb-3 px-5">
-                        <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Precio</label>
-                        <input type="number" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('precioMenu', { required: true })}/>
-                        {errors.precioMenu && <p className='text-red-500'>Precio is required</p>}
 
-                        </div>
+<div class="mb-3 px-5">
+<label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Descripción</label>
+<input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"  {...register('descripcionMenu', { required: true })}/>
+{errors.descripcionMenu && <p className='text-red-500'>Descripción is required</p>}
+</div>
+<div class="mb-3 px-5">
+<label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Categoria</label>
+<input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('categoriaMenu', { required: true })}/>
+{errors.categoriaMenu && <p className='text-red-500'>Categoria is required</p>}
 
-                        <div>         
-                   
-                        <button type="submit" class="btn btn-success mb-3 m-1">Crear</button>
+</div>
+<div class="mb-3 px-5">
+<label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Precio</label>
+<input type="number" className="form-control" id="InputNameReg" aria-describedby="nameregHelp"{...register('precioMenu', { required: true })}/>
+{errors.precioMenu && <p className='text-red-500'>Precio is required</p>}
 
-                        </div>
-                        
-                      </form>
+</div>
+
+<div>         
+
+<button type="submit" class="btn btn-success mb-3 m-1">Crear</button>
+
+</div>
+
+</form>
+
                      
                     </div>
+
+
                     
                     </>)  }
      

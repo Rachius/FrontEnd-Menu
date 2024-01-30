@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/AuthContex';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
+import { Modal, Button } from 'react-bootstrap';
+
 
 
 const Carrito = () => {
@@ -66,12 +68,21 @@ const Carrito = () => {
       
        carritoPedidos(enviarPedido)
         localStorage.clear();
-      
-       navigate('/esperaPedido');
+
+       setShowMessage(true);
+
+       setTimeout(() => {
+         setShowMessage(false);
+         
+         if (!showMessage) {
+           navigate('/esperaPedido');
+         }
+       }, 2000);
 
     };
   
-  
+    const [showMessage, setShowMessage] = useState(false);
+
     
   return (
     <div className="d-flex col-12 row carrito-banner justify-content-center">
@@ -131,6 +142,22 @@ const Carrito = () => {
           </table>
         </div>
       </div>
+      <Modal className='col-12' show={showMessage} onHide={() => setShowMessage(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Le Forky</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        Pedido Encargado!
+        </Modal.Body>
+        <Modal.Footer>
+          <Button className='btn btn-success' onClick={() => setShowMessage(false)} >
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+
+
 
       <div className="card col-sm-10 col-md-6 col-lg-6 botonesCarrito align-items-center justify-content-around mx-auto mt-3 mb-5">
         <h5 className="card-title mt-2">Total a Pagar: ${totalAPagar}</h5>
