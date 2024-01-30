@@ -188,9 +188,9 @@ function EditUsuario() {
                 </div>
               ))}
               <form>
-                <h3 className='fuente-formMenuAdmin'>Alta de usuario</h3>
+                
                 <div class="mb-3 needs-validation" noValidate>
-                  <label for="InputNameReg" className="form-label fuente-formMenuAdmin">username</label>
+                  <label for="InputNameReg" className="form-label fuente-formMenuAdmin">Usuario</label>
                   <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: false })} />
                   {errors.username && <p className='text-red-500'>Username es requerido</p>}
                 </div>

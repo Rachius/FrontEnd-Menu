@@ -92,10 +92,9 @@ function CartaMenu() {
         {(!isAuthenticated) ? (
           <div className="col-12 text-center alert alert-danger" role="alert">Tienes que iniciar sesión para poder encargar</div>
         ) : null}
-        <div className="card fondo-CardPlato text-center " >
-          <div className="card-body">
-            <h5 className="card-title carta-home-titulo"> Le Forky</h5>
-            <p className="card-text carta-home-titulo"> Los mejores Platos</p>
+        <div className=" logo-grande card fondo-CardPlato text-center " >
+          <div className="">
+            <p className="card-text logo-grande carta-home-titulo"> Los mejores Platos</p>
           </div>
         </div>
       </section>
@@ -253,7 +252,8 @@ function CartaMenu() {
           <p>Horarios de atención: Lun a Dom de 11:30-16:00 hs. | 19:00-1:00 hs.</p>
           </div>
           <div className='col-lg-4 col-md-12 col-sm-12'>
-          <p>LOGO</p>
+          <p className='logo-grande'>LOGO</p>
+          <img src="/src/img/Le_forky.png" alt="" />
           </div>
           <div className='col-lg-4 col-md-12 col-sm-12'>
           <p>Contacto: <a href="tel:03815958693" className='link-color'>0381-5958693</a></p>

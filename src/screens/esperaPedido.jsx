@@ -120,7 +120,7 @@ function EsperandoPedido() {
                 </tbody>
               </table>
             </div>
-            <Link to="/esperaPedido" className="btn btn-success mt-3">
+            <Link to="/home" className="btn btn-success mt-3">
               Volver al inicio
             </Link>
           </div>
