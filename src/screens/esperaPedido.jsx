@@ -49,67 +49,62 @@ function EsperandoPedido() {
 
 
     return (
-      <div className='d-flex justify-content-center bg-verde-blanco fondo-logReg align-items-center vh-100'>
-        <div className='row col-12'>
+      <div className=' col-12 bg-verde-blanco fondo-logReg  vh-100 text-center  justify-content-around row'>
           <Helmet>
             <title>Le Forky</title>
           </Helmet>
-          <br />
-          <div className="text-center col-sm-8 bg-verde-claro carta-titulo mx-auto pb-4 pt-1 ">
-            <br />
-            <h4 className='editMenuTitulo text-center white-star-carta mt-40'>Pedidos Pendientes</h4>
-            <div className="table-responsive text-center fuente-formMenuAdmin mb-4">
-  <table className="table table-bordered table-striped mx-auto">
-                <thead>
+          <div className=" text-center fuente-formMenuAdmin mt-4 col-lg-5 col--md-11 col-sm shadow-lg rounded-2 bordeCarta fondo-CardCarrito">
+              <h4 className='editMenuTitulo text-center white-star-carta mb-4'>Pedidos Pendientes</h4>
+              <table className="col-12 justify-content-around mb-3">
+          <thead>
+            <tr>
+            <th className='bg-transparent bordeTituloCarrito' scope="col">ID</th>
+            <th className='bg-transparent bordeTituloCarrito' scope="col">Fecha</th>
+            <th className='bg-transparent bordeTituloCarrito' scope="col">Cliente</th>
+            <th className='bg-transparent bordeTituloCarrito' scope="col">Total</th>
+            <th className='bg-transparent bordeTituloCarrito' scope="col">Estado</th>
+            <th className='bg-transparent bordeTituloCarrito' scope="col">Detalle</th>
+            </tr>
+        </thead>
+      <tbody>
+        {pedidosPendientes.map((elemento, index) => (
+          <tr key={index}>
+            <th scope="row">{index + 1}</th>
+            <td>{formatearFecha(elemento.fechaPedido)}</td>
+            <td>{elemento.username}</td>
+            <td>{elemento.total}</td>
+            <td>{elemento.estado}</td>
+            <td>
+              {elemento.items.map((item, itemIndex) => (
+                <div key={itemIndex}>{item.tituloMenu}</div>
+              ))}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <div className=" text-center fuente-formMenuAdmin mt-4 col-lg-5 col--md-11 col-sm shadow-lg rounded-2 bordeCarta fondo-CardCarrito">
+              <h4 className='editMenuTitulo text-center white-star-carta mb-4'>Pedidos Realizados</h4>
+              <table className="col-12 justify-content-around mb-3">
+                <thead className=''>
                   <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Cliente</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Detalle</th>
+                    <th className='"bg-transparent bordeTituloCarrito' scope="col">ID</th>
+                    <th className='"bg-transparent bordeTituloCarrito' scope="col">Fecha</th>
+                    <th className='"bg-transparent bordeTituloCarrito' scope="col">Cliente</th>
+                    <th className='"bg-transparent bordeTituloCarrito' scope="col">Total</th>
+                    <th className='"bg-transparent bordeTituloCarrito' scope="col">Estado</th>
+                    <th className='"bg-transparent bordeTituloCarrito' scope="col">Detalle</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {pedidosPendientes.map((elemento, index) => (
-                    <tr key={index}>
-                      <th scope="row">{index + 1}</th>
-                      <td>{formatearFecha(elemento.fechaPedido)}</td>
-                      <td>{elemento.username}</td>
-                      <td>{elemento.total}</td>
-                      <td>{elemento.estado}</td>
-                      <td>
-                        {elemento.items.map((item, itemIndex) => (
-                          <div key={itemIndex}>{item.tituloMenu}</div>
-                        ))}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <br />
-            <h4 className='editMenuTitulo text-center white-star-carta mb-4'>Pedidos Realizados</h4>
-            <div className="table-responsive text-center fuente-formMenuAdmin mb-4">
-              <table className="table table-bordered table-striped mx-auto">
-                <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Cliente</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Detalle</th>
-                  </tr>
-                </thead>
-                <tbody>
+                <tbody className=''>
                   {pedidosRealizados.map((elemento, index) => (
-                    <tr key={index}>
+                    <tr   key={index}>
                       <th scope="row">{index + 1}</th>
                       <td>{formatearFecha(elemento.fechaPedido)}</td>
                       <td>{elemento.username}</td>
                       <td>{elemento.total}</td>
-                      <td>{elemento.estado}</td>
+                      <td >{elemento.estado}</td>
                       <td>
                         {elemento.items.map((item, itemIndex) => (
                           <div key={itemIndex}>{item.tituloMenu}</div>
@@ -117,16 +112,39 @@ function EsperandoPedido() {
                       </td>
                     </tr>
                   ))}
-                </tbody>
+                </tbody>  
               </table>
+              
             </div>
+            <div className=' mt-5 mb-3'>
             <Link to="/home" className="btn btn-success mt-3">
               Volver al inicio
             </Link>
-          </div>
-        </div>
+
+            </div>
       </div>
     );
   }
   
   export default EsperandoPedido;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
