@@ -104,50 +104,31 @@ const pedidoEdit = async (pedido,pedidoEditID)=>{
   } catch (error) {
       console.log(error.response)
      setErrors(error.response.data)
-
   }
-
 }
-
 
 
 const carritoPedidos = async (pedido)=>{
-
   try {
       const res = await crearPedidoRequest(pedido)
-      
       console.log(res.data)
-      
-     
-      
-  } catch (error) {
-      console.log(error.response.data)
-     setErrors(error.response.data)
-
-  }
-
-}
+      } catch (error) {
+        console.log(error.response.data)
+      setErrors(error.response.data)
+      }
+    }
 
 const menuEdit = async (menuEdit,editingUserId)=>{
-
   try {
       const res = await modificarMenuRequest(menuEdit,editingUserId)
       console.log(editingUserId)
       console.log(res.data)
       setadmMenuEdit(res.data)
-      
-     
-      
-  } catch (error) {
+      } catch (error) {
       console.log(error.response)
      setErrors(error.response.data)
-
-  }
-
-}
-
-
-
+      }
+    }
 
     const logOut = async (user)=>{
        try {    
@@ -155,19 +136,12 @@ const menuEdit = async (menuEdit,editingUserId)=>{
             Cookies.remove("token")
             setIsAuthenticated(false)
             setUser(null)
-           console.log(res.data.message)
-            
-} catch (error) {
-    console.log(error.response)
-    setErrors(error.response.data)
-}
-
-    }
-
-
-
-
-    
+           console.log(res.data.message)            
+          } catch (error) {
+          console.log(error.response)
+          setErrors(error.response.data)
+          }
+        }
 
         useEffect(()=> {
         if(errors.length>0) {
@@ -175,29 +149,18 @@ const menuEdit = async (menuEdit,editingUserId)=>{
                 setErrors([])
             },500)
             return ()=>clearTimeout(timer)
-        }
-    })
-    const crearMenu = async (menu)=>{
-
+          }
+        })
+      const crearMenu = async (menu)=>{
       try {
           const res = await crearMenuRequest(menu)
           console.log(res.data)
           setMenu(res.data)
-        
-          
-      } catch (error) {
+          } catch (error) {
           console.log(error.response)
-         setErrors(error.response.data)
-
-      }
-
-  }
-
-
-
-
-
-
+          setErrors(error.response.data)
+          }
+        }
 
 
  /*   useEffect(() => {
@@ -230,20 +193,16 @@ const menuEdit = async (menuEdit,editingUserId)=>{
       }, []);
       
 */
-
     useEffect(()=>{
         async function checklogin(){
-            const cookies = Cookies.get()
-            
-            
-                   if(!cookies.token){
-                       setIsAuthenticated(false)
-                         setLoading(false)
-                            return setUser(null)
-                                             }
+            const cookies = Cookies.get()          
+              if(!cookies.token){
+                setIsAuthenticated(false)
+                setLoading(false)
+                return setUser(null)
+                 }
           try {
                 const res = await verifyTokenRequest(cookies.token)
-              
                     if(!res.data){
                         setIsAuthenticated(false)
                         setLoading(false)
@@ -252,8 +211,7 @@ const menuEdit = async (menuEdit,editingUserId)=>{
 
                 setIsAuthenticated(true)
                 setUser(res.data)
-                console.log(res.data)
-               
+                console.log(res.data)              
                 setLoading(false)
                } catch (error) {
                 setIsAuthenticated(false)

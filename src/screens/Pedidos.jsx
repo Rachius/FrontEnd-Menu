@@ -142,6 +142,7 @@ const Carrito = () => {
           </table>
         </div>
       </div>
+      
       <Modal className='col-12' show={showMessage} onHide={() => setShowMessage(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Le Forky</Modal.Title>
@@ -155,9 +156,6 @@ const Carrito = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-
-
-
 
       <div className="card col-sm-10 col-md-6 col-lg-6 botonesCarrito align-items-center justify-content-around mx-auto mt-3 mb-5">
         <h5 className="card-title mt-2">Total a Pagar: ${totalAPagar}</h5>

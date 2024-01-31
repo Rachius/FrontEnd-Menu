@@ -16,13 +16,6 @@
 
 @media (max-width: 767px) { .fuente-nombrePlato, .fuente-PrecioPlato, .fuente-descripcionPlato { font-size: 18px; } }
 
-/* 
-@media (max-width: 767px) {
-  .card {
-     width: 100%;
-  }
- }
-  */
 
   .full-screen {
     width: 100vw;
@@ -95,7 +88,7 @@
   font-family: 'Times New Roman', Times, serif;
   color: white;
   font-size: 25px;
-  border-bottom: 5px solid #1c5c16d9; /* Línea en la parte inferior */
+  border-bottom: 5px solid #1c5c16d9; 
 
 }
 
@@ -109,10 +102,10 @@
 
 
  .bordePedido {
-  border-bottom: 3px solid #07970eb0; /* Línea en la parte inferior */
-  border-left: 3px solid transparent; /* Borde transparente a la izquierda */
-  border-right: 3px solid transparent; /* Borde transparente a la derecha */
-  border-top: none; /* Sin borde en la parte superior */
+  border-bottom: 3px solid #07970eb0;
+  border-left: 3px solid transparent; 
+  border-right: 3px solid transparent; 
+  border-top: none; 
 }
 
 
@@ -183,8 +176,8 @@
 
  .negrita-color-blanco {
   font-family:'Times New Roman';
-  color: rgb(255, 255, 255); /* Cambia este valor por el color que desees */
-  font-family: Arial, sans-serif; /* Cambia este valor por la fuente que desees */
+  color: rgb(255, 255, 255); 
+  font-family: Arial, sans-serif; 
   font-size: 35px;
 }
 
@@ -206,8 +199,8 @@
 
 .negrita-color-negro {
   font-family:'Times New Roman';
-  color: rgb(0, 0, 0); /* Cambia este valor por el color que desees */
-  font-family: Arial, sans-serif; /* Cambia este valor por la fuente que desees */
+  color: rgb(0, 0, 0); 
+  font-family: Arial, sans-serif; 
   font-size: 20px;
 }
 
@@ -219,9 +212,9 @@
   background-repeat:no-repeat;
   background-size: cover;
   background-position: center center;
-  background-blend-mode:multiply ; /* Agrega el efecto de difuminado */
+  background-blend-mode:multiply ; 
   opacity: 0.9;
-  color: rgb(0, 0, 0); /* Cambia el color del texto para que se vea bien con el fondo difuminado */
+  color: rgb(0, 0, 0); 
 }
 
 
@@ -239,15 +232,15 @@
   overflow-y: auto;
 }
 
-/* Estilos del scroll */
+
 .table-container::-webkit-scrollbar {
-  width: 10px; /* Ancho de la barra desplazadora */
-  background-color: #006e14b4; /* Color de fondo de la barra */
+  width: 10px; 
+  background-color: #006e14b4; 
 }
 
 .table-container::-webkit-scrollbar-thumb {
-  background-color: #000000; /* Color de la barra desplazadora */
-  border-radius: 3px; /* Bordes redondeados de la barra desplazadora */
+  background-color: #000000; 
+  border-radius: 3px; 
   
 }
 
@@ -258,9 +251,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-blend-mode:multiply ; /* Agrega el efecto de difuminado */
+  background-blend-mode:multiply ; 
   opacity: 0.95;
-  color: rgb(0, 0, 0); /* Cambia el color del texto para que se vea bien con el fondo difuminado */
+  color: rgb(0, 0, 0); /* Cambia el*/
   image-resolution:inherit;
 }
 
@@ -306,7 +299,7 @@ background-color: #fbfbfb00;
 }
 
 .footer-home-letra {
-  color: rgb(0, 0, 0); /* Puedes cambiar el color del texto según tus necesidades */
+  color: rgb(0, 0, 0); 
 }
 
 

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContex';
 import { listarMenuRequest, listarPedidoRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
+import { Modal, Button } from 'react-bootstrap';
 
 function EditPedidos() {
   const { register, handleSubmit,reset ,formState: { errors } } = useForm();
@@ -61,6 +62,17 @@ function EditPedidos() {
   }, []);
 
   const onSubmit = () => {
+
+    setShowMessage(true);
+      setTimeout(() => {
+            setShowMessage(false);
+            if (!showMessage) {
+              
+              setPedidoId(null);
+            }
+          }, 2000);
+
+
    
     if (pedidoEditID) {
       const cleanedValues = {
@@ -79,19 +91,21 @@ function EditPedidos() {
   };
 
 
+  const [showMessage, setShowMessage] = useState(false);
+
   return (
-    <div className='container-fluid fondo-admin d-flex col-12 flex-wrap'>
+    <div className='container-fluid fondo-admin pb-3'>
       <Helmet>
         <title>Editar Pedidos</title>
       </Helmet>
       <div className='row justify-content-around col-12 '>
         <div className='col-lg-6 col-md-12 col-sm-12 mt-5 '>
           <h4 className='editMenuTitulo text-center white-star-carta'>Pedidos</h4>
-          <button onClick={handleToggleFiltrarPendientes} className="btn btn-primary mb-3 m-1">
+          <button onClick={handleToggleFiltrarPendientes} className="btn btn-primary mb-4 mt-3">
             {filtrarPendientes ? 'Mostrar Todos' : 'Mostrar Pendientes'}
           </button>
-          <div className="table-container text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
-            <table className="fondo-formMenuAdmin ">
+          <div className="table-container text-center  fuente-formMenuAdmin" >
+            <table className="fondo-formMenuAdmin col-12 ">
               <thead>
                 <tr className=''>
                   <th scope="col">ID</th>
@@ -114,11 +128,6 @@ function EditPedidos() {
                       <td>{elemento.username}</td>
                       <td>{elemento.total}</td>
                       <td>{elemento.estado}</td>
-                      <td>
-                        {elemento.items.map((item, itemIndex) => (
-                          <div key={itemIndex}>{item.tituloMenu}</div>
-                        ))}
-                      </td>
                       {pedidoEditID === elemento._id ? (
                         <>
                           <button
@@ -133,14 +142,14 @@ function EditPedidos() {
                           <button
                             type="button"
                             onClick={onSubmit}
-                            className="btn btn-success mb-3 m-1"
+                            className="btn btn-success m-2"
                           >
                             Confirmar
                           </button>
                         </>
                       ) : (
                         <button
-                          className="btn btn-primary"
+                          className="btn btn-primary m-2"
                           type="submit"
                           onClick={() => handleEditarUsuario(elemento)}
                         >
@@ -154,6 +163,21 @@ function EditPedidos() {
             </table>
           </div>
         </div>
+        <Modal className='col-12' show={showMessage} onHide={() => setShowMessage(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Le Forky</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        Realizado
+        </Modal.Body>
+        <Modal.Footer>
+          <Button className='btn btn-success' onClick={() => setShowMessage(false)} >
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    
+
 
         {pedidoEditID ? (
           <div className='col-lg-4 col-md-6 col-sm-10 pb-5 pt-1  '>

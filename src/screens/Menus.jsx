@@ -31,13 +31,8 @@ function CartaMenu ()  {
     },[])
 
     const agregarAlCarrito = (elemento) => {
-      // Copiar el pedido actual y agregar el nuevo elemento
-      const nuevoCarrito = [...carrito, elemento];
-      
-      // Actualizar el estado del pedido
+      const nuevoCarrito = [...carrito, elemento];      
       setCarrito(nuevoCarrito);
-      
-      // Guardar en localStorage
       localStorage.setItem('pedido', JSON.stringify(nuevoCarrito));
     };
 

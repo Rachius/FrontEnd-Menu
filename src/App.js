@@ -9,13 +9,12 @@ import CartaMenu from './screens/Home';
 import Registro from './screens/Registro';
 import Login from './screens/Login';
 import Pedidos from './screens/Pedidos';
-import Platos from './screens/Platos';
 import LogOut from './screens/LogOut';
 import ProtectedRoute from './ProtectedRoutes';
 import { AdminRoute } from './ProtectedRoutes';
 import EditPedido from './screens/EditPedido.jsx';
 import EditUsuario from './screens/EditUsuario.jsx';
-import EditMenu from './screens/editMenu.jsx';
+import EditMenu from './screens/EditMenu.jsx';
 import Logout from './screens/LogOut';
 import LogoutScr from './screens/LogoutScr.jsx';
 import EsperandoPedido from './screens/esperaPedido.jsx';
@@ -24,7 +23,6 @@ import EsperandoPedido from './screens/esperaPedido.jsx';
 
 function App() {
 
-// const {data} = useFetch("https://jsonplaceholder.typicode.com/users")
 
   return (
       
@@ -33,19 +31,15 @@ function App() {
           <Router>
 
           <NavBar/>
-
           <Routes>
             <Route >
             <Route path="/pedidos" element={<Pedidos/>}/>
-
             <Route path="/registro" element={<Registro/>}/>
-              <Route path="/login" element={<Login/>}/>
+            <Route path="/login" element={<Login/>}/>
             <Route path="/home" element={<CartaMenu/>}/>
             <Route path="/" element={<CartaMenu/>}/>
             <Route path="/logoutscr" element={<LogoutScr/>}/>
             <Route path="/esperaPedido" element={<EsperandoPedido/>} />
-            
-       
             </Route>
 
             <Route>
@@ -69,11 +63,10 @@ function App() {
             <Route path="/" element={<CartaMenu/>}/>
             <Route path="/logoutscr" element={<LogoutScr/>}/>
             <Route path="/esperaPedido" element={<EsperandoPedido/>} />
-
-          </Route>
+            </Route>
         
           </Routes>
-          </Router>
+      </Router>
 
       </AuthProvider>
 
