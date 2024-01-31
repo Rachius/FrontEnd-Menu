@@ -8,6 +8,7 @@ import { listarMenuRequest } from '../api/auth';
 import { listarCarritoRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
 import { Modal, Button } from 'react-bootstrap';
+import LogoComponent from './Logo.jsx';
 
 
 
@@ -85,19 +86,19 @@ function CartaMenu() {
 
   return (
     <div className=' align-items-center carta-banner col-12 '>
+      <div className='row col-12  justify-content-center carta-logo-fondo'>
+      <LogoComponent/>
+      </div>
+      
       <Helmet>
         <title>Le Forky</title>
       </Helmet>
-      <section className=''>
+      {/* <div className='col-12 justify-content-center d-flex'>
         {(!isAuthenticated) ? (
-          <div className="col-12 text-center alert alert-danger" role="alert">Tienes que iniciar sesión para poder encargar</div>
+          <div className=" text-center alert alert-danger" role="alert">Tienes que iniciar sesión para poder encargar</div>
         ) : null}
-        <div className=" logo-grande card fondo-CardPlato text-center " >
-          <div className="">
-            <p className="card-text logo-grande carta-home-titulo"> Los mejores Platos</p>
-          </div>
-        </div>
-      </section>
+      </div> */}
+      
       <Modal className='col-12' show={showMessage} onHide={() => setShowMessage(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Le Forky</Modal.Title>
@@ -112,9 +113,10 @@ function CartaMenu() {
         </Modal.Footer>
       </Modal>
       <section>
+        
         <div className='container '>
           <div className='bordeCarta white-star-carta mt-5 justify-content-center d-flex '>
-            <div className='col-lg-12 col-sm-12  '>
+            <div className='col-lg-12 col-sm-12  row'>
               <h1 className='text-center mb-3 mt-3 '>Platos</h1>
               <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
                 <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
@@ -245,20 +247,19 @@ function CartaMenu() {
           </div>
         </div>
       </section>
-      <footer className="bg-dark text-light pt-5 pb-4 mt-3 text-center ">
-        <div className=' col-lg-12 row'>
-          <div className='col-lg-4 col-md-12 col-sm-12'>
-          <p>Dirección: Congreso de Tucumán 141, San Miguel de Tucumán, Tucumán </p>
-          <p>Horarios de atención: Lun a Dom de 11:30-16:00 hs. | 19:00-1:00 hs.</p>
+      <footer className="bg-white text-light pt-5 pb-4 mt-3 text-center ">
+        <div className=' col-lg-12 row justify-content-around'>
+          <div className='col-lg-4 text-center col-md-12 col-sm-12'>
+          <p className='footer-home-letra'>Dirección: Congreso de Tucumán 141, San Miguel de Tucumán, Tucumán </p>
+          <p className='footer-home-letra'>Horarios de atención: Lun a Dom de 11:30-16:00 hs. | 19:00-1:00 hs.</p>
           </div>
           <div className='col-lg-4 col-md-12 col-sm-12'>
-          <p className='logo-grande'>LOGO</p>
-          <img src="/src/img/Le_forky.png" alt="" />
+          <LogoComponent/>
           </div>
-          <div className='col-lg-4 col-md-12 col-sm-12'>
-          <p>Contacto: <a href="tel:03815958693" className='link-color'>0381-5958693</a></p>
-          <p>Email: <a href="mailto:info@leforky.com.ar" className='link-color'>info@leforky.com.ar</a></p>
-          <p>Instagram: <a href="https://www.instagram.com/francoamado7/" className='link-color' target="_blank" rel="noopener noreferrer">@francoamado7</a></p>
+          <div className='col-lg-3 col-md-12 col-sm-12'>
+          <p className='footer-home-letra'>Contacto: <a href="tel:03815958693" className='link-color'>0381-5958693</a></p>
+          <p className='footer-home-letra'>Email: <a href="mailto:info@leforky.com.ar" className='link-color'>info@leforky.com.ar</a></p>
+          <p className='footer-home-letra'>Instagram: <a href="https://www.instagram.com/francoamado7/" className='link-color' target="_blank" rel="noopener noreferrer">@francoamado7</a></p>
           </div>
         </div>
       </footer>

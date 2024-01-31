@@ -290,15 +290,24 @@
 
 .logo-grande {
   background-image: url('/src/img/Le_forky.png');
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size:contain;
-
+background-color: #fbfbfb00;
   opacity: 0.9;
   color: rgb(0, 0, 0); 
 }
 
 
 
+
+.carta-logo-fondo {
+  background-color: #ffffffa1;
+  
+}
+
+.footer-home-letra {
+  color: rgb(0, 0, 0); /* Puedes cambiar el color del texto según tus necesidades */
+}
 
 
 

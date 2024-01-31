@@ -12,7 +12,7 @@ const { isAuthenticated, logOut, user } = useAuth();
   
 
   return (
-<nav className="navbar sticky-top navbar-expand navbar-dark bg-dark">
+<nav className="navbar sticky-top navbar-expand navbar-dark bg-dark ">
       <div className="container-fluid">
         <div className="">
           <ul className="navbar-nav">
@@ -37,6 +37,8 @@ const { isAuthenticated, logOut, user } = useAuth();
         <li className="nav-item" >
         <LogoutButton />
         </li>
+        
+        
         </>
             ) : isAuthenticated && user.rol === 'user' ? (
               <>
