@@ -176,7 +176,7 @@ const Carrito = () => {
           <div className='col-lg-4 col-md-12 col-sm-12'>
           <p>Contacto: <a href="tel:03815958693" className='link-color'>0381-5958693</a></p>
           <p>Email: <a href="mailto:info@leforky.com.ar" className='link-color'>info@leforky.com.ar</a></p>
-          <p>Instagram: <a href="https://www.instagram.com/francoamado7/" className='link-color' target="_blank" rel="noopener noreferrer">@francoamado7</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/leforky/" className='link-color' target="_blank" rel="noopener noreferrer">@leforky</a></p>
           </div>
         </div>
       </footer>
