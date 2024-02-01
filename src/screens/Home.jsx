@@ -1,11 +1,7 @@
 
-import { set, useForm } from 'react-hook-form';
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from 'react-router-dom';
-import { useAuth, AuthProvider } from '../contexts/AuthContex.jsx';
+import { useAuth } from '../contexts/AuthContex.jsx';
 import { listarMenuRequest } from '../api/auth';
-import { listarCarritoRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
 import { Modal, Button } from 'react-bootstrap';
 import LogoComponent from './Logo.jsx';
@@ -13,15 +9,12 @@ import LogoComponent from './Logo.jsx';
 
 
 function CartaMenu() {
-  const [carrito, setCarrito] = useState([]);
-  const { handleSubmit, formState: { errors } } = useForm();
-  const { isAuthenticated, logOut, user } = useAuth();
+ 
+  const { isAuthenticated, user } = useAuth();
   const [listaMenu, setlistaMenu] = useState([]);
-  const [showAlert, setShowAlert] = useState(false);
-  const [selectedItems, setSelectedItems] = useState([]);
+ 
   const [id, setid] = useState();
   const [username, setUsername] = useState();
-  const [total, setTotal] = useState(0);
 
   const handleAddToCart = (item, username, id) => {
     const savedCart = localStorage.getItem('cart');
@@ -40,7 +33,7 @@ function CartaMenu() {
     existingCart.total = existingCart.items.reduce((acc, currentItem) => acc + currentItem.precioMenu * currentItem.cantidad, 0);
 
     localStorage.setItem('cart', JSON.stringify(existingCart));
-    setTotal(existingCart.total);
+
 
     setShowMessage(true);
     setTimeout(() => {
@@ -78,7 +71,6 @@ function CartaMenu() {
   useEffect(() => {
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
-      setSelectedItems(JSON.parse(savedCart));
     }
   }, []);
 

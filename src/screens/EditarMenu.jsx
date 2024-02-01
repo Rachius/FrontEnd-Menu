@@ -1,9 +1,7 @@
-
 import React, { useState, useEffect, useRef  } from "react";
 import { useForm } from 'react-hook-form';
 
-import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+
 import { useAuth } from '../contexts/AuthContex';
 import { listarMenuRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
@@ -12,14 +10,14 @@ import { Modal, Button } from 'react-bootstrap';
 function EditMenu ()  {
   const {register,handleSubmit,formState:{errors},} = useForm()
   const [listaMenu,setlistaMenu] =  useState([])
-  const {crearMenu,menuEdit,isAuthenticated,errors:RegisterErrors} = useAuth()
+  const {crearMenu,menuEdit,errors:RegisterErrors} = useAuth()
   const [editTitulo,setTituloEdit] = useState()
   const [editDescripcion,setDescripcionEdit] = useState()
   const [editCategoria,setCategoriaEdit] = useState()
   const [editEstado,setEstadoEdit] = useState()
   const [editPrecio,setPrecioEdit] = useState()
   const [editingUserId, setEditingUserId] = useState(null);
-  const navigate = useNavigate()
+
   const formRef = useRef(null);
   useEffect(()=>{
     async function listadeMenus(){

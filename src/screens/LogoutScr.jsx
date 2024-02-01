@@ -1,20 +1,14 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { useAuth } from '../contexts/AuthContex';
+
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import { Helmet } from 'react-helmet';
 
 function LogoutScr() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const { signin, isAuthenticated, errors: signinErrors = [] } = useAuth();
-  const navigate = useNavigate();
 
-  const onSubmit = handleSubmit((data) => {
-    signin(data);
-    console.log(data);
-  });
+  
+
+
 
   
   return (

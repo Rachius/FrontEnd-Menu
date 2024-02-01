@@ -1,20 +1,19 @@
 import { useForm } from 'react-hook-form';
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+
 import { useAuth } from '../contexts/AuthContex';
-import { listarMenuRequest, listarPedidoRequest } from '../api/auth';
+import { listarPedidoRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
 import { Modal, Button } from 'react-bootstrap';
 
 function EditPedidos() {
-  const { register, handleSubmit,reset ,formState: { errors } } = useForm();
-  const [listaMenu, setlistaMenu] = useState([]);
+  const { register,reset ,formState: { errors } } = useForm();
+ 
   const [listaPedido, setlistaPedido] = useState([]);
-  const { crearMenu, listarMn, pedidoEdit,isAuthenticated, errors: RegisterErrors } = useAuth();
+  const {  pedidoEdit, errors: RegisterErrors } = useAuth();
   const [detallePedido, setDetallePedido] = useState([]);
 
-  const [editId, seteditId] = useState();
+  
   const [editUsername, setEditUsername] = useState();
   const [editEstado, setEstadoEdit] = useState();
   const [editTotal,setEditTotal] = useState();
@@ -24,7 +23,7 @@ function EditPedidos() {
 
 
 
-  const navigate = useNavigate();
+ 
 
   const handleEditarUsuario = (elemento) => {
     try {

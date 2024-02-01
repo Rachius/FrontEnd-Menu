@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../contexts/AuthContex';
-import { listarUsuariosRequest, modificarUsuarioRequest } from '../api/auth';
+import { listarUsuariosRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
 import { Modal, Button } from 'react-bootstrap';
 
 
 function EditUsuario() {
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm();
-  const { admSignup, admEdit, isAuthenticated, errors: RegisterErrors } = useAuth();
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { admSignup, admEdit, errors: RegisterErrors } = useAuth();
   const [usernameEdit, setUsernameEdit] = useState();
-  const [username2Edit, setUsername2Edit] = useState();
+
   const [editEmail, setEmailEdit] = useState();
   const [editRol, setRolEdit] = useState();
   const [editEstado, setEstadoEdit] = useState();

@@ -121,8 +121,7 @@ const carritoPedidos = async (pedido)=>{
 const menuEdit = async (menuEdit,editingUserId)=>{
   try {
       const res = await modificarMenuRequest(menuEdit,editingUserId)
-      console.log(editingUserId)
-      console.log(res.data)
+      
       setadmMenuEdit(res.data)
       } catch (error) {
       console.log(error.response)
@@ -211,7 +210,7 @@ const menuEdit = async (menuEdit,editingUserId)=>{
 
                 setIsAuthenticated(true)
                 setUser(res.data)
-                            
+                console.log(res.data)              
                 setLoading(false)
                } catch (error) {
                 setIsAuthenticated(false)
@@ -223,7 +222,7 @@ const menuEdit = async (menuEdit,editingUserId)=>{
         },[])
 
 
-    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,pedidoEdit,admSignup,admEdit,menuEdit,carritoPedidos,menu,user,isAuthenticated,errors,loading,admUserCreate,admUserEdit}}>
+    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,pedidoEdit,admSignup,admEdit,menuEdit,carritoPedidos,menu,admMenuEdit,user,isAuthenticated,errors,loading,admUserCreate,admUserEdit}}>
         {children}
     </AuthContext.Provider>)
 
