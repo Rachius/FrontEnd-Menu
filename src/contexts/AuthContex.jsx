@@ -211,7 +211,7 @@ const menuEdit = async (menuEdit,editingUserId)=>{
 
                 setIsAuthenticated(true)
                 setUser(res.data)
-                console.log(res.data)              
+                            
                 setLoading(false)
                } catch (error) {
                 setIsAuthenticated(false)

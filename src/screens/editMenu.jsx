@@ -97,12 +97,11 @@ return (
       <Helmet>
       <h4>Lista de Menus</h4>
       </Helmet>
-      <div className='col-6 '>
+      <div className='col-7 '>
       <h4 className=' text-center mt-5 white-star-carta'>Menus</h4>
       <div className="table-container text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
       <form ref={formRef} >
-        <table className="fondo-formMenuAdmin ">
-          <thead>
+      <table className="col-12 text-center fondo-formMenuAdmin">          <thead>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Menú</th>
@@ -114,8 +113,8 @@ return (
           </thead>
           <tbody>
             {listaMenu.map((elemento, index) => (
-            <tr key={elemento._id} data-id={elemento._id}>
-            <th scope="row">{elemento._id}</th>
+             <tr key={index}>
+             <th scope="row">{index + 1}</th>
                 <td>{elemento.tituloMenu}</td>
                 <td>{elemento.categoriaMenu || 'N/A'}</td>
                 <td>{elemento.descripcionMenu}</td>

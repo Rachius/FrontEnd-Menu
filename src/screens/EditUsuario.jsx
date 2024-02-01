@@ -59,15 +59,17 @@ function EditUsuario() {
 
 
   return (
-    <div className='container-fluid d-flex fondo-admin col-12 flex-wrap justify-content-around'>
-      <Helmet>
-        <title>Editar Usuario</title>
-      </Helmet>
-      <div className='col-lg-6 col-md-12 col-sm-12 mt-5'>
-        <h4 className='editMenuTitulo text-center white-star-carta'>Usuarios</h4>
-        <form onSubmit={onSubmit} noValidate>
-          <div className="fondo-formMenuAdmin text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
-            <table className="col-12 text-center fuente-formMenuAdmin">
+                      <div className='container-fluid d-flex fondo-admin col-12 flex-wrap justify-content-around'>
+                               <Helmet>
+                                  <title>Editar Usuario</title>
+                                 </Helmet>
+                          <div className='col-lg-6 col-md-12 col-sm-12 mt-5'>
+                    <h4 className='editMenuTitulo text-center white-star-carta'>Usuarios</h4>
+                  <form onSubmit={onSubmit} noValidate>
+                  <div className="table-container text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>           
+                  
+                   <table className="col-12 text-center fondo-formMenuAdmin">
+
               <thead>
                 <tr className=''>
                   <th scope="col">Usuario</th>

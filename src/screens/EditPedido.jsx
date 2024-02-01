@@ -210,7 +210,7 @@ function EditPedidos() {
                   {errors.estado && <p className='text-red-500'>El estado es requerido</p>}
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="exampleFormControlTextarea1" className="form-label" disabled>Detalle del pedido</label>
+                  <label htmlFor="InputNameRegUsuario" className="fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro" disabled>Detalle del pedido</label>
                   <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" defaultValue={detallePedido}></textarea>
                 </div>
                 <div className="mb-2 px-5">
