@@ -1,34 +1,27 @@
-import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import React, { useState, useEffect } from "react";
-import { listarMenuRequest, listarPedidoRequest } from '../api/auth';
+import {  listarPedidoRequest } from '../api/auth';
 import { useAuth } from '../contexts/AuthContex';
 
 function EsperandoPedido() {
   const [listaPedido, setlistaPedido] = useState([]);
   const [editId, seteditId] = useState();
   const { user } = useAuth();
-  const [pedidoEditID, setPedidoId] = useState(null);
-
-  useEffect(() => {
-  
-
-    async function listadePedidos() {
-      try {
-        const listadeP = await listarPedidoRequest();
-        setlistaPedido(listadeP.data);
-        seteditId(user.username)
-       
-       
-        
-      } catch (error) {
-        console.log(error);
-      }
+ 
+  // eslint-disable-next-line
+useEffect(() => {
+  async function listadePedidos() {
+    try {
+      const listadeP = await listarPedidoRequest();
+      setlistaPedido(listadeP.data);
+      seteditId(user.username);
+    } catch (error) {
+      console.log(error);
     }
-    listadePedidos();
-  }, []);
+  }
+  listadePedidos();
+}, []);
 
   const formatearFecha = (fecha) => {
     const fechaFormateada = new Date(fecha);
