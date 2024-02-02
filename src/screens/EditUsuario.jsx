@@ -65,6 +65,7 @@ function EditUsuario() {
       </Helmet>
       <div className='col-lg-6 col-md-12 col-sm-12 mt-5'>
         <h4 className='editMenuTitulo text-center white-star-carta'>Usuarios</h4>
+        
         <form onSubmit={onSubmit} noValidate>
           <div className="fondo-formMenuAdmin text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
             <table className="col-12 text-center fuente-formMenuAdmin">
