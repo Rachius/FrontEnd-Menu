@@ -1,6 +1,6 @@
 
 
-import { AuthProvider,useAuth} from './contexts/AuthContex';
+import { AuthProvider} from './contexts/AuthContex';
 
 import './App.css';
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
@@ -14,8 +14,7 @@ import ProtectedRoute from './ProtectedRoutes';
 import { AdminRoute } from './ProtectedRoutes';
 import EditPedido from './screens/EditPedido.jsx';
 import EditUsuario from './screens/EditUsuario.jsx';
-import EditMenu from './screens/EditMenu.jsx';
-import Logout from './screens/LogOut';
+import EditMenu from './screens/EditarMenu.jsx';
 import LogoutScr from './screens/LogoutScr.jsx';
 import EsperandoPedido from './screens/esperaPedido.jsx';
 

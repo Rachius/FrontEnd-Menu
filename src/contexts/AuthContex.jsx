@@ -121,8 +121,7 @@ const carritoPedidos = async (pedido)=>{
 const menuEdit = async (menuEdit,editingUserId)=>{
   try {
       const res = await modificarMenuRequest(menuEdit,editingUserId)
-      console.log(editingUserId)
-      console.log(res.data)
+      
       setadmMenuEdit(res.data)
       } catch (error) {
       console.log(error.response)
@@ -223,7 +222,7 @@ const menuEdit = async (menuEdit,editingUserId)=>{
         },[])
 
 
-    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,pedidoEdit,admSignup,admEdit,menuEdit,carritoPedidos,menu,user,isAuthenticated,errors,loading,admUserCreate,admUserEdit}}>
+    return (<AuthContext.Provider value={{signin,signup,logOut,crearMenu,pedidoEdit,admSignup,admEdit,menuEdit,carritoPedidos,menu,admMenuEdit,user,isAuthenticated,errors,loading,admUserCreate,admUserEdit}}>
         {children}
     </AuthContext.Provider>)
 

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../contexts/AuthContex';
-import { listarUsuariosRequest, modificarUsuarioRequest } from '../api/auth';
+import { listarUsuariosRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
 import { Modal, Button } from 'react-bootstrap';
 
 
 function EditUsuario() {
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm();
-  const { admSignup, admEdit, isAuthenticated, errors: RegisterErrors } = useAuth();
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { admSignup, admEdit, errors: RegisterErrors } = useAuth();
   const [usernameEdit, setUsernameEdit] = useState();
-  const [username2Edit, setUsername2Edit] = useState();
+
   const [editEmail, setEmailEdit] = useState();
   const [editRol, setRolEdit] = useState();
   const [editEstado, setEstadoEdit] = useState();
@@ -59,16 +59,18 @@ function EditUsuario() {
 
 
   return (
-    <div className='container-fluid d-flex fondo-admin col-12 flex-wrap justify-content-around'>
-      <Helmet>
-        <title>Editar Usuario</title>
-      </Helmet>
-      <div className='col-lg-6 col-md-12 col-sm-12 mt-5'>
-        <h4 className='editMenuTitulo text-center white-star-carta'>Usuarios</h4>
+                      <div className='container-fluid d-flex fondo-admin col-12 flex-wrap justify-content-around'>
+                               <Helmet>
+                                  <title>Editar Usuario</title>
+                                 </Helmet>
+                          <div className='col-lg-6 col-md-12 col-sm-12 mt-5'>
+                    <h4 className='editMenuTitulo text-center white-star-carta'>Usuarios</h4>
         
-        <form onSubmit={onSubmit} noValidate>
-          <div className="fondo-formMenuAdmin text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
-            <table className="col-12 text-center fuente-formMenuAdmin">
+                  <form onSubmit={onSubmit} noValidate>
+                  <div className="table-container text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>           
+                  
+                   <table className="col-12 text-center fondo-formMenuAdmin">
+
               <thead>
                 <tr className=''>
                   <th scope="col">Usuario</th>

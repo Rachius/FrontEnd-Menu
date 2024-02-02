@@ -1,35 +1,27 @@
-import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import React, { useState, useEffect } from "react";
-import { listarMenuRequest, listarPedidoRequest } from '../api/auth';
+import {  listarPedidoRequest } from '../api/auth';
 import { useAuth } from '../contexts/AuthContex';
 
 function EsperandoPedido() {
   const [listaPedido, setlistaPedido] = useState([]);
   const [editId, seteditId] = useState();
   const { user } = useAuth();
-  const [pedidoEditID, setPedidoId] = useState(null);
-
-  useEffect(() => {
-  
-
-    async function listadePedidos() {
-      try {
-        const listadeP = await listarPedidoRequest();
-        setlistaPedido(listadeP.data);
-        seteditId(user.username)
-        console.log(user.username)
-        console.log(listadeP.data)
-       
-        
-      } catch (error) {
-        console.log(error);
-      }
+ 
+  // eslint-disable-next-line
+useEffect(() => {
+  async function listadePedidos() {
+    try {
+      const listadeP = await listarPedidoRequest();
+      setlistaPedido(listadeP.data);
+      seteditId(user.username);
+    } catch (error) {
+      console.log(error);
     }
-    listadePedidos();
-  }, []);
+  }
+  listadePedidos();
+}, []);
 
   const formatearFecha = (fecha) => {
     const fechaFormateada = new Date(fecha);
@@ -49,12 +41,16 @@ function EsperandoPedido() {
 
 
     return (
-      <div className=' col-12 bg-verde-blanco fondo-logReg  vh-100 text-center  justify-content-around row'>
+      <div className=' align-items-center fondo-logReg col-12 text-center  justify-content-around row'>
+
+   
           <Helmet>
             <title>Le Forky</title>
           </Helmet>
           <div className=" text-center fuente-formMenuAdmin mt-4 col-lg-5 col--md-11 col-sm shadow-lg rounded-2 bordeCarta fondo-CardCarrito">
               <h4 className='editMenuTitulo text-center white-star-carta mb-4'>Pedidos Pendientes</h4>
+              <div style={{ overflowY: 'auto', maxHeight: '400px' }}>
+
               <table className="col-12 justify-content-around mb-3">
           <thead>
             <tr>
@@ -82,10 +78,14 @@ function EsperandoPedido() {
           </tr>
         ))}
       </tbody>
+      
     </table>
+    </div>
+
   </div>
   <div className=" text-center fuente-formMenuAdmin mt-4 col-lg-5 col--md-11 col-sm shadow-lg rounded-2 bordeCarta fondo-CardCarrito">
               <h4 className='editMenuTitulo text-center white-star-carta mb-4'>Pedidos Realizados</h4>
+              <div style={{ overflowY: 'auto', maxHeight: '400px' }}>
               <table className="col-12 justify-content-around mb-3">
                 <thead className=''>
                   <tr>
@@ -114,15 +114,38 @@ function EsperandoPedido() {
                   ))}
                 </tbody>  
               </table>
-              
+              </div>
+
             </div>
             <div className=' mt-5 mb-3'>
             <Link to="/home" className="btn btn-success mt-3">
               Volver al inicio
             </Link>
 
+
             </div>
+
+            <footer className="bg-dark text-light pt-5 pb-2 mt-5 text-center ">
+        <div className=' col-lg-12 row'>
+          <div className='col-lg-4 col-md-12 col-sm-12'>
+          <p>Dirección: Congreso de Tucumán 141, San Miguel de Tucumán, Tucumán </p>
+          <p>Horarios de atención: Lun a Dom de 11:30-16:00 hs. | 19:00-1:00 hs.</p>
+          </div>
+          <div className='col-lg-4 col-md-12 col-sm-12'>
+          <p>LOGO</p>
+          </div>
+          <div className='col-lg-4 col-md-12 col-sm-12'>
+          <p>Contacto: <a href="tel:03815958693" className='link-color'>0381-5958693</a></p>
+          <p>Email: <a href="mailto:info@leforky.com.ar" className='link-color'>info@leforky.com.ar</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/leforky/" className='link-color' target="_blank" rel="noopener noreferrer">@leforky</a></p>
+          </div>
+        </div>
+      </footer>
+
+            
       </div>
+      
+      
     );
   }
   

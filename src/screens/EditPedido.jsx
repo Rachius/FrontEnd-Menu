@@ -1,20 +1,19 @@
 import { useForm } from 'react-hook-form';
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+
 import { useAuth } from '../contexts/AuthContex';
-import { listarMenuRequest, listarPedidoRequest } from '../api/auth';
+import { listarPedidoRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
 import { Modal, Button } from 'react-bootstrap';
 
 function EditPedidos() {
-  const { register, handleSubmit,reset ,formState: { errors } } = useForm();
-  const [listaMenu, setlistaMenu] = useState([]);
+  const { register,reset ,formState: { errors } } = useForm();
+ 
   const [listaPedido, setlistaPedido] = useState([]);
-  const { crearMenu, listarMn, pedidoEdit,isAuthenticated, errors: RegisterErrors } = useAuth();
+  const {  pedidoEdit, errors: RegisterErrors } = useAuth();
   const [detallePedido, setDetallePedido] = useState([]);
 
-  const [editId, seteditId] = useState();
+  
   const [editUsername, setEditUsername] = useState();
   const [editEstado, setEstadoEdit] = useState();
   const [editTotal,setEditTotal] = useState();
@@ -24,7 +23,7 @@ function EditPedidos() {
 
 
 
-  const navigate = useNavigate();
+ 
 
   const handleEditarUsuario = (elemento) => {
     try {
@@ -210,7 +209,7 @@ function EditPedidos() {
                   {errors.estado && <p className='text-red-500'>El estado es requerido</p>}
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="exampleFormControlTextarea1" className="form-label" disabled>Detalle del pedido</label>
+                  <label htmlFor="InputNameRegUsuario" className="fuente-formMenuAdmin form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro" disabled>Detalle del pedido</label>
                   <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" defaultValue={detallePedido}></textarea>
                 </div>
                 <div className="mb-2 px-5">

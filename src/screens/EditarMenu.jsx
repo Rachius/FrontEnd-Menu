@@ -1,9 +1,7 @@
-
 import React, { useState, useEffect, useRef  } from "react";
 import { useForm } from 'react-hook-form';
 
-import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+
 import { useAuth } from '../contexts/AuthContex';
 import { listarMenuRequest } from '../api/auth';
 import { Helmet } from 'react-helmet';
@@ -12,14 +10,14 @@ import { Modal, Button } from 'react-bootstrap';
 function EditMenu ()  {
   const {register,handleSubmit,formState:{errors},} = useForm()
   const [listaMenu,setlistaMenu] =  useState([])
-  const {crearMenu,menuEdit,isAuthenticated,errors:RegisterErrors} = useAuth()
+  const {crearMenu,menuEdit,errors:RegisterErrors} = useAuth()
   const [editTitulo,setTituloEdit] = useState()
   const [editDescripcion,setDescripcionEdit] = useState()
   const [editCategoria,setCategoriaEdit] = useState()
   const [editEstado,setEstadoEdit] = useState()
   const [editPrecio,setPrecioEdit] = useState()
   const [editingUserId, setEditingUserId] = useState(null);
-  const navigate = useNavigate()
+
   const formRef = useRef(null);
   useEffect(()=>{
     async function listadeMenus(){
@@ -97,12 +95,11 @@ return (
       <Helmet>
       <h4>Lista de Menus</h4>
       </Helmet>
-      <div className='col-6 '>
+      <div className='col-7 '>
       <h4 className=' text-center mt-5 white-star-carta'>Menus</h4>
       <div className="table-container text-center fuente-formMenuAdmin" style={{ maxHeight: "550px", overflowY: "auto" }}>
       <form ref={formRef} >
-        <table className="fondo-formMenuAdmin ">
-          <thead>
+      <table className="col-12 text-center fondo-formMenuAdmin">          <thead>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Menú</th>
@@ -114,8 +111,8 @@ return (
           </thead>
           <tbody>
             {listaMenu.map((elemento, index) => (
-            <tr key={elemento._id} data-id={elemento._id}>
-            <th scope="row">{elemento._id}</th>
+             <tr key={index}>
+             <th scope="row">{index + 1}</th>
                 <td>{elemento.tituloMenu}</td>
                 <td>{elemento.categoriaMenu || 'N/A'}</td>
                 <td>{elemento.descripcionMenu}</td>

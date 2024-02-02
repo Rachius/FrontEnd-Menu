@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth,checklogin } from '../contexts/AuthContex';
-import Home from '../screens/Home';
+import { useAuth } from '../contexts/AuthContex';
+
 import LogoutButton from '../screens/LogOut';
 
 function Navbar() {
-const { isAuthenticated, logOut, user } = useAuth();
+const { isAuthenticated, user } = useAuth();
  
 
 
