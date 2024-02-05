@@ -21,7 +21,7 @@ useEffect(() => {
     }
   }
   listadePedidos();
-}, []);
+}, [user.username]);
 
   const formatearFecha = (fecha) => {
     const fechaFormateada = new Date(fecha);

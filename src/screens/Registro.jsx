@@ -15,7 +15,7 @@ function Registro(){
 
   useEffect(()=>{
     if(isAuthenticated) navigate("/Home")
-  },[isAuthenticated])
+  },[isAuthenticated,navigate])
 
 
 

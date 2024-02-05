@@ -18,7 +18,7 @@ function Login() {
 
   useEffect(() => {
     if (isAuthenticated) navigate("/Home");
-  }, [isAuthenticated]);
+  }, [isAuthenticated, navigate]);
 
   return (
     <div className='d-flex justify-content-center bg-verde-blanco fondo-logReg vh-100'>

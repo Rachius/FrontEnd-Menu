@@ -58,8 +58,9 @@ function CartaMenu() {
             console.log(error.data)
            }
         }
+         
         listadeMenus()
-    },[])
+    },[user.id, user.username])
 
 
 
