@@ -60,7 +60,7 @@ function CartaMenu() {
         }
          
         listadeMenus()
-    },[user.id, user.username])
+    },[])
 
 
 
@@ -86,11 +86,6 @@ function CartaMenu() {
       <Helmet>
         <title>Le Forky</title>
       </Helmet>
-      {/* <div className='col-12 justify-content-center d-flex'>
-        {(!isAuthenticated) ? (
-          <div className=" text-center alert alert-danger" role="alert">Tienes que iniciar sesión para poder encargar</div>
-        ) : null}
-      </div> */}
       
       <Modal className='col-12' show={showMessage} onHide={() => setShowMessage(false)}>
         <Modal.Header closeButton>
@@ -131,9 +126,7 @@ function CartaMenu() {
                                 onClick={() => handleAddToCart(elemento, username, id)}
                                 id="liveToastBtn"
                               >Agregar
-                              </button>
-                              
-                              
+                              </button>   
                             ) : null}
                           </small>
                           <div class="toast-container position-fixed bottom-0 end-0 p-3">
