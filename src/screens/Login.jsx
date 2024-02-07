@@ -38,12 +38,12 @@ function Login() {
               <div className="mb-5">
                 <label htmlFor="InputEmailReg" className="form-label form-group mt-5 mb-3 justify-content-right d-flex negrita-color-negro">Correo Electrónico</label>
                 <input type="email" className="form-control form-group w-100" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: true })} />
-                {errors.email && <p className='text-red-500'>Email is required</p>}
+                {errors.email && <p className='form-text'>Email is required</p>}
               </div>
               <div className="mb-5">
                 <label htmlFor="InputPasswordReg" className="form-label form-group mt-5 mb-3 justify-content-right d-flex negrita-color-negro">Contraseña</label>
                 <input type="password" className="form-control form-group w-100" id="InputPasswordReg" {...register('password', { required: true })} />
-                {errors.password && <p className='text-red-500'>Password is required</p>}
+                {errors.password && <p className='form-text'>Password is required</p>}
                 <span id="passwordHelpInline" className="form-text">Debe contener como mínimo 6 caracteres</span>
               </div>
               <div className='mb-5'>

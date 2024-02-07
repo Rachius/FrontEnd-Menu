@@ -32,13 +32,11 @@ function App() {
           <NavBar/>
           <Routes>
             <Route >
-            <Route path="/pedidos" element={<Pedidos/>}/>
+            
             <Route path="/registro" element={<Registro/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/home" element={<CartaMenu/>}/>
             <Route path="/" element={<CartaMenu/>}/>
-            <Route path="/logoutscr" element={<LogoutScr/>}/>
-            <Route path="/esperaPedido" element={<EsperandoPedido/>} />
             </Route>
 
             <Route>

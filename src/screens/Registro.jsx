@@ -45,17 +45,17 @@ function Registro(){
                         <div class="mb-3 needs-validation px-5" noValidate>
                         <label for="InputNameReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Nombre</label>
                         <input type="text" className="form-control" id="InputNameReg" aria-describedby="nameregHelp" {...register('username', { required: true })} />
-                        {errors.username && <p className='text-red-500'>Userame is required</p>}
+                        {errors.username && <p className='form-text'>Userame is required</p>}
                         </div>
                         <div class="mb-3 px-5">
                         <label for="InputEmailReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Correo Electrónico</label>
                         <input type="email" className=" form-control form-group w-100" id="InputEmailReg" aria-describedby="emailregHelp" placeholder="usuario@correo.com" {...register('email', { required: true })}/>
-                        {errors.email && <p className='text-red-500'>Email is required</p>}
+                        {errors.email && <p className='form-text'>Email is required</p>}
                         </div>
                         <div class="mb-3 px-5">
                         <label for="InputPasswordReg" className="form-label form-group mt-3 mb-3 justify-content-right d-flex negrita-color-negro">Contraseña</label>
                         <input type="password" className="form-control" id="InputPasswordReg" {...register('password', { required: true })}/>
-                        {errors.password && <p className='text-red-500'>Password is required</p>}
+                        {errors.password && <p className='form-text'>Password is required</p>}
                         <span id="passwordHelpInline" className="form-text">La contraseña ingresada debe tener como mínimo 6 caracteres</span>
                         </div>
                         <div>         
