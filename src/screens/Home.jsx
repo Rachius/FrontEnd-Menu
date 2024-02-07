@@ -110,7 +110,7 @@ function CartaMenu() {
         <div className='container '>
           <div className='bordeCarta white-star-carta mt-5 justify-content-center d-flex '>
             <div className='col-lg-12 col-sm-12  row'>
-              <h1 className='text-center mb-3 mt-3 '>Platos</h1>
+              <h1 className='text-center mb-3 mt-3 '>Platosss</h1>
               <div className='Card rounded-4 col-12 justify-content-center d-flex  '>
                 <ul className="list-group c d-flex flex-wrap px-5 col-12 justify-content-between">
                   {listaMenu.map((elemento, index) => (
